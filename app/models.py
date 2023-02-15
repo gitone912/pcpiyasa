@@ -23,3 +23,4 @@ class pc_builder_class(models.Model):
 class product_added(models.Model):
     user = models.ForeignKey(User , on_delete=models.CASCADE,null=True)
     processor = models.ForeignKey(new_processor, on_delete=models.CASCADE)
+    

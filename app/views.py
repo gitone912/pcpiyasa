@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 import io
 from rest_framework.parsers import JSONParser
 from .serializer import *
@@ -38,10 +38,14 @@ def pc_builder(request):
     user = request.user
     processor_id = request.GET.get('processor_id')
     processor= new_processor.objects.get(id=processor_id)
-    print(processor)
     add_product = product_added(user=user , processor=processor)#user=user need to be added for multiple users
     add_product.save()
-    return render(request, 'pc_builder.html')
+    return redirect("show_list")
+
+def show_list(request):
+    user = request.user
+    data = product_added.objects.filter(user=user)
+    return render(request, 'pc_builder.html', {'data':data})
 
 def processor_view(request):
 # Default queryset
@@ -73,3 +77,10 @@ def processor_view(request):
     'speeds': speeds,
     'cores': cores
     })
+    
+def delete_data(request,pk):#bin
+    order = product_added.objects.get(id=pk)
+    if request.method == "POST":
+        order.delete()
+        return redirect("show_list")
+    return redirect("show_list")

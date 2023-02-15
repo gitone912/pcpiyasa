@@ -6,5 +6,7 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("get_processor_data/", views.processor_create, name="get_processor_data"),
     path("processors/", views.processors, name="processors"),
-    path("pc_builder/", views.pc_builder, name="pc_builder")
+    path("pc_builder/", views.pc_builder, name="pc_builder"),
+    path("delete/<str:pk>", views.delete_data, name="delete"),
+    path("show_list/", views.show_list, name="show_list"),
 ]
