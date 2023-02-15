@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class new_processor(models.Model):
@@ -17,10 +18,8 @@ class new_processor(models.Model):
     
 class pc_builder_class(models.Model):
     processor = models.ForeignKey(new_processor, on_delete=models.CASCADE)
-    prod_id = models.UUIDField(default=uuid.uuid4, primary_key=True)
-    completed = models.BooleanField(default=False)
-    session_id = models.CharField(max_length=200)
+    
     
 class product_added(models.Model):
+    user = models.ForeignKey(User , on_delete=models.CASCADE,null=True)
     processor = models.ForeignKey(new_processor, on_delete=models.CASCADE)
-    

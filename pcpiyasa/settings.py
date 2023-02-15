@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'rest_framework',
+    'guest_user'
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,9 @@ CSRF_TRUSTED_ORIGINS = ['https://*.wastemanagement0.azurewebsites.net/']
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+AUTHENTICATION_BACKENDS = [
+   "django.contrib.auth.backends.ModelBackend",
+   # it should be the last entry to prevent unauthorized access
+   "guest_user.backends.GuestBackend",
+]

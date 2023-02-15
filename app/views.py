@@ -7,6 +7,7 @@ from rest_framework.renderers import JSONRenderer
 from django.views.decorators.csrf import csrf_exempt
 import requests
 import uuid
+from guest_user.decorators import allow_guest_user
 # Create your views here.
 def home(request):
     return render(request, 'homepage.html')
@@ -32,17 +33,13 @@ def processors(request):
     data = new_processor.objects.all()
     return render(request, 'processors.html', {'data':data})
 
+@allow_guest_user
 def pc_builder(request):
-    try:
-        user = pc_builder_class.objects.get(session_id = request.session['nonuser'], completed=False)
-    except:
-        request.session['nonuser'] = str(uuid.uuid4()) 
-        user = pc_builder_class.objects.create(session_id = request.session['nonuser'], completed=False)
-    print(user)
+    user = request.user
     processor_id = request.GET.get('processor_id')
     processor= new_processor.objects.get(id=processor_id)
     print(processor)
-    add_product = product_added(processor=processor)#user=user need to be added for multiple users
+    add_product = product_added(user=user , processor=processor)#user=user need to be added for multiple users
     add_product.save()
     return render(request, 'pc_builder.html')
 
