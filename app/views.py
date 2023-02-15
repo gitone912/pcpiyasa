@@ -33,6 +33,10 @@ def processors(request):
     data = new_processor.objects.all()
     return render(request, 'processors.html', {'data':data})
 
+def processor_detail(request, pk):
+    data = new_processor.objects.get(id=pk)
+    return render(request, 'processor_details.html', {'data':data})
+
 @allow_guest_user
 def pc_builder(request):
     user = request.user
@@ -84,3 +88,4 @@ def delete_data(request,pk):#bin
         order.delete()
         return redirect("show_list")
     return redirect("show_list")
+

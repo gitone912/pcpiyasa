@@ -1,6 +1,6 @@
 {% for x in data %}
+<a href="{%url 'processor_detail' x.processor.id %}">{{x.processor.processor_name}}</a>
   
-  {{x.processor.processor_name}}
   <hr>
   <div class="col-md-4">
     <div class="form-group">
@@ -11,4 +11,5 @@
       <br>
     </div>
   </div>
-  {% endfor %}
+  {% endfor %}<hr>
+  <a href="{% url 'processors' %}">add processor</a>
