@@ -1,0 +1,8 @@
+{% for x in data %}
+{{x.processor_model}}
+<form action="/pc_builder">
+    <input type="hidden" name="processor_id" value="{{x.id}}" id="processor_id">
+    <button type="submit">submit</button>
+</form>
+<br>
+{% endfor %}
