@@ -29,9 +29,9 @@ def processor_create(request):
         json_data = JSONRenderer().render(serializer.errors)
         return HttpResponse(json_data, content_type='application/json')
         
-def processors(request):
-    data = new_processor.objects.all()
-    return render(request, 'processors.html', {'data':data})
+# def processors(request):
+#     data = new_processor.objects.all()
+#     return render(request, 'processors.html', {'data':data})
 
 def processor_detail(request, pk):
     data = new_processor.objects.get(id=pk)
@@ -74,7 +74,7 @@ def processor_view(request):
         processors = processors.filter(processor_speed__gte=min_speed_filter)
     if min_cores_filter:
         processors = processors.filter(processor_cores__gte=min_cores_filter)
-    return render(request, 'processor_list.html', {
+    return render(request, 'processors.html', {
     'processors': processors,
     'brands': brands,
     'socket_types': socket_types,
