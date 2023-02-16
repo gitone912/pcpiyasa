@@ -89,3 +89,6 @@ def delete_data(request,pk):#bin
         return redirect("show_list")
     return redirect("show_list")
 
+def testing(request):
+    return render(request, 'index.html')
+

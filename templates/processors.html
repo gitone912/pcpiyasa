@@ -1,53 +1,125 @@
-<form action="/processors">
-    <label for="cars">Choose Brand Name:</label>
-    <select id="brand" name="brand">
-        {% for x in brands %}
-        <option value="{{x}}">{{x}}</option>
-        {% endfor %}
-        <option>all</option>
-        
+{% extends 'base.html' %}
+{% block content %}
 
-    </select>
-    <input type="submit" value="Submit">
-</form>
-<form action="/processors">
-    <label for="cars">Choose Socket:</label>
-    <select id="socket_type" name="socket_type">
-        {% for x in socket_types %}
-        <option value="{{x}}">{{x}}</option>
-        {% endfor %}
-      
-    </select>
-    <input type="submit" value="Submit">
-</form>
-<form action="/processors">
-    <label for="cars">Choose Min core:</label>
-    <select id="min_cores" name="min_cores">
-        {% for x in cores %}
-        <option value="{{x}}">{{x}}</option>
-        {% endfor %}
-        
-     
-    </select>
-    <input type="submit" value="Submit">
-</form>
-<form action="/processors">
-    <label for="cars">Choose Speeds:</label>
-    <select id="min_speed" name="min_speed">
-        {% for x in speeds %}
-        <option value="{{x}}">{{x}}</option>
-        {% endfor %}
-      
-    </select>
-    <input type="submit" value="Submit">
-</form>
-{% for x in processors %}
-<a href="{%url 'processor_detail' x.id %}">{{x.processor_model}}</a>
+	<h3 class="text-center">Choose a Processor</h3>
 
-<form action="/pc_builder">
-    <input type="hidden" name="processor_id" value="{{x.id}}" id="processor_id">
-    <button type="submit">submit</button>
+<body>
+	<div class="container">
+		<div class="row">
+		<div class="col-sm-3">
+			
+			<div class="card" style="width: 18rem;">
+				<div class="card-header">
+					<p class="font-weight-bold">Filter</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					
+				  <li class="list-group-item">
+					<form action="/processors">
+						
+						<select id="brand" name="brand" class="form-select" aria-label="Default select example">
+							<option selected>Brand Name</option>
+						  {% for x in brands %}
+						  <option value="{{x}}">{{x}}</option>
+						  {% endfor %}
+						</select>
+						<input type="submit" value="Filter" class="btn btn-info"/>
+					  </form>
+				  </li>
+				  <li class="list-group-item">
+					<form action="/processors">
+						
+						<select id="socket_type" name="socket_type" class="form-select" aria-label="Default select example">
+							<option selected>Socket Type</option>
+							{% for x in socket_types %}
+						  <option value="{{x}}">{{x}}</option>
+						  {% endfor %}
+						</select>
+						<input type="submit" value="Filter" class="btn btn-info"/>
+					  </form>
+				  </li>
+				  <li class="list-group-item">
+					<form action="/processors">
+						
+						<select id="min_cores" name="min_cores" class="form-select" aria-label="Default select example">
+							<option selected>Min Cores</option>
+							{% for x in cores %}
+						  <option value="{{x}}">{{x}}</option>
+						  {% endfor %}
+						</select>
+						<input type="submit" value="Filter" class="btn btn-info"/>
+					  </form>
+				  </li>
+				  <li class="list-group-item"><form action="/processors">
+					
+					<select id="min_speed" name="min_speed" class="form-select" aria-label="Default select example">
+						<option selected>Min Speed</option>
+						{% for x in speeds %}
+					  <option value="{{x}}">{{x}}</option>
+					  {% endfor %}
+					</select>
+					<input type="submit" value="Filter" class="btn btn-info"/>
+				  </form></li>
+				  <li class="list-group-item"><a href="/processors" class="btn btn-info">Reset Filters</a></li>
+				</ul>
+			  </div>
+		</div>
+		<div class="col-sm-9">
+			
+	<table class="table align-middle mb-0 bg-white">
+		<thead class="bg-light">
+			<tr>
+				
+				<th>Name</th>
+				<th>Brand</th>
+				<th>Cores</th>
+				<th>Socket Type</th>
+				<th>Speed</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for x in processors %}
+			<tr>
+				<td>
+					<div class="d-flex align-items-center">
+						<img
+						src="{{x.processor_image_url}}"
+						alt=""
+						style="width: 45px; height: 45px"
+						class="rounded"
+						/>
+						<div class="ms-3">
+							<p class="fw-bold mb-1"><a href="{%url 'processor_detail' x.id %}">{{x.processor_model}}</a></p>
+							
+						</div>
+					</div>
+				</td>
+				<td>
+					<p class="fw-normal mb-1">{{x.processor_brand}}</p>
+				</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_cores}}</p>
+			</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_socket_type}}</p>
+			</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_speed}}</p>
+			</td>
+			<td>
+				<form action="/pc_builder">
+					<input type="hidden" name="processor_id" value="{{x.id}}" id="processor_id" />
+					<button type="submit" class="btn btn-primary">Add</button>
+				  </form>
+				
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>
+</div>
+</div>
 
-<br>
-{% endfor %}
-
+{% endblock content %}

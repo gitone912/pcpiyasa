@@ -1,5 +1,19 @@
-homepage
-<br>
-<a href="{% url 'processors' %}">processors</a>
-<br>
-<a href="{% url 'show_list' %}">show_list</a>
+{% extends 'base.html' %}
+{% block content %}
+<main>
+  
+    <div class="px-4 py-5 my-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://m.media-amazon.com/images/I/41hzAFLpHnL._SL75_.jpg" alt="" width="72" height="57">
+      <h1 class="display-5 fw-bold">PCPIYASA</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">PC Piyasa places a strong emphasis on quality and customer satisfaction, which is reflected in their positive reviews and loyal customer base. The company's dedication to their craft and commitment to delivering high-quality custom PCs has earned them a strong reputation in the market. If you're in the market for a custom-built PC, PC Piyasa is a company that's worth considering.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="{% url 'show_list' %}" class="btn btn-outline-secondary btn-lg px-4">Pc Builder</a>
+          <a href="{% url 'processors' %}" class="btn btn-outline-primary btn-lg px-4">processors</a>
+        </div>
+      </div>
+    </div>
+  
+    
+  </main>
+  {% endblock content %}
