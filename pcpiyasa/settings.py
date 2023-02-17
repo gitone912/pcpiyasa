@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'pcpiyasa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pcpiyasa', 
+        'NAME': 'nre', 
         'USER': 'postgres',
         'PASSWORD': '9122',
         'HOST': '127.0.0.1', 

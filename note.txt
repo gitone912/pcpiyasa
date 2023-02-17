@@ -8,3 +8,8 @@ owner = models.ForeignKey(Customer, on_delete-models. CASCADE, null = True, blan
 cart_id = models. UUIDField (default-uuid.uuid4, editable=False, primary_key=True) created models.DateTimeField (auto_now_add=True)
 completed = models.BooleanField(default=False)
 [session_id = models.CharField(max_length=100)
+
+
+from django.contrib.contenttypes.models import ContentType
+ContentType.objects.all().delete()
+loaddata .json
