@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class new_processor(models.Model):
+class processor(models.Model):
     id = models.AutoField(primary_key=True)
     processor_brand = models.CharField(max_length=200)
     processor_cores = models.CharField(max_length=200)
@@ -17,10 +17,10 @@ class new_processor(models.Model):
         return str(self.id)
     
 class pc_builder_class(models.Model):
-    processor = models.ForeignKey(new_processor, on_delete=models.CASCADE)
+    processor = models.ForeignKey(processor, on_delete=models.CASCADE)
     
     
 class product_added(models.Model):
-    user = models.ForeignKey(User , on_delete=models.CASCADE,null=True)
-    processor = models.ForeignKey(new_processor, on_delete=models.CASCADE)
+    user = models.ForeignKey(User , on_delete=models.CASCADE,null=True,blank=True)
+    processor = models.ForeignKey(processor, on_delete=models.CASCADE,null=True,blank=True)
     

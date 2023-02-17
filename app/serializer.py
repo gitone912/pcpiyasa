@@ -3,5 +3,5 @@ from .models import *
 
 class processor_serializer(serializers.ModelSerializer):
     class Meta:
-        model = new_processor
+        model = processor
         fields = '__all__'

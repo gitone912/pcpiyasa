@@ -34,31 +34,34 @@ def processor_create(request):
 #     return render(request, 'processors.html', {'data':data})
 
 def processor_detail(request, pk):
-    data = new_processor.objects.get(id=pk)
+    data = processor.objects.get(id=pk)
     return render(request, 'processor_details.html', {'data':data})
 
 @allow_guest_user
 def pc_builder(request):
     user = request.user
     processor_id = request.GET.get('processor_id')
-    processor= new_processor.objects.get(id=processor_id)
-    add_product = product_added(user=user , processor=processor)#user=user need to be added for multiple users
+    processors= processor.objects.get(id=processor_id)
+    add_product = product_added(user=user , processor=processors)#user=user need to be added for multiple users
     add_product.save()
     return redirect("show_list")
 
 def show_list(request):
     user = request.user
-    data = product_added.objects.filter(user=user)
+    try:
+        data = product_added.objects.filter(user=user)
+    except:
+        data = None
     return render(request, 'pc_builder.html', {'data':data})
 
 def processor_view(request):
 # Default queryset
-    processors = new_processor.objects.all()
+    processors = processor.objects.all()
     # Get filter options from database
-    brands = new_processor.objects.values_list('processor_brand', flat=True).distinct()
-    socket_types = new_processor.objects.values_list('processor_socket_type', flat=True).distinct()
-    speeds = new_processor.objects.values_list('processor_speed', flat=True).distinct()
-    cores = new_processor.objects.values_list('processor_cores', flat=True).distinct()
+    brands = processor.objects.values_list('processor_brand', flat=True).distinct()
+    socket_types = processor.objects.values_list('processor_socket_type', flat=True).distinct()
+    speeds = processor.objects.values_list('processor_speed', flat=True).distinct()
+    cores = processor.objects.values_list('processor_cores', flat=True).distinct()
     if request.method == 'GET':
     # Get filter parameters from request.GET
         brand_filter = request.GET.get('brand')
