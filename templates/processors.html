@@ -69,18 +69,23 @@
 	<table class="table align-middle mb-0 bg-white">
 		<thead class="bg-light">
 			<tr>
-				
+				<th></th>
 				<th>Name</th>
 				<th>Brand</th>
 				<th>Cores</th>
-				<th>Socket Type</th>
-				<th>Speed</th>
+				<th>Core Clock</th>
+				<th>Boost Clock</th>
+				<th>Graphics</th>
+				<th>TDP</th>
+				<th>SMT</th>
+				<th>Price</th>
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for x in processors %}
 			<tr>
+				
 				<td>
 					<div class="d-flex align-items-center">
 						<img
@@ -90,23 +95,39 @@
 						class="rounded"
 						/>
 						<div class="ms-3">
-							<p class="fw-bold mb-1"><a href="{%url 'processor_detail' x.id %}">{{x.processor_model}}</a></p>
+							<p class="fw-bold mb-1">{{x.processor_model}}</p>
 							
 						</div>
 					</div>
 				</td>
 				<td>
+					<a href="{%url 'processor_detail' x.id %}"><p class="fw-normal mb-1">{{x.processor_short_name}}</p></a>
+				</td>
+				<td>
 					<p class="fw-normal mb-1">{{x.processor_brand}}</p>
 				</td>
 			<td>
-				<p class="fw-normal mb-1">{{x.processor_cores}}</p>
+				<p class="fw-normal mb-1">{{x.processor_core_count}}</p>
 			</td>
 			<td>
-				<p class="fw-normal mb-1">{{x.processor_socket_type}}</p>
+				<p class="fw-normal mb-1">{{x.processor_performance_core_clock}}</p>
 			</td>
 			<td>
-				<p class="fw-normal mb-1">{{x.processor_speed}}</p>
+				<p class="fw-normal mb-1">{{x.processor_performance_boost_clock}}</p>
 			</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_integrated_graphics}}</p>
+			</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_tdp}}</p>
+			</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_smt}}</p>
+			</td>
+			<td>
+				<p class="fw-normal mb-1">{{x.processor_price}}</p>
+			</td>
+		
 			<td>
 				<form action="/pc_builder">
 					<input type="hidden" name="processor_id" value="{{x.id}}" id="processor_id" />

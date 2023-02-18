@@ -41,10 +41,14 @@ def processor_detail(request, pk):
 def pc_builder(request):
     user = request.user
     processor_id = request.GET.get('processor_id')
-    processors= processor.objects.get(id=processor_id)
-    add_product = product_added(user=user , processor=processors)#user=user need to be added for multiple users
-    add_product.save()
+    try:
+        product = product_added.objects.get(user=user)
+        product.processor_id = processor_id
+    except product_added.DoesNotExist:
+        product = product_added(user=user, processor_id=processor_id)
+    product.save()
     return redirect("show_list")
+
 
 def show_list(request):
     user = request.user
@@ -59,9 +63,9 @@ def processor_view(request):
     processors = processor.objects.all()
     # Get filter options from database
     brands = processor.objects.values_list('processor_brand', flat=True).distinct()
-    socket_types = processor.objects.values_list('processor_socket_type', flat=True).distinct()
-    speeds = processor.objects.values_list('processor_speed', flat=True).distinct()
-    cores = processor.objects.values_list('processor_cores', flat=True).distinct()
+    socket_types = processor.objects.values_list('processor_integrated_graphics', flat=True).distinct()
+    speeds = processor.objects.values_list('processor_tdp', flat=True).distinct()
+    cores = processor.objects.values_list('processor_core_count', flat=True).distinct()
     if request.method == 'GET':
     # Get filter parameters from request.GET
         brand_filter = request.GET.get('brand')

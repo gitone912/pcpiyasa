@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
+    'user_language_middleware.UserLanguageMiddleware',
 ]
 
 ROOT_URLCONF = 'pcpiyasa.urls'
@@ -82,7 +84,7 @@ WSGI_APPLICATION = 'pcpiyasa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'nre', 
+        'NAME': 'pcpiyasa', 
         'USER': 'postgres',
         'PASSWORD': '9122',
         'HOST': '127.0.0.1', 
