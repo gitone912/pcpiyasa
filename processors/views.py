@@ -11,7 +11,7 @@ import uuid
 from guest_user.decorators import allow_guest_user
 from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
-
+from django.core.paginator import Paginator
 
 #api to get data from json 
 @csrf_exempt
@@ -63,19 +63,23 @@ from django.db.models import Q
 def processor_view(request):
     # Default queryset
     processors = processor.objects.all()
+
     # Get filter options from database
     brands = processor.objects.values_list('processor_brand', flat=True).distinct()
     socket_types = processor.objects.values_list('processor_integrated_graphics', flat=True).distinct()
     speeds = processor.objects.values_list('processor_tdp', flat=True).distinct()
     cores = processor.objects.values_list('processor_core_count', flat=True).distinct()
-    
+    prices = processor.objects.values_list('processor_price', flat=True).distinct()
+
     if request.method == 'GET':
         # Get filter parameters from request.GET
         brand_filter = request.GET.get('brand')
         socket_type_filter = request.GET.get('socket_type')
         min_speed_filter = request.GET.get('min_speed')
         min_cores_filter = request.GET.get('min_cores')
-        
+        min_price_filter = request.GET.get('min_price')
+        max_price_filter = request.GET.get('max_price')
+
         # Apply filters if they exist
         if brand_filter and socket_type_filter:
             processors = processors.filter(Q(processor_brand=brand_filter) & Q(processor_integrated_graphics=socket_type_filter))
@@ -83,16 +87,34 @@ def processor_view(request):
             processors = processors.filter(processor_brand=brand_filter)
         elif socket_type_filter:
             processors = processors.filter(processor_integrated_graphics=socket_type_filter)
-        
+
         if min_speed_filter:
             processors = processors.filter(processor_tdp__gte=min_speed_filter)
         if min_cores_filter:
             processors = processors.filter(processor_core_count__gte=min_cores_filter)
-            
+        if min_price_filter:
+            processors = processors.filter(processor_price__gte=min_price_filter)
+        if max_price_filter:
+            processors = processors.filter(processor_price__lte=max_price_filter)
+        paginator = Paginator(processors, 70)  # Show 100 processors per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        return render(request, 'processors.html', {
+            'processors': page_obj,
+            'brands': brands,
+            'socket_types': socket_types,
+            'speeds': speeds,
+            'cores': cores,
+            'prices': prices,
+        })
+    paginator = Paginator(processors, 70)  # Show 100 processors per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     return render(request, 'processors.html', {
-        'processors': processors,
+        'processors': page_obj,
         'brands': brands,
         'socket_types': socket_types,
         'speeds': speeds,
-        'cores': cores
+        'cores': cores,
+        'prices': prices,
     })
