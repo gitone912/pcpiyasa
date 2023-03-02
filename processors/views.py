@@ -96,7 +96,7 @@ def processor_view(request):
             processors = processors.filter(processor_price__gte=min_price_filter)
         if max_price_filter:
             processors = processors.filter(processor_price__lte=max_price_filter)
-        paginator = Paginator(processors, 70)  # Show 100 processors per page
+        paginator = Paginator(processors, 150)  # Show 100 processors per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
         return render(request, 'processors.html', {
@@ -107,7 +107,7 @@ def processor_view(request):
             'cores': cores,
             'prices': prices,
         })
-    paginator = Paginator(processors, 70)  # Show 100 processors per page
+    paginator = Paginator(processors, 150)  # Show 100 processors per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'processors.html', {

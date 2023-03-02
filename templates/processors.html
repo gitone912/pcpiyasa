@@ -190,6 +190,7 @@
                 <a class="page-link" href="?page={{ processors.previous_page_number }}">&lt;</a>
             </li>
         {% endif %}
+		
 
         {% for num in processors.paginator.page_range %}
             {% if processors.number == num %}
