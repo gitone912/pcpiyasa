@@ -64,7 +64,7 @@ def ram_list(request):
         if ram_size_filter:
             rams = rams.filter(ram_size=ram_size_filter)
 
-        paginator = Paginator(rams, 25)  # Show 25 RAM instances per page
+        paginator = Paginator(rams, 200)  # Show 25 RAM instances per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
         return render(request, 'ram_list.html', {
@@ -75,7 +75,7 @@ def ram_list(request):
             'ram_sizes': ram_sizes,
         })
 
-    paginator = Paginator(rams, 25)  # Show 25 RAM instances per page
+    paginator = Paginator(rams, 100)  # Show 25 RAM instances per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'ram_list.html', {

@@ -11,6 +11,7 @@ import uuid
 from guest_user.decorators import allow_guest_user
 from django.core.exceptions import ObjectDoesNotExist
 from processors.models import *
+from .models import *
 # Create your views here.
 def home(request):
     return render(request, 'homepage.html')
