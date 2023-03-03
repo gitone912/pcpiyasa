@@ -45,18 +45,6 @@ def processor_detail(request, pk):
     data = processor.objects.get(id=pk)
     return render(request, 'processor_details.html', {'data':data})
 
-@allow_guest_user
-def pc_builder(request):
-    user = request.user
-    processor_id = request.GET.get('processor_id')
-    try:
-        product = product_added.objects.get(user=user)
-        product.processor_id = processor_id
-    except product_added.DoesNotExist:
-        product = product_added(user=user, processor_id=processor_id)
-    product.save()
-    return redirect("show_list")
-
 
 from django.db.models import Q
 

@@ -6,4 +6,5 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("delete/<str:pk>", views.delete_data, name="delete"),
     path("show_list/", views.show_list, name="show_list"),
+    path("pc_builder/", views.pc_builder, name="pc_builder"),
 ]

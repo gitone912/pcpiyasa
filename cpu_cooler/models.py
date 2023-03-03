@@ -17,11 +17,4 @@ class cpu_cooler(models.Model):
     def __str__(self):
         return str(self.id)
     
-class pc_builder_class(models.Model):
-    processor = models.ForeignKey(cpu_cooler, on_delete=models.CASCADE)
-    
-    
-class product_added(models.Model):
-    user = models.ForeignKey(User , on_delete=models.CASCADE,null=True,blank=True)
-    processor = models.ForeignKey(cpu_cooler, on_delete=models.CASCADE,null=True,blank=True)
     

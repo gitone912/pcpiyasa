@@ -13,25 +13,23 @@ from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 from django.core.paginator import Paginator
 from django.db.models import Q
+from processors.models import *
 
 #api to get data from json
 @csrf_exempt
 def cpu_cooler_create(request):
     with open('cpu_cooler.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
-    json_data = data
-    json_data_str = json.dumps(json_data, ensure_ascii=False)
+
+    # Remove the 'id' field from each item in the list
+
+    json_data_str = json.dumps(data, ensure_ascii=False)
     stream = io.BytesIO(json_data_str.encode())
     pythondata = JSONParser().parse(stream)
 
     for item in pythondata:
-        uid = item['id']
-        try:
-            user_data = cpu_cooler.objects.get(id=uid)
-            serializer = cpu_cooler_serializer(user_data, data=item)
-        except ObjectDoesNotExist:
-            item['user'] = request.user.id
-            serializer = cpu_cooler_serializer(data=item)
+        item['user'] = request.user.id
+        serializer = cpu_cooler_serializer(data=item)
 
         if serializer.is_valid():
             serializer.save()
@@ -40,23 +38,12 @@ def cpu_cooler_create(request):
             print("form not saved")
 
     return redirect('cpu_cooler')
-        
+
 
 def cpu_cooler_detail(request, pk):
     data = cpu_cooler.objects.get(id=pk)
     return render(request, 'cpu_cooler_details.html', {'data':data})
 
-@allow_guest_user
-def pc_builder(request):
-    user = request.user
-    cpu_cooler_id = request.GET.get('cpu_cooler_id')
-    try:
-        product = product_added.objects.get(user=user)
-        product.cpu_cooler.id = cpu_cooler_id
-    except product_added.DoesNotExist:
-        product = product_added(user=user, cpu_cooler_id=cpu_cooler_id)
-    product.save()
-    return redirect("show_list")
 
 
 def cpu_cooler_view(request):
@@ -99,7 +86,7 @@ def cpu_cooler_view(request):
         paginator = Paginator(coolers, 150)  # Show 100 coolers per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'cpu_coolers.html', {
+        return render(request, 'cpu_cooler.html', {
             'coolers': page_obj,
             'brands': brands,
             'fan_rpms': fan_rpms,
@@ -111,7 +98,7 @@ def cpu_cooler_view(request):
     paginator = Paginator(coolers, 150)  # Show 100 coolers per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'cpu_coolers.html', {
+    return render(request, 'cpu_cooler.html', {
         'coolers': page_obj,
         'brands': brands,
         'fan_rpms': fan_rpms,

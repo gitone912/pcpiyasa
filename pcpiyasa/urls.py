@@ -21,4 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("processors.urls")),
     path("", include("home.urls")),
+    path("", include("cpu_cooler.urls")),
+    path("", include("graphics_cards.urls")),
+    path("", include("motherboard.urls")),
+    path("", include("ram.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

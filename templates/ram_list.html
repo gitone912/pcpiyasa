@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<h3 class="text-center">Choose a RAM</h3>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h4>Filter by:</h4>
+				<form method="GET">
+					<div class="mb-3">
+						<h5>Brand</h5>
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="brandDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Select brand
+							</button>
+							<div class="dropdown-menu" aria-labelledby="brandDropdown">
+								{% for brand in brands %}
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
+										<label class="form-check-label" for="{{ brand }}">
+											{{ brand }}
+										</label>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="mb-3">
+						<h5>Capacity</h5>
+						<input class="form-control" type="text" name="capacity" placeholder="Enter capacity">
+					</div>
+					<div class="mb-3">
+						<h5>Type</h5>
+						<input class="form-control" type="text" name="type" placeholder="Enter type">
+					</div>
+					<div class="mb-3">
+						<h5>Speed</h5>
+						<input class="form-control" type="text" name="speed" placeholder="Enter speed">
+					</div>
+					<div class="mb-3">
+						<h5>Price</h5>
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input class="form-control" type="text" name="min_price" placeholder="Min price">
+							<span class="input-group-addon">to</span>
+							<input class="form-control" type="text" name="max_price" placeholder="Max price">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Apply filters</button>
+				</form>
+			</div>
+			<div class="col-md-9">
+				<h2>RAMs</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Brand</th>
+							<th>Model</th>
+							<th>Capacity</th>
+							<th>Type</th>
+							<th>Speed</th>
+							<th>Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for ram in rams %}
+							<tr>
+								<td>{{ ram.ram_brand }}</td>
+								<td>{{ ram.ram_model }}</td>
+								<td>{{ ram.ram_capacity }} GB</td>
+								<td>{{ ram.ram_type }}</td>
+								<td>{{ ram.ram_speed }} MHz</td>
+								<td>${{ ram.ram_price }}</td>
+								<td>
+									<form action="/pc_builder">
+										<input type="hidden" name="ram_id" value="{{ ram.id }}" id="ram_id" />
+										<button type="submit" class="btn btn-primary">Add</button>
+									</form>
+								</td>
+							</tr>
+						{% empty %}
+							<tr>
+								<td colspan="6">No RAM modules found.</td>
+							</tr>
+						{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    {% if rams.has_other_pages %}
+        <ul class="pagination justify-content-center">
+            {% if rams.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1">&laquo;</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ rams.previous_page_number }}">&lt;</a>
+                </li>
+            {% endif %}
+    
+            {% for num in rams.paginator.page_range %}
+                {% if rams.number == num %}
+                    <li class="page-item active">
+                        <a class="page-link" href="#">{{ num }} <span class="sr-only">(current)</span></a>
+                    </li>
+                {% elif num > rams.number|add:'-3' and num < rams.number|add:'3' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+    
+            {% if rams.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ rams.next_page_number }}">&gt;</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ rams.paginator.num_pages }}">&raquo;</a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+    {% endblock content %}    

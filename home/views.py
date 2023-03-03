@@ -22,6 +22,30 @@ def delete_data(request,pk):#bin
         return redirect("show_list")
     return redirect("show_list")
 
+@allow_guest_user
+def pc_builder(request):
+    user = request.user
+    processor_id = request.GET.get('processor_id')
+    cpu_cooler_id = request.GET.get('cpu_cooler_id')
+    print(cpu_cooler_id)
+    products = []
+    try:
+        product = product_added.objects.get(user=user)
+    except product_added.DoesNotExist:
+        product = product_added(user=user)
+    if processor_id:
+        product.processor_id = processor_id
+        products.append(product)
+    if cpu_cooler_id:
+        cooler_product = product_added(user=user)
+        cooler_product.cpu_cooler_id = cpu_cooler_id
+        products.append(cooler_product)
+        
+    product_added.objects.bulk_create(products)
+    print(products)
+    return redirect("show_list")
+
+
 def show_list(request):
     user = request.user
     try:

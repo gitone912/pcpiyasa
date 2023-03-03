@@ -39,25 +39,17 @@
       </thead>
       <tbody>
         {% for x in data %}
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <img
-              src="{{x.processor.processor_image_url}}"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded"
-              />
-              <div class="ms-3">
-                <p class="fw-bold mb-1"><a href="{%url 'processor_detail' x.processor.id %}">{{x.processor.processor_name}}</a></p>
-                
-              </div>
-            </div>
-          </td>
-          <td>
-            <p class="fw-normal mb-1">{{x.processor.processor_brand}}</p>
-          </td>
-        
+  <tr>
+    <td>
+      {% if x.processor %}
+        <div class="d-flex align-items-center">
+          <img src="{{ x.processor.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1"><a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a></p>
+          </div>
+        </div>
+        <p class="fw-normal mb-1">{{ x.processor.processor_brand }}</p>
+          
        <td>
         <p class="fw-normal mb-1"> ${{x.processor.processor_price}} </p>
        </td>
@@ -71,8 +63,39 @@
           </form>
           
         </td>
-      </tr>
-      {% endfor %}
+      {% endif %}
+    </td>
+    <td>
+      {% if x.cpu_cooler %}
+        <div class="d-flex align-items-center">
+          <img src="{{ x.cpu_cooler.cooler_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1"><a href="{% url 'cpu_cooler_detail' x.cpu_cooler.id %}">{{ x.cpu_cooler.cpu_cooler_name }}</a></p>
+          </div>
+        </div>
+        <p class="fw-normal mb-1">{{ x.cpu_cooler.cpu_cooler_brand }}</p>
+          
+       <td>
+        <p class="fw-normal mb-1"> ${{x.cpu_cooler.cpu_cooler_price}} </p>
+       </td>
+        <td>
+          <form action="{%url 'delete' x.id %}" method="POST" id="bin_form">
+            {% csrf_token %}
+            <button type="submit" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            
+          </form>
+          
+        </td>
+      {% endif %}
+    </td>
+  </tr>
+{% endfor %}
+
+      
+      
+     
     </tbody>
   </table>
   </div>

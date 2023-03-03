@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'guest_user',
     'home',
     'processors',
+    'motherboard',
+    'ram',
+    'graphics_cards',
+    'cpu_cooler',
 ]
 
 MIDDLEWARE = [
