@@ -1,521 +1,226 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PCPiyasa</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+{% extends 'base.html' %}
+{% block content %}
 
-	<link rel="stylesheet" href="{% static 'css/site.css' %}">
-</head>
+	<h3 class="text-center">Choose a Processor</h3>
 
-{% include 'header.html' %}
 <body>
-	<div>
-
-		<div class="part-index">
-		  <div class="hero tabnav-hero">
-			<div class="page-container">
-			  <div class="title">
-				<h1>Choose A Processor</h1>
-	  
-				<ul class="tabbed-nav">
-	  
-				  <li><a href="/web/20180401103346mp_/https://pcpartpicker.com/products/cpu/overall-list/#">List</a></li>
-	  
-				  <li><a href="/web/20180401103346mp_/https://pcpartpicker.com/products/cpu/detailed-list/#"
-					  class="active">Detailed List</a></li>
-	  
-				</ul>
-	  
-			  </div>
-			</div>
-		  </div>
-		  <div class="details">
-			<div class="part-index-body">
-			  <div class="page-container">
-				<div class="column-wrapper">
-				  <div class="left-column">
-					<h2>Filters</h2>
-					<div class="obj-filters">
-					  <div class="obj-filter">
-						<div class="title">Merchants / Pricing</div>
-						<ul class="filter-list">
-						  <li><input type="checkbox" class="price_settings" id="price_settings_mir" checked="checked"
-							  control-id="ControlID-5"><label for="price_settings_mir">Include mail-in rebates</label></li>
-	  
-						  <li><input type="checkbox" class="price_settings" id="price_settings_use_smile"
-							  control-id="ControlID-6"><label for="price_settings_use_smile">Use <a
-								href="https://web.archive.org/web/20180401103346/http://smile.amazon.com/about?tag=pcpapi-20">Amazon
-								Smile</a> links</label></li>
-	  
-	  
-						  <li id="price_settings_show_merchants"><a href="#" id="price_settings_show_merchants_link">Show
-							  merchants...</a></li>
-	  
-						</ul>
-					  </div>
-	  
-	  
-					  <div class="obj-filter  hidden" id="price_settings_merchant_list">
-						<div class="title">Include Merchants</div>
-						<ul class="filter-list">
-						  <li><input type="checkbox" class="price_settings" id="price_settings_merchant_all" checked="checked"
-							  control-id="ControlID-7"><span style="font-weight:bold;"><label
-								for="price_settings_merchant_all">All</label></span></li>
-	  
-						  <li><input type="checkbox" class="price_settings" id="price_settings_merchant_64"><label
-							  for="price_settings_merchant_64">Adorama</label></li>
-						</ul>
-					  </div>
-	  
-	  
-					  <div class="block">
-						<div class="obj-filters">
-	  
-						  <div class="obj-filter " id="filterdiv_X">
-							<div class="title">Price</div>
-	  
-							<div id="filter_slide_labelbox_X" class="ui-slider-horizontal-labelbox">&nbsp;
-							  <div id="filter_slide_left_X" class="ui-slider-horizontal-labelbox-label" style="left: 3.5px;">
-								<a href="#">$0</a>
-								<div class="labelbox-input">
-								  $ <input type="text" size="8" id="filter_slide_left_input_X"
-									class="left ui-slider-horizontal-editbox">
-								</div>
-							  </div>
-							  <div id="filter_slide_right_X" class="ui-slider-horizontal-labelbox-label" style="left: 165px;">
-								<a href="#">$3700</a>
-								<div class="labelbox-input">
-								  $ <input type="text" size="8" id="filter_slide_right_input_X"
-									class="right ui-slider-horizontal-editbox">
-								</div>
-							  </div>
-							</div>
-							<div id="filter_slide_X"
-							  class="obj-filter-dualslide ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-							  aria-disabled="false">
-							  <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;">
-							  </div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 100%;"></a>
-							</div>
-	  
-						  </div>
-	  
-	  
-	  
-						  <div class="obj-filter " id="filterdiv_m">
-							<div class="title" {% if not request.GET.brand %}selected{% endif %}>Manufacturer</div>
-							<ul id="m_set" class="filter-list">
-							  <li class="filter-row-all">
-								  <input type="checkbox">
-								  <label>All</label></li>
-							  {% for brand in brands %}
-							  <li>
-								  <input type="checkbox" class="filteritem">
-								  <label value="{{ brand }}" {% if brand == request.GET.brand %}selected{% endif %}>{{ brand }}</label>
-							  </li>
-							  {% endfor %}
-							</ul>
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_s">
-							<div class="title" {% if not request.GET.socket_type %}selected{% endif %}>Socket Type</div>
-							<ul id="s_set" class="filter-list">
-							  <li class="filter-row-all">
-								  <input type="checkbox">
-								  <label>All</label></li>
-							  {% for socket_type in socket_types %}
-							  <li>
-								  <input type="checkbox" class="filteritem">
-								  <label value="{{ socket_type }}" {% if socket_type == request.GET.socket_type %}selected{% endif %}>{{ socket_type }}</label>
-							  </li>
-							  {% endfor %}
-							</ul>
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_f">
-							<div class="title">Family</div>
-	  
-							<ul id="f_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="f_all" control-id="ControlID-26"><label
-								  for="f_all">All</label></li>
-							  <li id="li_f67" class="abbreviated_f " style="display:none;"><input type="checkbox" id="f67"
-								  class="filteritem" control-id="ControlID-27"><label for="f67">Abu Dhabi</label></li>
-							  <li id="showall_f"><a href="#"
-								  onclick="$('li.abbreviated_f').show();$('#showall_f').hide();return false;">Show all...</a>
-							  </li>
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_k">
-							<div class="title">Socket</div>
-	  
-							<ul id="k_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="k_all" control-id="ControlID-36"><label
-								  for="k_all">All</label></li>
-							  <li id="li_k27" class="abbreviated_k " style="display:none;"><input type="checkbox" id="k27"
-								  class="filteritem" control-id="ControlID-37"><label for="k27">AM1</label></li>
-							  <li id="li_k5" class="abbreviated_k " style="display:none;"><input type="checkbox" id="k5"
-								  class="filteritem"><label for="k5">AM2+/AM2</label></li>
-							  <li id="li_k3" class="abbreviated_k " style="display:none;"><input type="checkbox" id="k3"
-								  class="filteritem"><label for="k3">AM3</label></li>
-							  <li id="li_k4"><input type="checkbox" id="k4" class="filteritem"
-								  control-id="ControlID-38"><label for="k4">AM3+</label></li>
-							  <li id="showall_k"><a href="#"
-								  onclick="$('li.abbreviated_k').show();$('#showall_k').hide();return false;">Show all...</a>
-							  </li>
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_g">
-							<div class="title">Integrated Graphics</div>
-	  
-							<ul id="g_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="g_all" control-id="ControlID-47"><label
-								  for="g_all">All</label></li>
-							  <li id="li_g0"><input type="checkbox" id="g0" class="filteritem"
-								  control-id="ControlID-48"><label for="g0">None</label></li>
-							  <li id="li_g75" class="abbreviated_g " style="display:none;"><input type="checkbox" id="g75"
-								  class="filteritem" control-id="ControlID-49"><label for="g75">Intel HD Graphics</label></li>
-							  <li id="li_g331" class="abbreviated_g " style="display:none;"><input type="checkbox" id="g331"
-								  class="filteritem"><label for="g331">Intel HD Graphics 510</label></li>
-							  <li id="li_g328"><input type="checkbox" id="g328" class="filteritem"
-								  control-id="ControlID-50"><label for="g328">Intel HD Graphics 530</label></li>
-							  <li id="li_g419" class="abbreviated_g " style="display:none;"><input type="checkbox" id="g419"
-								  class="filteritem" control-id="ControlID-57"><label for="g419">Radeon Vega 11</label></li>
-							  <li id="showall_g"><a href="#"
-								  onclick="$('li.abbreviated_g').show();$('#showall_g').hide();return false;">Show all...</a>
-							  </li>
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_C">
-							<div class="title">Cores</div>
-	  
-							<div id="filter_slide_labelbox_C" class="ui-slider-horizontal-labelbox">&nbsp;
-							  <div id="filter_slide_left_C" class="ui-slider-horizontal-labelbox-label" style="left: 7px;">
-								<a href="#">1</a>
-								<div class="labelbox-input">
-								  <input type="text" size="8" id="filter_slide_left_input_C"
-									class="left ui-slider-horizontal-editbox">
-								</div>
-							  </div>
-							  <div id="filter_slide_right_C" class="ui-slider-horizontal-labelbox-label"
-								style="left: 180.5px;">
-								<a href="#">22</a>
-								<div class="labelbox-input">
-								  <input type="text" size="8" id="filter_slide_right_input_C"
-									class="right ui-slider-horizontal-editbox">
-								</div>
-							  </div>
-							</div>
-							<div id="filter_slide_C"
-							  class="obj-filter-dualslide ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-							  aria-disabled="false">
-							  <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;">
-							  </div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 100%;"></a>
-							</div>
-	  
-						  </div>
-	  
-						  <div class="obj-filter hidden" id="filterdiv_c">
-							<div class="title">Cores</div>
-	  
-							<ul id="c_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="c_all"><label for="c_all">All</label></li>
-							  <li id="li_c22" class="abbreviated_c " style="display:none;"><input type="checkbox" id="c22"
-								  class="filteritem"><label for="c22">22</label></li>
-							  <li id="showall_c"><a href="#"
-								  onclick="$('li.abbreviated_c').show();$('#showall_c').hide();return false;">Show all...</a>
-							  </li>
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_Z">
-							<div class="title">Speed</div>
-	  
-							<div id="filter_slide_labelbox_Z" class="ui-slider-horizontal-labelbox">&nbsp;
-							  <div id="filter_slide_left_Z" class="ui-slider-horizontal-labelbox-label" style="left: 0px;">
-								<a href="#">1.1GHz</a>
-								<div class="labelbox-input">
-								  <input type="text" size="8" id="filter_slide_left_input_Z"
-									class="left ui-slider-horizontal-editbox"> GHz
-								</div>
-							  </div>
-							  <div id="filter_slide_right_Z" class="ui-slider-horizontal-labelbox-label" style="left: 159px;">
-								<a href="#">4.7GHz</a>
-								<div class="labelbox-input">
-								  <input type="text" size="8" id="filter_slide_right_input_Z"
-									class="right ui-slider-horizontal-editbox"> GHz
-								</div>
-							  </div>
-							</div>
-							<div id="filter_slide_Z"
-							  class="obj-filter-dualslide ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-							  aria-disabled="false">
-							  <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;">
-							  </div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 100%;"></a>
-							</div>
-	  
-						  </div>
-	  
-						  <div class="obj-filter hidden" id="filterdiv_z">
-							<div class="title">Speed</div>
-	  
-							<ul id="z_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="z_all"><label for="z_all">All</label></li>
-							  <li id="li_z4700" class="abbreviated_z " style="display:none;"><input type="checkbox" id="z4700"
-								  class="filteritem"><label for="z4700">4.7GHz</label></li>
-							  <li id="showall_z"><a href="#"
-								  onclick="$('li.abbreviated_z').show();$('#showall_z').hide();return false;">Show all...</a>
-							  </li>
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_T">
-							<div class="title">TDP</div>
-	  
-							<div id="filter_slide_labelbox_T" class="ui-slider-horizontal-labelbox">&nbsp;
-							  <div id="filter_slide_left_T" class="ui-slider-horizontal-labelbox-label" style="left: 0px;">
-								<a href="#">10W</a>
-								<div class="labelbox-input">
-								  <input type="text" size="8" id="filter_slide_left_input_T"
-									class="left ui-slider-horizontal-editbox"> W
-								</div>
-							  </div>
-							  <div id="filter_slide_right_T" class="ui-slider-horizontal-labelbox-label" style="left: 166px;">
-								<a href="#">220W</a>
-								<div class="labelbox-input">
-								  <input type="text" size="8" id="filter_slide_right_input_T"
-									class="right ui-slider-horizontal-editbox"> W
-								</div>
-							  </div>
-							</div>
-							<div id="filter_slide_T"
-							  class="obj-filter-dualslide ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
-							  aria-disabled="false">
-							  <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;">
-							  </div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 0%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"
-								style="left: 100%;"></a>
-							</div>
-	  
-						  </div>
-	  
-						  <div class="obj-filter hidden" id="filterdiv_t">
-							<div class="title">TDP</div>
-	  
-							<ul id="t_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="t_all"><label for="t_all">All</label></li>
-							  <li id="li_t220" class="abbreviated_t " style="display:none;"><input type="checkbox" id="t220"
-								  class="filteritem"><label for="t220">220W</label></li>
-							  <li id="showall_t"><a href="#"
-								  onclick="$('li.abbreviated_t').show();$('#showall_t').hide();return false;">Show all...</a>
-							  </li>
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_h">
-							<div class="title">Simultaneous Multithreading</div>
-	  
-							<ul id="h_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="h_all" control-id="ControlID-58"><label
-								  for="h_all">All</label></li>
-							  <li id="li_h1"><input type="checkbox" id="h1" class="filteritem"
-								  control-id="ControlID-59"><label for="h1">Yes</label></li>
-							  <li id="li_h0"><input type="checkbox" id="h0" class="filteritem"
-								  control-id="ControlID-60"><label for="h0">No</label></li>
-	  
-							</ul>
-	  
-						  </div>
-	  
-						  <div class="obj-filter " id="filterdiv_e">
-							<div class="title">Supports ECC</div>
-	  
-							<ul id="e_set" class="filter-list">
-							  <li class="filter-row-all"><input type="checkbox" id="e_all" control-id="ControlID-61"><label
-								  for="e_all">All</label></li>
-							  <li id="li_e1"><input type="checkbox" id="e1" class="filteritem"
-								  control-id="ControlID-62"><label for="e1">Yes</label></li>
-							  <li id="li_e0"><input type="checkbox" id="e0" class="filteritem"
-								  control-id="ControlID-63"><label for="e0">No</label></li>
-	  
-							</ul>
-	  
-						  </div>
-	  
-						</div>
-					  </div>
-	  
-					</div>
-				  </div>
-				  <div class="right-column">
-					<div class="search-bar">
-	  
-					  Search CPUs: <input type="text" id="part_category_search" class="inactive_search"
-						control-id="ControlID-64">
-					</div>
-					<h2>Parts</h2>
-					<div>
-					  <div class="part-category-compat-compare">
-						<a class="part-category-parametric" id="parametric_add_button" href="#parametric_add">Add From
-						  Filter</a>
-						<a class="part-category-parametric" id="parametric_add_price_alert_button"
-						  href="/web/20180401103346/https://pcpartpicker.com/accounts/login/?next=/products/cpu/">Set Price
-						  Alert</a>
-						<a class="part-category-compare disabled" href="#compare_selected" id="compare_selected">Compare
-						  Selected</a>
-						<a class="part-category-compare disabled" href="#clear_selected" id="clear_selected">Clear
-						  Selection</a>
-						<div class="part-category-compat-compare-clear"></div>
-					  </div>
-					  <div id="animation_anchor"></div>
-					  <table id="list_table" class="part-table tablesorter tablesorter-default" role="grid">
-						<thead>
-						  <tr role="row" class="tablesorter-headerRow">
-							<th data-column="0" class="tablesorter-header sorter-false tablesorter-headerUnSorted"
-							  tabindex="0" scope="col" role="columnheader" aria-disabled="true" unselectable="on"
-							  aria-sort="none" style="user-select: none;">
-							  <div class="tablesorter-header-inner"></div>
-							</th>
-							<th style="user-select: none;" data-column="1"
-							  class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col"
-							  role="columnheader" aria-disabled="false" aria-controls="list_table" unselectable="on"
-							  aria-sort="none" aria-label="CPU: No sort applied, activate to apply an ascending sort">
-							  <div class="tablesorter-header-inner">CPU</div>
-							</th>
-							<th style="text-align: left; user-select: none;" data-column="2"
-							  class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col"
-							  role="columnheader" aria-disabled="false" aria-controls="list_table" unselectable="on"
-							  aria-sort="none" aria-label="Speed: No sort applied, activate to apply an ascending sort">
-							  <div class="tablesorter-header-inner">Speed</div>
-							</th>
-							<th style="text-align: center; user-select: none;" data-column="3"
-							  class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col"
-							  role="columnheader" aria-disabled="false" aria-controls="list_table" unselectable="on"
-							  aria-sort="none" aria-label="Cores: No sort applied, activate to apply an ascending sort">
-							  <div class="tablesorter-header-inner">Cores</div>
-							</th>
-							<th style="text-align: left; user-select: none;" data-column="4"
-							  class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col"
-							  role="columnheader" aria-disabled="false" aria-controls="list_table" unselectable="on"
-							  aria-sort="none" aria-label="TDP: No sort applied, activate to apply an ascending sort">
-							  <div class="tablesorter-header-inner">TDP</div>
-							</th>
-							<th data-column="6" class="tablesorter-header tablesorter-headerUnSorted" tabindex="0" scope="col"
-							  role="columnheader" aria-disabled="false" aria-controls="list_table" unselectable="on"
-							  aria-sort="none" aria-label="Price: No sort applied, activate to apply an ascending sort"
-							  style="user-select: none;">
-							  <div class="tablesorter-header-inner">Vendor</div>
-							</th>
-							<th data-column="7" class="tablesorter-header sorter-false tablesorter-headerUnSorted"
-							  tabindex="0" scope="col" role="columnheader" aria-disabled="true" unselectable="on"
-							  aria-sort="none" style="user-select: none;">
-							  <div class="tablesorter-header-inner">Price</div>
-							</th>
-						  </tr>
-						</thead>
-						{% for processor in processors %}
-						<tbody id="category_content" aria-live="polite" aria-relevant="all">
-						  <tr>
-							<td class="select"><input type="checkbox" class="px" id="px_48283" control-id="ControlID-65"></td>
-							<td class="tdname"><a
-								href="{% url 'processor_detail' processor.id %}">
-								{{ processor.processor_short_name}}</a></td>
-							<td style="text-align:center;">{{ processor.processor_performance_boost_clock}}</td>
-							<td style="text-align:center;">{{ processor.processor_core_count}}</td>
-							<td style="text-align:center;">{{processor.processor_tdp}}</td>
-							<td class="tdcombo combo-available"> </td>
-							<td class="tdprice">{{processor.processor_price}} </td>
-							<td class="viewadd">
-								<form action="{% url 'processor_builder' %}">
-									<input type="hidden" name="processor_id" value="{{ processor.id }}" id="processor_id" />
-									<button type="submit" class="btn btn-primary">Add</button>
-								</form>
-							</td>
-						  </tr>
-						</tbody>
-						{% endfor %}
-					  </table>
-	  
-	  
-					  <div id="page_button_row_bot">
-						<div class="page-button-row"><span>Page</span>
-							{% if processors.has_other_pages %}
-							<ul class="pagination justify-content-center">
-								{% if processors.has_previous %}
-									<li class="page-item">
-										<a class="page-link" href="?page=1">&laquo;</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="?page={{ processors.previous_page_number }}">&lt;</a>
-									</li>
-								{% endif %}
-								
-						
-								{% for num in processors.paginator.page_range %}
-									{% if processors.number == num %}
-										<li class="page-item active">
-											<a class="page-link" href="#">{{ num }} <span class="sr-only">(current)</span></a>
-										</li>
-									{% elif num > processors.number|add:'-3' and num < processors.number|add:'3' %}
-										<li class="page-item">
-											<a class="page-link" href="?page={{ num }}">{{ num }}</a>
-										</li>
-									{% endif %}
-								{% endfor %}
-						
-								{% if processors.has_next %}
-									<li class="page-item">
-										<a class="page-link" href="?page={{ processors.next_page_number }}">&gt;</a>
-									</li>
-									<li class="page-item">
-										<a class="page-link" href="?page={{ processors.paginator.num_pages }}">&raquo;</a>
-									</li>
-								{% endif %}
-							</ul>
-						{% endif %}
-						</div>
-					  </div>
-					</div>
-				  </div>
+	<div class="container">
+		<div class="row">
+		<div class="col-sm-3">
+			
+			<div class="card" style="width: 18rem;">
+				<div class="card-header">
+					<p class="font-weight-bold">Filter</p>
 				</div>
+				<ul class="list-group list-group-flush">
+					
+				  <li class="list-group-item">
+					<form method="get">
+						<h3>Filter by:</h3>
+						<div class="form-group">
+							<label for="brand">Brand:</label>
+							<div class="dropdown">
+							  
+							  <div >
+								{% for brand in brands %}
+								  <div class="form-check">
+									<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
+									<label class="form-check-label" for="{{ brand }}">
+									  {{ brand }}
+									</label>
+								  </div>
+								{% endfor %}
+							  </div>
+							</div>
+						  </div>
+						  <div class="form-group">
+							<label for="brand">Socket</label>
+							<div class="dropdown">
+							  
+							  <div >
+								{% for socket_type in socket_types %}
+								  <div class="form-check">
+									<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
+									<label class="form-check-label" for="{{ brand }}">
+										{{ socket_type }}
+									</label>
+								  </div>
+								{% endfor %}
+							  </div>
+							</div>
+						  </div>
+						  
+						
+						<div>
+						  <label for="min_speed">Minimum Speed (TDP):</label>
+						  <br>
+						  <input type="checkbox" name="min_speed" value="30" id="30">
+						  <label for="30">30W</label>
+						  <br>
+						  <input type="checkbox" name="min_speed" value="45" id="45">
+						  <label for="45">45W</label>
+						  <br>
+						  <input type="checkbox" name="min_speed" value="65" id="65">
+						  <label for="65">65W</label>
+						  <br>
+						</div>
+						<div>
+						  <label for="min_cores">Minimum Cores:</label>
+						  <br>
+						  <input type="checkbox" name="min_cores" value="4" id="4">
+						  <label for="4">4 cores</label>
+						  <br>
+						  <input type="checkbox" name="min_cores" value="6" id="6">
+						  <label for="6">6 cores</label>
+						  <br>
+						  <input type="checkbox" name="min_cores" value="8" id="8">
+						  <label for="8">8 cores</label>
+						  <br>
+						</div>
+						<div>
+						  <label for="min_price">Minimum Price:</label>
+						  <br>
+						  <input type="checkbox" name="min_price" value="100" id="100">
+						  <label for="100">$100</label>
+						  <br>
+						  <input type="checkbox" name="min_price" value="200" id="200">
+						  <label for="200">$200</label>
+						  <br>
+						  <input type="checkbox" name="min_price" value="300" id="300">
+						  <label for="300">$300</label>
+						  <br>
+						</div>
+						<div>
+						  <label for="max_price">Maximum Price:</label>
+						  <br>
+						  <input type="checkbox" name="max_price" value="500" id="500">
+						  <label for="500">$500</label>
+						  <br>
+						  <input type="checkbox" name="max_price" value="1000" id="1000">
+						  <label for="1000">$1000</label>
+						  <br>
+						  <input type="checkbox" name="max_price" value="2000" id="2000">
+						  <label for="2000">$2000</label>
+						  <br>
+						</div>
+						<button type="submit">Filter</button>
+					  </form>
+					  </li>
+				  <li class="list-group-item"><a href="/processors" class="btn btn-info">Reset Filters</a></li>
+				</ul>
 			  </div>
-	  
-			  <div class="hidden-dialog">
-	  
-			  </div>
-	  
-	  
-	  
-			</div>
-		  </div>
-		  <form id="parametric_add_form" action="/web/20180401103346/https://pcpartpicker.com/qapi/partlist/add_parametric/"
-			method="post"><input type="hidden" name="csrfmiddlewaretoken"
-			  value="sAwmC5FcV8krjCSjAqQZ2NEUCeGB98ObS9uh4nHnq4MCK0K9rl3rZljCLpdjmdj6"><input id="parametric_add_filter_ids"
-			  type="hidden" name="filter_ids" value=""><input id="parametric_add_filter" type="hidden" name="filter_string"
-			  value=""><input type="hidden" name="class_slug" value="cpu"></form>
 		</div>
-	  
-	  </div>
-	</body>
-	{% include 'footer.html' %}
+		<div class="col-sm-9">
+			
+	<table class="table align-middle mb-0 bg-white">
+		<thead class="bg-light">
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Brand</th>
+				<th>Cores</th>
+				<th>Core Clock</th>
+				<th>Boost Clock</th>
+				<th>Graphics</th>
+				<th>TDP</th>
+				<th>SMT</th>
+				<th>Price</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for x in processors %}
+				<tr>
+					<td>
+						<div class="d-flex align-items-center">
+							<img src="{{ x.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+							<div class="ms-3">
+								<p class="fw-bold mb-1">{{ x.processor_model }}</p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<a href="{% url 'processor_detail' x.id %}"><p class="fw-normal mb-1">{{ x.processor_short_name }}</p></a>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_brand }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_core_count }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_performance_core_clock }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_performance_boost_clock }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_integrated_graphics }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_tdp }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_smt }}</p>
+					</td>
+					<td>
+						<p class="fw-normal mb-1">{{ x.processor_price }}</p>
+					</td>
+					<td>
+						<form action="{% url 'processor_builder' %}">
+							<input type="hidden" name="processor_id" value="{{ x.id }}" id="processor_id" />
+							<button type="submit" class="btn btn-primary">Add</button>
+						</form>
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+			<tbody>
+
+			
+			<tr>
+
+			
+			{% if processors.has_other_pages %}
+    <ul class="pagination justify-content-center">
+        {% if processors.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1">&laquo;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ processors.previous_page_number }}">&lt;</a>
+            </li>
+        {% endif %}
+		
+
+        {% for num in processors.paginator.page_range %}
+            {% if processors.number == num %}
+                <li class="page-item active">
+                    <a class="page-link" href="#">{{ num }} <span class="sr-only">(current)</span></a>
+                </li>
+            {% elif num > processors.number|add:'-3' and num < processors.number|add:'3' %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if processors.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ processors.next_page_number }}">&gt;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ processors.paginator.num_pages }}">&raquo;</a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+</tr>
+</tbody>
+			
+</table>
+</div>
+</div>
+</div>
+
+{% endblock content %}
