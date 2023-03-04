@@ -40,13 +40,16 @@ def processor_builder(request):
         processor_obj = None
     try:
         product1 = processor_added.objects.get(user=user, processor__isnull=False)
+        
     except processor_added.DoesNotExist:
         product1 = None
         
     if product1:
         # if the user already has a product_added object for the processor, update it with the new processor
         product1.processor = processor_obj
+        
         product1.save()
+        
     else:
         # if the user doesn't have a product_added object for the processor, create one with the new processor
         product1 = processor_added(user=user, processor=processor_obj)
@@ -79,13 +82,20 @@ def cpu_cooler_builder(request):
 
 def show_list(request):
     user = request.user
-    try:
-        processor = processor_added.objects.filter(user=user)
-    except:
-        processor = None
-    try:
-        cpu_coolers = cpu_cooler_added.objects.filter(user=user)
-    except:
-        cpu_coolers = None
-    context = {'processor':processor,'cpu_cooler':cpu_coolers}
+    processor = processor_added.objects.filter(user=user)
+    cpu_coolers = cpu_cooler_added.objects.filter(user=user)
+    context = {}
+    
+    if processor:
+        context['processor'] = processor
+    
+    if cpu_coolers:
+        context['cpu_cooler'] = cpu_coolers
+    
+    if not processor:
+        context['no_processor'] = 'No Processor added yet.'
+    
+    if not cpu_coolers:
+        context['no_cpu_cooler'] = 'No CPU Cooler added yet.'
+    
     return render(request, 'pc_builder.html', context)

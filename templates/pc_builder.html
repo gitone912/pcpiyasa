@@ -115,48 +115,43 @@
 
       <tr class="last zebra">
         
-        <td class="component-type tl"><a href="{% url 'processors' %}">CPU</a></td>
+        <td class="component-type tl"><a href="{% url 'processors' %}" >CPU</a></td>
         
         
         <td></td>
         
-        {% for x in processor %}
-          
-              {% if x.processor %}
-              <td>
-                <td>
-
-                  <div class="d-flex align-items-center">
-                    <img src="{{ x.processor.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
-                    <div class="ms-3">
-                      <p class="fw-bold mb-1"><a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a></p>
-                    </div>
-                  </div>
-                </td>
-                  <td>
-                    
-                  <p class="fw-normal mb-1">{{ x.processor.processor_brand }}</p>
-                </td>
-                  
-               <td>
-                <p class="fw-normal mb-1"> ${{x.processor.processor_price}} </p>
-               </td>
-                <td>
-                  <form action="{%url 'delete' x.id %}" method="POST" id="bin_form">
-                    {% csrf_token %}
-                    <button type="submit" class="close" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    
-                  </form>
-                  
-                </td>
-              </td>
-              
-                 {% elif x %}
-                <td><a href="{% url 'processors' %}">Choose A CPU Cooler</a></td>
-                {% endif %}
+        {% if no_processor %}
+        <td><a href="{% url 'processors' %}" class="btn-mds">Choose A CPU </a></td>
+{% else %}
+            {% for x in processor %}
+                
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ x.processor.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1"><a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">{{ x.processor.processor_brand }}</p>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1"> ${{x.processor.processor_price}} </p>
+                    </td>
+                    <td>
+                        <form action="{%url 'delete' x.id %}" method="POST" id="bin_form">
+                            {% csrf_token %}
+                            <button type="submit" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </form>
+                    </td>
+               
             {% endfor %}
+        
+{% endif %}
+
         <td colspan="9"></td>
       </tr>
 
@@ -185,36 +180,38 @@
         
         <td></td>
         
-               {% for y in cpu_cooler %}
+        {% if no_cpu_cooler %}
+        <td><a href="{% url 'cpu_cooler' %}" class="btn-mds">Choose A CPU Cooler</a></td>
+    {% else %}
+        
+                {% for x in cpu_cooler %}
+                   
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ x.cpu_cooler.cpu_cooler_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><a href="{% url 'cpu_cooler_detail' x.cpu_cooler.id %}">{{ x.cpu_cooler.cpu_cooler_brand }}</a></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">{{ x.cpu_cooler.cpu_cooler_brand }}</p>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1"> ${{x.cpu_cooler.cpu_cooler_price}} </p>
+                        </td>
+                        <td>
+                            <form action="{%url 'delete' x.id %}" method="POST" id="bin_form">
+                                {% csrf_token %}
+                                <button type="submit" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </form>
+                        </td>
+                   
+                {% endfor %}
           
-       
-          {% if y.cpu_cooler %}
-          <td> 
-          <div class="d-flex align-items-center">
-          <img src="{{ y.cpu_cooler.cpu_cooler_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
-          <div class="ms-3">
-          <p class="fw-bold mb-1"><a href="{% url 'cpu_cooler_detail' y.cpu_cooler.id %}">{{ y.cpu_cooler.cpu_cooler_name }}</a></p>
-          </div>
-          </div>
-          <p class="fw-normal mb-1">{{ y.cpu_cooler.cpu_cooler_brand }}</p>
-          
-          </td>
-          <td>
-          <p class="fw-normal mb-1"> ${{y.cpu_cooler.cpu_cooler_price}} </p>
-          </td>
-          <td>
-          <form action="{%url 'delete' y.id %}" method="POST" id="bin_form">
-          {% csrf_token %}
-          <button type="submit" class="close" aria-label="Close">
-          <span aria-hidden="true">×</span>
-          </button>
-          </form>
-        </td>
-         {% else %}
-         <td><a href="{% url 'cpu_cooler' %}" class="btn-mds">Choose A CPU Cooler</a></td>
-          {% endif %}
-          
-          {% endfor %}
+    {% endif %}
         <td colspan="9"></td>
       </tr>
 

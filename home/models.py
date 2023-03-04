@@ -13,7 +13,9 @@ class pc_builder_class(models.Model):
 class processor_added(models.Model):
     user = models.ForeignKey(User , on_delete=models.CASCADE,null=True,blank=True)
     processor = models.ForeignKey(processor, on_delete=models.CASCADE,null=True,blank=True)
+    exists = models.BooleanField(default=False)
     
 class cpu_cooler_added(models.Model):
     user = models.ForeignKey(User , on_delete=models.CASCADE,null=True,blank=True)
     cpu_cooler = models.ForeignKey(cpu_cooler, on_delete=models.CASCADE,null=True,blank=True)
+    exists = models.BooleanField(default=False)
