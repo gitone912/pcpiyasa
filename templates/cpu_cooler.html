@@ -76,7 +76,7 @@
                             <td>${{ cooler.cpu_cooler_price }}</td>
                        
                         <td>
-                            <form action="/pc_builder">
+                            <form action="{% url 'cpu_cooler_builder' %}">
                                 <input type="hidden" name="cpu_cooler_id" value="{{ cooler.id }}" id="cpu_cooler_id" />
                                 <button type="submit" class="btn btn-primary">Add</button>
                             </form>

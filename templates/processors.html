@@ -171,7 +171,7 @@
 						<p class="fw-normal mb-1">{{ x.processor_price }}</p>
 					</td>
 					<td>
-						<form action="/pc_builder">
+						<form action="{% url 'processor_builder' %}">
 							<input type="hidden" name="processor_id" value="{{ x.id }}" id="processor_id" />
 							<button type="submit" class="btn btn-primary">Add</button>
 						</form>

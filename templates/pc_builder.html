@@ -16,7 +16,7 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="{% url 'processors' %}">Add Processor</a></li>
             <li class="list-group-item"><a href="#">Add Motherboards</a></li>
-            <li class="list-group-item"><a href="#">Add CPU Cooler</a></li>
+            <li class="list-group-item"><a href="{% url 'cpu_cooler' %}">Add CPU Cooler</a></li>
             <li class="list-group-item"><a href="#">Add Memory</a></li>
             <li class="list-group-item"><a href="#">Add Storage</a></li>
           </ul>
@@ -38,7 +38,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for x in data %}
+        {% for x in processor %}
   <tr>
     <td>
       {% if x.processor %}
@@ -65,37 +65,36 @@
         </td>
       {% endif %}
     </td>
-    <td>
-      {% if x.cpu_cooler %}
-        <div class="d-flex align-items-center">
-          <img src="{{ x.cpu_cooler.cooler_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
-          <div class="ms-3">
-            <p class="fw-bold mb-1"><a href="{% url 'cpu_cooler_detail' x.cpu_cooler.id %}">{{ x.cpu_cooler.cpu_cooler_name }}</a></p>
-          </div>
-        </div>
-        <p class="fw-normal mb-1">{{ x.cpu_cooler.cpu_cooler_brand }}</p>
-          
-       <td>
-        <p class="fw-normal mb-1"> ${{x.cpu_cooler.cpu_cooler_price}} </p>
-       </td>
-        <td>
-          <form action="{%url 'delete' x.id %}" method="POST" id="bin_form">
-            {% csrf_token %}
-            <button type="submit" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            
-          </form>
-          
-        </td>
-      {% endif %}
-    </td>
-  </tr>
+    {% endfor %}
+      <tr>
+        {% for y in cpu_cooler %}
+<tr>
+<td>
+{% if y.cpu_cooler %}
+<div class="d-flex align-items-center">
+<img src="{{ y.cpu_cooler.cpu_cooler_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+<div class="ms-3">
+<p class="fw-bold mb-1"><a href="{% url 'cpu_cooler_detail' y.cpu_cooler.id %}">{{ y.cpu_cooler.cpu_cooler_name }}</a></p>
+</div>
+</div>
+<p class="fw-normal mb-1">{{ y.cpu_cooler.cpu_cooler_brand }}</p>
+{% endif %}
+</td>
+<td>
+<p class="fw-normal mb-1"> ${{y.cpu_cooler.cpu_cooler_price}} </p>
+</td>
+<td>
+<form action="{%url 'delete' y.id %}" method="POST" id="bin_form">
+{% csrf_token %}
+<button type="submit" class="close" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</form>
+</td>
+</tr>
 {% endfor %}
-
+        
       
-      
-     
     </tbody>
   </table>
   </div>
