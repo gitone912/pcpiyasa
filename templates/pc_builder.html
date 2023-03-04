@@ -75,27 +75,19 @@
       <th class="tl">Component</th>
       
       
-      <th></th>
       
+      <th></th>
       <th class="tl">Selection</th>
       
       <th class="tr">Base</th>
       <th class="tc">Promo</th>
       <th class="tc">Shipping</th>
-      <th class="tc">Tax</th>
-      
       <th class="tr">Price</th>
       
-      <th class="tl">Where</th>
       
       
-      <th></th>
       
-      
-      <th></th>
-      
-      
-      <th></th>
+     
       
     </tr>
   </thead>
@@ -118,7 +110,7 @@
         <td class="component-type tl"><a href="{% url 'processors' %}" >CPU</a></td>
         
         
-        <td></td>
+       
         
         {% if no_processor %}
         <td><a href="{% url 'processors' %}" class="btn-mds">Choose A CPU </a></td>
@@ -126,16 +118,14 @@
             {% for x in processor %}
                 
                     <td>
-                        <div class="d-flex align-items-center">
-                            <img src="{{ x.processor.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1"><a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a></p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1">{{ x.processor.processor_brand }}</p>
-                    </td>
+                        
+                            <img src="{{ x.processor.processor_image_url }}" alt="" />
+                            
+                            </td>
+                            <td>
+                                <a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a>
+                            </td>
+                    
                     <td>
                         <p class="fw-normal mb-1"> ${{x.processor.processor_price}} </p>
                     </td>
@@ -178,7 +168,7 @@
         <td class="component-type tl"><a href="{% url 'cpu_cooler' %}">CPU Cooler</a></td>
         
         
-        <td></td>
+        
         
         {% if no_cpu_cooler %}
         <td><a href="{% url 'cpu_cooler' %}" class="btn-mds">Choose A CPU Cooler</a></td>
@@ -189,14 +179,16 @@
                         <td>
                             <div class="d-flex align-items-center">
                                 <img src="{{ x.cpu_cooler.cpu_cooler_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                              </td>
+                              <td>
+
+                             
                                 <div class="ms-3">
                                     <p class="fw-bold mb-1"><a href="{% url 'cpu_cooler_detail' x.cpu_cooler.id %}">{{ x.cpu_cooler.cpu_cooler_brand }}</a></p>
                                 </div>
                             </div>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1">{{ x.cpu_cooler.cpu_cooler_brand }}</p>
-                        </td>
+                          </td>
+                       
                         <td>
                             <p class="fw-normal mb-1"> ${{x.cpu_cooler.cpu_cooler_price}} </p>
                         </td>
@@ -238,7 +230,7 @@
         <td class="component-type tl"><a href="{% url 'motherboard' %}">Motherboard</a></td>
         
         
-        <td></td>
+        
         
         {% if no_motherboard %}
     <td><a href="{% url 'motherboard' %}" class="btn-mds">Choose A Motherboard</a></td>
@@ -247,14 +239,15 @@
         <td>
             <div class="d-flex align-items-center">
                 <img src="{{ x.motherboard.motherboard_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+              </td>
+                <td>
+                  
                 <div class="ms-3">
-                    <p class="fw-bold mb-1"><a href="{% url 'motherboard_detail' x.motherboard.id %}">{{ x.motherboard.motherboard_brand }}</a></p>
+                    <p class="fw-bold mb-1"><a href="{% url 'motherboard_detail' x.motherboard.id %}">{{ x.motherboard.motherboard_model }}</a></p>
                 </div>
             </div>
         </td>
-        <td>
-            <p class="fw-normal mb-1">{{ x.motherboard.motherboard_model }}</p>
-        </td>
+        
         <td>
             <p class="fw-normal mb-1"> ${{x.motherboard.motherboard_price}} </p>
         </td>
@@ -295,40 +288,25 @@
         <td class="component-type tl"><a href="{% url 'ram' %}">Memory</a></td>
         
         
-        <td></td>
+        
         
         {% if no_ram %}
     <td><a href="{% url 'ram' %}" class="btn-mds">Choose RAM</a></td>
 {% else %}
     {% for x in ram %}
-        <tr>
+        
             <td>
-                <div class="d-flex align-items-center">
-                    <img src="{{ x.ram.ram_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                
+                    <img src="{{ x.ram.ram_image_url }}" alt="" style="width: 30px; height: 30px" class="rounded" />
+                  </td>
+                    <td>
+                      
                     <div class="ms-3">
-                        <p class="fw-bold mb-1"><a href="{% url 'ram_detail' x.ram.id %}">{{ x.ram.ram_name }}</a></p>
+                        <p class="fw-bold mb-1"><a href="{% url 'ram_detail' x.ram.id %}">{{ x.ram.ram_model }}</a></p>
                     </div>
-                </div>
+                
             </td>
-            <td>
-                <p class="fw-normal mb-1">{{ x.ram.ram_brand }}</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">{{ x.ram.ram_size }} GB</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">{{ x.ram.ram_quantity }}</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">{{ x.ram.ram_type }}</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">{{ x.ram.ram_dimm_type }}</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">{{ x.ram.ram_cas_latency }}</p>
-            </td>
-            <td>
+           <td>
                 <p class="fw-normal mb-1"> ${{ x.ram.ram_price }}</p>
             </td>
             <td>
@@ -339,7 +317,7 @@
                     </button>
                 </form>
             </td>
-        </tr>
+        
     {% endfor %}
 {% endif %}
 
@@ -369,25 +347,25 @@
         <td class="component-type tl"><a href="{% url 'graphics_card' %}">Graphics Card</a></td>
         
         
-        <td></td>
+        
         
         {% if no_graphics_card %}
     <td><a href="{% url 'graphics_card' %}" class="btn-mds">Choose A Graphics Card</a></td>
 {% else %}
     {% for x in graphics_card %}
         <td>
-            <div class="d-flex align-items-center">
+            <div>
                 <img src="{{ x.graphics_card.graphics_card_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+              </td>
+                <td>
+                  
                 <div class="ms-3">
-                    <p class="fw-bold mb-1"><a href="#">{{ x.graphics_card.graphics_card_brand }}</a></p>
+                    <p class="fw-bold mb-1"><a href="#">{{ x.graphics_card.graphic_card_model }}</a></p>
                 </div>
             </div>
         </td>
         <td>
-            <p class="fw-normal mb-1">{{ x.graphics_card.graphics_card_brand }} {{ x.graphics_card.graphics_card_model }}</p>
-        </td>
-        <td>
-            <p class="fw-normal mb-1"> ${{ x.graphics_card.graphics_card_price }} </p>
+            <p class="fw-normal mb-1"> ${{ x.graphics_card.graphic_card_price }} </p>
         </td>
         <td>
             <form action="{% url 'delete' x.id %}" method="POST" id="bin_form">
@@ -426,7 +404,7 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/video-card/">Video Card</a></td>
         
         
-        <td></td>
+        
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/video-card/" class="btn-mds">Choose A Video Card</a></td>
         <td colspan="9"></td>
@@ -455,7 +433,7 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/case/">Case</a></td>
         
         
-        <td></td>
+      
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/case/" class="btn-mds">Choose A Case</a></td>
         <td colspan="9"></td>
@@ -484,7 +462,7 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/power-supply/">Power Supply</a></td>
         
         
-        <td></td>
+        
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/power-supply/" class="btn-mds">Choose A Power Supply</a></td>
         <td colspan="9"></td>
@@ -513,8 +491,7 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/optical-drive/">Optical Drive</a></td>
         
         
-        <td></td>
-        
+       
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/optical-drive/" class="btn-mds">Choose An Optical Drive</a></td>
         <td colspan="9"></td>
       </tr>
@@ -542,7 +519,7 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/os/">Operating System</a></td>
         
         
-        <td></td>
+      
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/os/" class="btn-mds">Choose An Operating System</a></td>
         <td colspan="9"></td>
@@ -571,7 +548,6 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/software/">Software</a></td>
         
         
-        <td></td>
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/software/" class="btn-mds">Choose Software</a></td>
         <td colspan="9"></td>
@@ -600,7 +576,6 @@
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/monitor/">Monitor</a></td>
         
         
-        <td></td>
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/monitor/" class="btn-mds">Choose A Monitor</a></td>
         <td colspan="9"></td>
@@ -628,8 +603,7 @@
         
         <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/external-hard-drive/">External Storage</a></td>
         
-        
-        <td></td>
+       
         
         <td><a href="/web/20160707101905/http://pcpartpicker.com/products/external-hard-drive/" class="btn-mds">Choose External Storage</a></td>
         <td colspan="9"></td>
@@ -660,7 +634,7 @@
         <td class="component-type tl">Expansion Cards / Networking</td>
         
         
-        <td></td>
+       
         
         <td colspan="10">
           <div id="sg_13">
@@ -702,7 +676,7 @@
         <td class="component-type tl">Peripherals</td>
         
         
-        <td></td>
+        
         
         <td colspan="10">
           <div id="sg_14">
@@ -746,7 +720,7 @@
         <td class="component-type tl">Accessories / Other</td>
         
         
-        <td></td>
+        
         
         <td colspan="10">
           <div id="sg_15">
@@ -779,7 +753,7 @@
         <td class="component-type tl">Custom</td>
         
         
-        <td></td>
+       
         
         <td><a id="add_custom" href="#other" class="btn-mds">Add Custom Part</a></td>
         <td colspan="9"></td>

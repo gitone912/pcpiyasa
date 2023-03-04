@@ -1,97 +1,74 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-	<h3 class="text-center">Choose a Processor</h3>
-
-<body>
-	<div class="container">
-
-    <div class="row">
-        <div class="col-md-3">
-            <h4>Filter by:</h4>
-            <form method="GET">
-                <div class="mb-3">
-                    <h5>Brand</h5>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="brandDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select brand
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="brandDropdown">
-                            {% for brand in brands %}
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
-                                    <label class="form-check-label" for="{{ brand }}">
-                                        {{ brand }}
-                                    </label>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <h5>Fan RPM</h5>
-                    <input class="form-control" type="text" name="fan_rpm" placeholder="Enter fan RPM">
-                </div>
-                <div class="mb-3">
-                    <h5>Noise Level</h5>
-                    <input class="form-control" type="text" name="noise_level" placeholder="Enter noise level">
-                </div>
-                <div class="mb-3">
-                    <h5>Color</h5>
-                    <input class="form-control" type="text" name="color" placeholder="Enter color">
-                </div>
-                <div class="mb-3">
-                    <h5>Price</h5>
-                    <div class="input-group">
-                        <span class="input-group-addon">$</span>
-                        <input class="form-control" type="text" name="min_price" placeholder="Min price">
-                        <span class="input-group-addon">to</span>
-                        <input class="form-control" type="text" name="max_price" placeholder="Max price">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Apply filters</button>
-            </form>
-        </div>
-        <div class="col-md-9">
-            <h2>CPU Coolers</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        <th>Fan RPM</th>
-                        <th>Noise Level</th>
-                        <th>Color</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for cooler in coolers %}
-                        <tr>
-                            <td>{{ cooler.cpu_cooler_brand }}</td>
-                            <td>{{ cooler.cpu_cooler_model }}</td>
-                            <td>{{ cooler.cpu_cooler_fan_rpm }}</td>
-                            <td>{{ cooler.cpu_cooler_noise_level }}</td>
-                            <td>{{ cooler.cpu_cooler_color }}</td>
-                            <td>${{ cooler.cpu_cooler_price }}</td>
-                       
-                        <td>
-                            <form action="{% url 'cpu_cooler_builder' %}">
-                                <input type="hidden" name="cpu_cooler_id" value="{{ cooler.id }}" id="cpu_cooler_id" />
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </form>
-                        </td>
-                    </tr>
-                    {% empty %}
-                        <tr>
-                            <td colspan="6">No CPU coolers found.</td>
-                        </tr>
-                    {% endfor %}
-
-                </tbody>
-            
-
-			
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h4>Filter by:</h4>
+			<form method="GET">
+				<div class="mb-3">
+					<h5>Brand</h5>
+					{% for brand in brands %}
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
+						<label class="form-check-label" for="{{ brand }}">
+							{{ brand }}
+						</label>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="mb-3">
+					<h5>Color</h5>
+					{% for color in colors %}
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="color" value="{{ color }}" id="{{ color }}">
+						<label class="form-check-label" for="{{ color }}">
+							{{ color }}
+						</label>
+					</div>
+					{% endfor %}
+				</div>
+				<button type="submit" class="btn btn-primary">Apply filters</button>
+			</form>
+		</div>
+		<div class="col-md-9">
+			<h2>CPU Coolers</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Brand</th>
+						<th>Model</th>
+						<th>Fan RPM</th>
+						<th>Noise Level</th>
+						<th>Color</th>
+						<th>Price</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for cooler in coolers %}
+					<tr>
+						<td>{{ cooler.cpu_cooler_brand }}</td>
+						<td>{{ cooler.cpu_cooler_model }}</td>
+						<td>{{ cooler.cpu_cooler_fan_rpm }}</td>
+						<td>{{ cooler.cpu_cooler_noise_level }}</td>
+						<td>{{ cooler.cpu_cooler_color }}</td>
+						<td>${{ cooler.cpu_cooler_price }}</td>
+						<td>
+							<form action="{% url 'cpu_cooler_builder' %}">
+								<input type="hidden" name="cpu_cooler_id" value="{{ cooler.id }}" id="cpu_cooler_id" />
+								<button type="submit" class="btn btn-primary">Add</button>
+							</form>
+						</td>
+					</tr>
+					{% empty %}
+					<tr>
+						<td colspan="7">No CPU coolers found.</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
 			{% if coolers.has_other_pages %}
     <ul class="pagination justify-content-center">
         {% if coolers.has_previous %}
@@ -128,7 +105,7 @@
 {% endif %}
 
 			
-</table>
+
 </div>
 </div>
 </div>

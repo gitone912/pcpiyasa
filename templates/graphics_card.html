@@ -14,38 +14,43 @@
                         <div class="mb-3">
                             <h5>Brand</h5>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="brandDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Select brand
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="brandDropdown">
-                                    {% for brand in brands %}
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
-                                            <label class="form-check-label" for="{{ brand }}">
-                                                {{ brand }}
-                                            </label>
-                                        </div>
-                                    {% endfor %}
+                                
+                                {% for brand in brands %}
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="brand" id="{{ brand }}" value="{{ brand }}"
+                                    {% if brand in selected_brand_filters %} checked {% endif %}>
+                                  <label class="form-check-label" for="{{ brand }}">
+                                    {{ brand }}
+                                  </label>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="mb-3">
-                            <h5>GPU Memory</h5>
-                            <input class="form-control" type="text" name="gpu_memory" placeholder="Enter GPU memory">
+                            <h5>Memory Interfaces</h5>
+                            {% for memory_interfaces in memory_interfaces %}
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="memory_interfaces" id="{{ memory_interfaces }}" value="{{ memory_interfaces }}"
+                                  >
+                                  <label class="form-check-label" for="{{ memory_interfaces }}">
+                                    {{ memory_interfaces }}
+                                  </label>
+                                </div>
+                                {% endfor %}
                         </div>
                         <div class="mb-3">
-                            <h5>GPU Clock</h5>
-                            <input class="form-control" type="text" name="gpu_clock" placeholder="Enter GPU clock">
+                            <h5>Frame Syncs</h5>
+                            {% for frame_syncs in frame_syncs %}
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="frame_syncs" id="{{ frame_syncs }}" value="{{ frame_syncs }}"
+                                    >
+                                  <label class="form-check-label" for="{{ frame_syncs }}">
+                                    {{ frame_syncs }}
+                                  </label>
+                                </div>
+                                {% endfor %}
                         </div>
-                        <div class="mb-3">
-                            <h5>Price</h5>
-                            <div class="input-group">
-                                <span class="input-group-addon">$</span>
-                                <input class="form-control" type="text" name="min_price" placeholder="Min price">
-                                <span class="input-group-addon">to</span>
-                                <input class="form-control" type="text" name="max_price" placeholder="Max price">
-                            </div>
-                        </div>
+                       
                         <button type="submit" class="btn btn-primary">Apply filters</button>
                     </form>
                 </div>

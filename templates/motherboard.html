@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
@@ -13,33 +14,47 @@
             <form method="GET">
                 <div class="mb-3">
                     <h5>Brand</h5>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="brandDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Select brand
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="brandDropdown">
-                            {% for brand in brands %}
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
-                                    <label class="form-check-label" for="{{ brand }}">
-                                        {{ brand }}
-                                    </label>
-                                </div>
-                            {% endfor %}
+                    {% for brand in brands %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
+                            <label class="form-check-label" for="{{ brand }}">
+                                {{ brand }}
+                            </label>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="mb-3">
-                    <h5>Socket</h5>
-                    <input class="form-control" type="text" name="socket" placeholder="Enter socket">
+                    <h5>Chipsets</h5>
+                    {% for chipsets in chipsets %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="brand" value="{{ chipsets }}" id="{{ chipsets }}">
+                            <label class="form-check-label" for="{{ chipsets }}">
+                                {{ chipsets }}
+                            </label>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="mb-3">
-                    <h5>RAM Slots</h5>
-                    <input class="form-control" type="text" name="ram_slots" placeholder="Enter RAM slots">
+                    <h5>form_factors</h5>
+                    {% for form_factors in form_factors %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="brand" value="{{ form_factors }}" id="{{ form_factors }}">
+                            <label class="form-check-label" for="{{ form_factors }}">
+                                {{ form_factors }}
+                            </label>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="mb-3">
-                    <h5>Form Factor</h5>
-                    <input class="form-control" type="text" name="form_factor" placeholder="Enter form factor">
+                    <h5>form_factors</h5>
+                    {% for socket_types in socket_types %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="brand" value="{{ socket_types }}" id="{{ socket_types }}">
+                            <label class="form-check-label" for="{{ socket_types }}">
+                                {{ socket_types }}
+                            </label>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="mb-3">
                     <h5>Price</h5>
@@ -53,75 +68,72 @@
                 <button type="submit" class="btn btn-primary">Apply filters</button>
             </form>
         </div>
-        <div class="col-md-9">
-            <h2>Motherboards</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        <th>Socket</th>
-                        <th>RAM Slots</th>
-                        <th>Form Factor</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for motherboard in motherboards %}
-                        <tr>
-                            <td>{{ motherboard.motherboard_brand }}</td>
-                            <td>{{ motherboard.motherboard_model }}</td>
-                            <td>{{ motherboard.motherboard_socket }}</td>
-                            <td>{{ motherboard.motherboard_ram_slots }}</td>
-                            <td>{{ motherboard.motherboard_form_factor }}</td>
-                            <td>${{ motherboard.motherboard_price }}</td>
-                            <tr>
-                                {% endfor %}
-                       
-                        <td>
-                            <form action="{% url 'motherboard_builder' %}">
-                                <input type="hidden" name="motherboard_id" value="{{ motherboard.id }}" id="motherboard_id" />
-                                <button type="submit" class="btn btn-primary">Select</button>
-                            </form>
-                            {% if coolers.has_other_pages %}
-                            <ul class="pagination justify-content-center">
-                                {% if coolers.has_previous %}
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page=1">&laquo;</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ coolers.previous_page_number }}">&lt;</a>
-                                    </li>
-                                {% endif %}
-                                
-                        
-                                {% for num in coolers.paginator.page_range %}
-                                    {% if coolers.number == num %}
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">{{ num }} <span class="sr-only">(current)</span></a>
-                                        </li>
-                                    {% elif num > coolers.number|add:'-3' and num < coolers.number|add:'3' %}
+			<div class="col-md-9">
+				<h2>Motherboards</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Brand</th>
+							<th>Model</th>
+							<th>Socket</th>
+							<th>RAM Slots</th>
+							<th>Form Factor</th>
+							<th>Price</th>
+							<th>Select</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for motherboard in motherboards %}
+							<tr>
+								<td>{{ motherboard.motherboard_brand }}</td>
+								<td>{{ motherboard.motherboard_model }}</td>
+								<td>{{ motherboard.motherboard_socket }}</td>
+								<td>{{ motherboard.motherboard_ram_slots }}</td>
+								<td>{{ motherboard.motherboard_form_factor }}</td>
+								<td>${{ motherboard.motherboard_price }}</td>
+								<td>
+									<form action="{% url 'motherboard_builder' %}">
+										<input type="hidden" name="motherboard_id" value="{{ motherboard.id }}" id="motherboard_id"" />
+                                        <button type="submit" class="btn btn-primary">Select</button>
+                                        </form>
+                                        </td>
+                                        </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                        </table>
+                                        {% if motherboards.has_other_pages %}
+                                        <ul class="pagination justify-content-center">
+                                        {% if motherboards.has_previous %}
                                         <li class="page-item">
-                                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                        <a class="page-link" href="?page=1">«</a>
+                                        </li>
+                                        <li class="page-item">
+                                        <a class="page-link" href="?page={{ motherboards.previous_page_number }}"><</a>
+                                        </li>
+                                        {% endif %}
+                                        {% for num in motherboards.paginator.page_range %}
+                                        {% if motherboards.number == num %}
+                                            <li class="page-item active">
+                                                <a class="page-link" href="#">{{ num }} <span class="sr-only">(current)</span></a>
+                                            </li>
+                                        {% elif num > motherboards.number|add:'-3' and num < motherboards.number|add:'3' %}
+                                            <li class="page-item">
+                                                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                
+                                    {% if motherboards.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ motherboards.next_page_number }}">&gt;</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ motherboards.paginator.num_pages }}">&raquo;</a>
                                         </li>
                                     {% endif %}
-                                {% endfor %}
-                        
-                                {% if coolers.has_next %}
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ coolers.next_page_number }}">&gt;</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page={{ coolers.paginator.num_pages }}">&raquo;</a>
-                                    </li>
-                                {% endif %}
-                            </ul>
-                        {% endif %}
-                        
-                                    
-                        </table>
+                                </ul>
+                            {% endif %}
                         </div>
-                        </div>
-                        </div>
-                        
-                        {% endblock content %}                            
+                    </div>
+                </div>
+{% endblock %}                

@@ -12,45 +12,51 @@
 					<div class="mb-3">
 						<h5>Brand</h5>
 						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="brandDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Select brand
-							</button>
-							<div class="dropdown-menu" aria-labelledby="brandDropdown">
-								{% for brand in brands %}
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
-										<label class="form-check-label" for="{{ brand }}">
-											{{ brand }}
-										</label>
-									</div>
-								{% endfor %}
+							
+							{% for brand in brands %}
+							<div class="form-check">
+							  <input class="form-check-input" type="checkbox" name="brand" id="{{ brand }}" value="{{ brand }}"
+								{% if brand in selected_brand_filters %} checked {% endif %}>
+							  <label class="form-check-label" for="{{ brand }}">
+								{{ brand }}
+							  </label>
 							</div>
+							{% endfor %}
 						</div>
+					
+					<h3>Type</h3>
+  					{% for ram_type in ram_types %}
+					  <div class="form-check">
+					    <input class="form-check-input" type="checkbox" name="ram_type" id="{{ ram_type }}" value="{{ ram_type }}"
+					      {% if ram_type in selected_ram_type_filters %} checked {% endif %}>
+					    <label class="form-check-label" for="{{ ram_type }}">
+					      {{ ram_type }}
+					    </label>
+					  </div>
+  					{% endfor %}
+
+					  <h4>RAM Size</h4>
+					
+					<div class="card-body">
+					  {% for ram_size in ram_sizes %}
+					  <div class="form-check">
+						<input class="form-check-input" type="checkbox" name="ram_size" id="{{ ram_size }}" value="{{ ram_size }}"
+						  {% if ram_size in selected_ram_size_filters %} checked {% endif %}>
+						<label class="form-check-label" for="{{ ram_size }}">
+						  {{ ram_size }} GB
+						</label>
+					  </div>
+					  {% endfor %}
 					</div>
-					<div class="mb-3">
-						<h5>Capacity</h5>
-						<input class="form-control" type="text" name="capacity" placeholder="Enter capacity">
-					</div>
-					<div class="mb-3">
-						<h5>Type</h5>
-						<input class="form-control" type="text" name="type" placeholder="Enter type">
-					</div>
-					<div class="mb-3">
-						<h5>Speed</h5>
-						<input class="form-control" type="text" name="speed" placeholder="Enter speed">
-					</div>
-					<div class="mb-3">
-						<h5>Price</h5>
-						<div class="input-group">
-							<span class="input-group-addon">$</span>
-							<input class="form-control" type="text" name="min_price" placeholder="Min price">
-							<span class="input-group-addon">to</span>
-							<input class="form-control" type="text" name="max_price" placeholder="Max price">
-						</div>
-					</div>
-					<button type="submit" class="btn btn-primary">Apply filters</button>
-				</form>
+				  
+				  <button type="submit" class="btn btn-primary mt-3">Apply Filters</button>
+				  </form>
+						  
+					
+						  
+				</div>  
 			</div>
+			
 			<div class="col-md-9">
 				<h2>RAMs</h2>
 				<table class="table">
@@ -80,6 +86,8 @@
 									</form>
 								</td>
 							</tr>
+					
+
 						{% empty %}
 							<tr>
 								<td colspan="6">No RAM modules found.</td>
