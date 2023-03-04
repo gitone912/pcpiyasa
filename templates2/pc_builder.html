@@ -124,19 +124,13 @@
           
               {% if x.processor %}
               <td>
-                <td>
-
-                  <div class="d-flex align-items-center">
-                    <img src="{{ x.processor.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
-                    <div class="ms-3">
-                      <p class="fw-bold mb-1"><a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a></p>
-                    </div>
+                <div class="d-flex align-items-center">
+                  <img src="{{ x.processor.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1"><a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a></p>
                   </div>
-                </td>
-                  <td>
-                    
-                  <p class="fw-normal mb-1">{{ x.processor.processor_brand }}</p>
-                </td>
+                </div>
+                <p class="fw-normal mb-1">{{ x.processor.processor_brand }}</p>
                   
                <td>
                 <p class="fw-normal mb-1"> ${{x.processor.processor_price}} </p>
@@ -152,8 +146,7 @@
                   
                 </td>
               </td>
-              
-                 {% elif x %}
+                 {% else %}
                 <td><a href="{% url 'processors' %}">Choose A CPU Cooler</a></td>
                 {% endif %}
             {% endfor %}
@@ -180,7 +173,7 @@
 
       <tr class="last">
         
-        <td class="component-type tl"><a href="{% url 'cpu_cooler' %}">CPU Cooler</a></td>
+        <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/cpu-cooler/">CPU Cooler</a></td>
         
         
         <td></td>
