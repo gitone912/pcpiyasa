@@ -71,8 +71,8 @@
                                     <td>${{ graphics_card.gpu_price }}</td>
 
                                     <td>
-                                        <form action="/pc_builder">
-                                            <input type="hidden" name="gpu_id" value="{{ graphics_card.id }}" id="gpu_id" />
+                                        <form action="{% url 'graphics_card_builder' %}">
+                                            <input type="hidden" name="graphics_card_id" value="{{ graphics_card.id }}" id="graphics_card_id" />
                                             <button type="submit" class="btn btn-primary">Add</button>
                                         </form>
                                     </td>

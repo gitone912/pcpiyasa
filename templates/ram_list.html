@@ -74,7 +74,7 @@
 								<td>{{ ram.ram_speed }} MHz</td>
 								<td>${{ ram.ram_price }}</td>
 								<td>
-									<form action="/pc_builder">
+									<form action="{% url 'ram_builder' %}">
 										<input type="hidden" name="ram_id" value="{{ ram.id }}" id="ram_id" />
 										<button type="submit" class="btn btn-primary">Add</button>
 									</form>

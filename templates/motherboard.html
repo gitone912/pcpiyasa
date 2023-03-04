@@ -79,7 +79,7 @@
                                 {% endfor %}
                        
                         <td>
-                            <form action="/pc_builder">
+                            <form action="{% url 'motherboard_builder' %}">
                                 <input type="hidden" name="motherboard_id" value="{{ motherboard.id }}" id="motherboard_id" />
                                 <button type="submit" class="btn btn-primary">Select</button>
                             </form>

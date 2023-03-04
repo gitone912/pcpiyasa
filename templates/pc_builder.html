@@ -235,12 +235,40 @@
 
       <tr class="last zebra">
         
-        <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/motherboard/">Motherboard</a></td>
+        <td class="component-type tl"><a href="{% url 'motherboard' %}">Motherboard</a></td>
         
         
         <td></td>
         
-        <td><a href="/web/20160707101905/http://pcpartpicker.com/products/motherboard/" class="btn-mds">Choose A Motherboard</a></td>
+        {% if no_motherboard %}
+    <td><a href="{% url 'motherboard' %}" class="btn-mds">Choose A Motherboard</a></td>
+{% else %}
+    {% for x in motherboard %}
+        <td>
+            <div class="d-flex align-items-center">
+                <img src="{{ x.motherboard.motherboard_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                <div class="ms-3">
+                    <p class="fw-bold mb-1"><a href="{% url 'motherboard_detail' x.motherboard.id %}">{{ x.motherboard.motherboard_brand }}</a></p>
+                </div>
+            </div>
+        </td>
+        <td>
+            <p class="fw-normal mb-1">{{ x.motherboard.motherboard_model }}</p>
+        </td>
+        <td>
+            <p class="fw-normal mb-1"> ${{x.motherboard.motherboard_price}} </p>
+        </td>
+        <td>
+            <form action="{%url 'delete' x.id %}" method="POST" id="bin_form">
+                {% csrf_token %}
+                <button type="submit" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+        </td>
+    {% endfor %}
+{% endif %}
+
         <td colspan="9"></td>
       </tr>
 
@@ -264,12 +292,57 @@
 
       <tr class="last">
         
-        <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/memory/">Memory</a></td>
+        <td class="component-type tl"><a href="{% url 'ram' %}">Memory</a></td>
         
         
         <td></td>
         
-        <td><a href="/web/20160707101905/http://pcpartpicker.com/products/memory/" class="btn-mds">Choose Memory</a></td>
+        {% if no_ram %}
+    <td><a href="{% url 'ram' %}" class="btn-mds">Choose RAM</a></td>
+{% else %}
+    {% for x in ram %}
+        <tr>
+            <td>
+                <div class="d-flex align-items-center">
+                    <img src="{{ x.ram.ram_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1"><a href="{% url 'ram_detail' x.ram.id %}">{{ x.ram.ram_name }}</a></p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">{{ x.ram.ram_brand }}</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">{{ x.ram.ram_size }} GB</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">{{ x.ram.ram_quantity }}</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">{{ x.ram.ram_type }}</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">{{ x.ram.ram_dimm_type }}</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">{{ x.ram.ram_cas_latency }}</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1"> ${{ x.ram.ram_price }}</p>
+            </td>
+            <td>
+                <form action="{% url 'delete' x.id %}" method="POST" id="bin_form">
+                    {% csrf_token %}
+                    <button type="submit" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+{% endif %}
+
         <td colspan="9"></td>
       </tr>
 
@@ -293,12 +366,40 @@
 
       <tr class="last zebra">
         
-        <td class="component-type tl"><a href="/web/20160707101905/http://pcpartpicker.com/products/internal-hard-drive/">Storage</a></td>
+        <td class="component-type tl"><a href="{% url 'graphics_card' %}">Graphics Card</a></td>
         
         
         <td></td>
         
-        <td><a href="/web/20160707101905/http://pcpartpicker.com/products/internal-hard-drive/" class="btn-mds">Choose Storage</a></td>
+        {% if no_graphics_card %}
+    <td><a href="{% url 'graphics_card' %}" class="btn-mds">Choose A Graphics Card</a></td>
+{% else %}
+    {% for x in graphics_card %}
+        <td>
+            <div class="d-flex align-items-center">
+                <img src="{{ x.graphics_card.graphics_card_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+                <div class="ms-3">
+                    <p class="fw-bold mb-1"><a href="#">{{ x.graphics_card.graphics_card_brand }}</a></p>
+                </div>
+            </div>
+        </td>
+        <td>
+            <p class="fw-normal mb-1">{{ x.graphics_card.graphics_card_brand }} {{ x.graphics_card.graphics_card_model }}</p>
+        </td>
+        <td>
+            <p class="fw-normal mb-1"> ${{ x.graphics_card.graphics_card_price }} </p>
+        </td>
+        <td>
+            <form action="{% url 'delete' x.id %}" method="POST" id="bin_form">
+                {% csrf_token %}
+                <button type="submit" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </form>
+        </td>
+    {% endfor %}
+{% endif %}
+
         <td colspan="9"></td>
       </tr>
 
