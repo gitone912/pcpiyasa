@@ -36,8 +36,8 @@
 			<h2>CPU Coolers</h2>
 			<table class="table">
 				<thead>
-					<tr>
-						<th>Brand</th>
+					<tr><th>image</th>
+						<th>Name</th>
 						<th>Model</th>
 						<th>Fan RPM</th>
 						<th>Noise Level</th>
@@ -48,8 +48,8 @@
 				</thead>
 				<tbody>
 					{% for cooler in coolers %}
-					<tr>
-						<td>{{ cooler.cpu_cooler_brand }}</td>
+					<tr><td><img src="{{ cooler.cpu_cooler_image_url }}" alt="image" width="50" height="50"></td>
+						<td>{{ cooler.cpu_cooler_name }}</td>
 						<td>{{ cooler.cpu_cooler_model }}</td>
 						<td>{{ cooler.cpu_cooler_fan_rpm }}</td>
 						<td>{{ cooler.cpu_cooler_noise_level }}</td>

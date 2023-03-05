@@ -72,7 +72,7 @@
 				<h2>Motherboards</h2>
 				<table class="table">
 					<thead>
-						<tr>
+						<tr><th>image</th>
 							<th>Brand</th>
 							<th>Model</th>
 							<th>Socket</th>
@@ -84,7 +84,7 @@
 					</thead>
 					<tbody>
 						{% for motherboard in motherboards %}
-							<tr>
+							<tr><td><img src="{{ motherboard.motherboard_image_url }}" alt="{{ motherboard.motherboard_model }}" width="50" height="50"></td>
 								<td>{{ motherboard.motherboard_brand }}</td>
 								<td>{{ motherboard.motherboard_model }}</td>
 								<td>{{ motherboard.motherboard_socket }}</td>

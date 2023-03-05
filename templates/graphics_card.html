@@ -58,7 +58,7 @@
                     <h2>Graphics Cards</h2>
                     <table class="table">
                         <thead>
-                            <tr>
+                            <tr><th>image</th>
                                 <th>Brand</th>
                                 <th>Model</th>
                                 <th>GPU Memory</th>
@@ -68,7 +68,7 @@
                         </thead>
                         <tbody>
                             {% for graphics_card in graphics_cards %}
-                                <tr>
+                                <tr><td><img src="{{ graphics_card.Image_URL }}" alt="graphics_card" width="50" height="50"></td>
                                     <td>{{ graphics_card.graphic_card_brand }}</td>
                                     <td>{{ graphics_card.graphic_card_model }}</td>
                                     <td>{{ graphics_card.graphic_card_chipset }}</td>

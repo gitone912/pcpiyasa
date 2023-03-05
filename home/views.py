@@ -169,7 +169,7 @@ def graphics_card_builder(request):
     
     return redirect("show_list")
 
-
+@allow_guest_user
 def show_list(request):
     user = request.user
     processor = processor_added.objects.filter(user=user)

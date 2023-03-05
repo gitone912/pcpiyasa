@@ -61,7 +61,7 @@
 				<h2>RAMs</h2>
 				<table class="table">
 					<thead>
-						<tr>
+						<tr><th>image</th>
 							<th>Brand</th>
 							<th>Model</th>
 							<th>Capacity</th>
@@ -72,7 +72,7 @@
 					</thead>
 					<tbody>
 						{% for ram in rams %}
-							<tr>
+							<tr><td><img src="{{ ram.ram_image_url }}" alt="ram image" width="50" height="50"></td>
 								<td>{{ ram.ram_brand }}</td>
 								<td>{{ ram.ram_model }}</td>
 								<td>{{ ram.ram_capacity }} GB</td>

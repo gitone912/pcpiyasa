@@ -1,0 +1,4900 @@
+
+
+@charset "UTF-8";
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none; }
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Colors - Light Theme
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Sizes
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Typography
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Effects
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #252835; }
+
+p {
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 1.5em 0; }
+
+ul, ol {
+  margin: 0;
+  padding: 0; }
+
+ul li {
+  list-style: none; }
+
+blockquote {
+  margin: 0 0 1.5em 0;
+  padding-left: 16px;
+  border-left: 3px solid #e3e3e3;
+  font-style: italic;
+  color: #8d8f9e; }
+
+h1.name {
+  font-size: 48px;
+  margin: 0 0 .375em 0;
+  line-height: 1.125em; }
+
+h1 {
+  margin: .25em 0;
+  line-height: 1.25em;
+  font-size: 32px; }
+
+h2 {
+  font-size: 22px;
+  margin: 0 0 1em 0;
+  font-weight: 400;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #cfcfcf; }
+
+h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #8d8f9e;
+  margin: 0 0 5px 0;
+  font-weight: 400; }
+
+.left-column h4 {
+  margin: 16px 0 4px 0; }
+
+.full-column .block ul {
+  list-style: none;
+  overflow: hidden; }
+  .full-column .block ul li:before {
+    content: "– ";
+    position: absolute;
+    left: -15px;
+    color: #8d8f9e;
+    display: inline; }
+.full-column .block ol {
+  padding: 0; }
+.full-column .block li {
+  font-size: 13px;
+  margin: 0 0 10px 30px;
+  width: 85%;
+  line-height: 22px;
+  font-family: georgia, serif;
+  position: relative; }
+  .full-column .block li p {
+    line-height: 22px; }
+
+.markdown {
+  word-wrap: break-word;
+  font-family: georgia, serif; }
+  .markdown p {
+    font-size: 18px;
+    margin: .625em 0; }
+  .markdown ul {
+    list-style: none;
+    overflow: hidden; }
+    .markdown ul li {
+      margin: 0 0 10px 30px;
+      width: 85%;
+      line-height: 22px;
+      position: relative; }
+      .markdown ul li:before {
+        content: "– ";
+        position: absolute;
+        left: -15px;
+        color: #8d8f9e;
+        display: inline; }
+  .markdown ol {
+    overflow: hidden; }
+    .markdown ol li {
+      margin: 0 0 10px 30px;
+      width: 85%;
+      line-height: 22px;
+      position: relative; }
+  .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    padding: 0;
+    margin-bottom: .5em;
+    font-weight: 700; }
+  .markdown h2 {
+    font-size: 24px;
+    border: 0; }
+  .markdown h3 {
+    font-size: 18px; }
+  .markdown .embed-video, .markdown img {
+    margin-bottom: 1em; }
+  .markdown ol {
+    padding: 0; }
+  .markdown pre {
+    font-size: 90%;
+    line-height: 1.2em;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    height: 1%;
+    width: auto;
+    display: block;
+    clear: both;
+    background: white;
+    color: #7f8192;
+    border: solid 1px #e1e1e1;
+    padding: 10px 16px; }
+  .markdown code {
+    font-size: 90%;
+    line-height: 1.5em;
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    display: inline; }
+  .markdown table {
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+
+.title {
+  color: white;
+  padding: 1.5em 0;
+  line-height: 1.25em; }
+
+.left-column .title, .right-column .title {
+  padding: 0; }
+
+.label {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #8d8f9e;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 0; }
+
+.title-note {
+  font-size: 75%;
+  font-weight: 400;
+  color: rgba(141, 143, 158, 0.75);
+  padding-left: .25em; }
+
+.note {
+  font-size: 12px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Foundational Blocks
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  background-color: white; }
+
+body {
+  min-width: 1200px; }
+
+a {
+  text-decoration: none;
+  color: #2c85c5; }
+  a:hover {
+    color: #103148; }
+
+img {
+  max-width: 100%; }
+
+hr {
+  border: 0;
+  height: 3px;
+  background-color: #e3e3e3;
+  margin: 30px 0; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Tables
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 12px; }
+  table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; }
+  table thead {
+    font-size: 14px;
+    font-weight: 400; }
+    table thead tr {
+      border: 0 !important; }
+    table thead th {
+      padding: 6px;
+      border-bottom: 1px solid #e3e3e3; }
+  table th {
+    font-size: 11px;
+    color: #252835;
+    font-weight: 400; }
+  table .tl {
+    text-align: left; }
+  table .tc {
+    text-align: center; }
+  table .tr {
+    text-align: right; }
+  table tr {
+    border-bottom: 1px solid #e8e8e8; }
+    table tr td {
+      padding: 5px;
+      font-size: 12px; }
+      table tr td:last-child {
+        color: #252835; }
+  table .tdprice {
+    text-align: center;
+    font-weight: 700; }
+  table .tdname {
+    font-weight: 700; }
+    table .tdname a {
+      color: #252835; }
+      table .tdname a:hover {
+        color: #2c85c5; }
+  table.stacked-table {
+    display: block; }
+    table.stacked-table tbody tr:nth-child(odd) {
+      background-color: transparent; }
+    table.stacked-table tr {
+      border: 0;
+      padding: 0 0 20px 0;
+      display: block; }
+    table.stacked-table td {
+      display: block;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 400; }
+    table.stacked-table .title {
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: #8d8f9e;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1px;
+      margin-bottom: 2px; }
+
+.part-table td {
+  font-size: 14px;
+  line-height: 16px;
+  padding: 5px; }
+.part-table td.viewadd a.pp_add_part {
+  margin-left: 10px; }
+.part-table td.select {
+  white-space: nowrap;
+  padding-right: 0px; }
+.part-table td.viewadd a.pp_add_part {
+  margin-left: 10px; }
+.part-table .inventory-price {
+  text-align: right; }
+.part-table .inventory-where {
+  text-align: center; }
+
+.amazon-prime {
+  width: 40px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Containers
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-container {
+  margin: 0 auto;
+  width: 1800px; }
+  .page-container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.block {
+  margin-bottom: 4em; }
+
+.hero {
+  overflow: hidden; }
+  .hero h4, .hero p {
+    color: rgba(0, 0, 0, 0.5); }
+
+.general-hero {
+  background-color: #54547B;
+  color: #fff; }
+
+.privacy-hero {
+  background-color: #54547B;
+  color: white; }
+
+.tos-hero {
+  background-color: #54547B;
+  color: white; }
+
+.usage-trends-hero {
+  background-color: #54547B;
+  color: #fff; }
+
+.price-drops-hero {
+  background-color: #54547B;
+  color: #fff; }
+
+.price-trends-hero {
+  background-color: #54547B;
+  color: #fff; }
+
+.details {
+    background-color: #ededed;
+}
+
+.image-gallery {
+  background-color: white;
+  border-bottom: 1px solid #e3e3e3; }
+  .image-gallery h4 {
+    text-align: center;
+    font-size: 11px;
+    margin: 0;
+    padding: 1em 0; }
+
+.image-triple-group {
+  background-color: white; }
+  .image-triple-group:before, .image-triple-group:after {
+    content: "";
+    display: table; }
+  .image-triple-group:after {
+    clear: both; }
+  .image-triple-group img {
+    background-color: white; }
+  .image-triple-group .image-triple-group-left {
+    width: 66.66667%;
+    float: left;
+    line-height: 0; }
+  .image-triple-group .image-triple-group-right {
+    width: 33.33333%;
+    float: left;
+    line-height: 0;
+    border-left: 1px solid #ffffff; }
+    .image-triple-group .image-triple-group-right .image-two {
+      border-bottom: 1px solid #ffffff; }
+
+.image-wrapper {
+  width: 126px;
+  height: 126px;
+  text-align: center; }
+  .image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
+a.image-wrapper {
+  display: inline-block; }
+
+.image-wrapper64 {
+  width: 64px;
+  height: 64px;
+  text-align: center; }
+  .image-wrapper64 img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
+.details {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/bkgd-split-wide.png) repeat-y 50% 0; }
+
+.user-comments .details,
+.user-forum-topics .details,
+.about .details,
+.tos .details,
+.privacy .details,
+.disclosure .details,
+.individual-parts .details,
+.trends-index .details,
+.search-results .details,
+.partlist-by-merchant .details,
+.inbox .details,
+.part-compare .details,
+.system-build .details {
+  background: #f7f7f7; }
+
+.markdown {
+  margin-bottom: 16px; }
+
+.full-column {
+  padding: 48px 0; }
+
+.column-wrapper {
+  display: table;
+  width: 100%; }
+
+.left-column, .right-column {
+  padding: 48px 0;
+  display: table-cell;
+  vertical-align: top; }
+
+.left-column {
+  width: 393px;
+  background-color: #ededed;
+  border-right: 1px solid #e3e3e3; }
+  .left-column ul {
+    margin: 0; }
+  .left-column li {
+    padding: .5em 0;
+    font-size: 14px; }
+
+.right-column {
+  padding-left: 30px;
+  width: 743px;
+  background-color: #F2F2F2; }
+
+.forum .left-column,
+.system-build .left-column,
+.part-index .left-column,
+.build-guide .left-column,
+.saved-builds .left-column {
+  width: 150px;
+  min-width: 150px; }
+.forum .right-column,
+.system-build .right-column,
+.part-index .right-column,
+.build-guide .right-column,
+.saved-builds .right-column {
+  width: 886px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Tabbed Nav
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tabbed-nav li {
+  font-size: 14px; }
+
+.tabnav-hero .page-container {
+  position: relative; }
+  .tabnav-hero .page-container ul {
+    position: absolute;
+    bottom: 0px;
+    right: 30px; }
+    .tabnav-hero .page-container ul li {
+      float: left; }
+      .tabnav-hero .page-container ul li a {
+        padding: 6px 14px;
+        display: inline-block;
+        border-bottom: solid 3px transparent;
+        color: #a1a2b8; }
+        .tabnav-hero .page-container ul li a:hover, .tabnav-hero .page-container ul li a.active {
+          border-bottom: solid 3px #ffda45;
+          color: #fff; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Links & Buttons
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.btn-lgs {
+  display: inline-block;
+  text-align: center;
+  background-color: #2c85c5;
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: .75em;
+  font-size: 14px; }
+  .btn-lgs:hover {
+    color: white;
+    background-color: #194d72; }
+
+.btn-mds {
+  display: inline-block;
+  text-align: center;
+  background-color: #2c85c5;
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: .375em .5em;
+  font-size: 12px; }
+  .btn-mds:hover {
+    color: white;
+    background-color: #194d72; }
+
+.btn-mds-wide {
+  display: inline-block;
+  text-align: center;
+  background-color: #2c85c5;
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  display: block;
+  padding: .375em .5em;
+  font-size: 12px; }
+  .btn-mds-wide:hover {
+    color: white;
+    background-color: #194d72; }
+
+.create-btn {
+  display: block;
+  text-align: center;
+  background-color: #f7f7f7;
+  border: solid 1px #cacaca;
+  padding: 15px 30px;
+  margin-bottom: 30px; }
+  .create-btn a {
+    display: inline-block;
+    text-align: center;
+    background-color: #2c85c5;
+    color: white;
+    border-radius: 4px;
+    -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    display: block;
+    padding: .75em; }
+    .create-btn a:hover {
+      color: white;
+      background-color: #194d72; }
+
+.delete a {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/delete.png) no-repeat;
+  width: 10px;
+  height: 10px;
+  background-size: 10px;
+  display: block;
+  opacity: .4; }
+  .delete a:hover {
+    opacity: 1;
+    background-color: transparent; }
+
+.hero-tab {
+  text-align: center; }
+  .hero-tab a {
+    background-color: rgba(0, 0, 0, 0.15);
+    line-height: 1.5em;
+    padding: 8px 16px;
+    display: inline-block;
+    color: white;
+    border-radius: 4px 4px 0px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-transition: background-color 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: background-color 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: background-color 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: background-color 0.65s cubic-bezier(0.19, 1, 0.22, 1); }
+    .hero-tab a:hover {
+      background-color: rgba(0, 0, 0, 0.4); }
+
+.back-link a:before {
+  content: "";
+  display: inline-block;
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/link-arrow-left.png) no-repeat top left;
+  background-size: 16px 8px;
+  width: 16px;
+  height: 8px;
+  margin-right: 10px; }
+
+.view-link a:before {
+  content: "";
+  display: inline-block;
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/view-icon.png) no-repeat top left;
+  background-size: 14px 10px;
+  width: 14px;
+  height: 10px;
+  margin-right: 10px; }
+
+.header-actions {
+  font-size: 12px;
+  color: #8d8f9e;
+  float: right; }
+  .header-actions a {
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 8px; }
+    .header-actions a.btn-mds {
+      top: 2px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+UI Controls
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.ui-slider {
+  background-color: #bfc0c8; }
+
+.ui-slider-horizontal {
+  height: 4px;
+  position: relative; }
+
+.ui-slider-horizontal .ui-slider-range {
+  position: absolute;
+  height: 4px;
+  background-color: #2c85c5; }
+
+.ui-slider-handle {
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3), 0px 1px 1px 0px rgba(0, 0, 0, 0.3); }
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -6px;
+  margin-left: -8px; }
+
+.ui-slider-horizontal-labelbox {
+  position: relative;
+  margin-top: 6px;
+  margin-bottom: 11px; }
+
+.ui-slider-horizontal-labelbox-label {
+  position: absolute;
+  top: 0px;
+  left: 0px; }
+
+.ui-slider-horizontal-labelbox-label a {
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(44, 133, 197, 0.4); }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Action Box
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.action-box td {
+  text-align: center;
+  background-color: #f7f7f7;
+  font-size: 12px;
+  border: solid 1px #cacaca;
+  padding: 15px 6px; }
+
+.action-box .action-box-votebox {
+  font-size: 24px;
+  vertical-align: middle;
+  width: 80px;
+  padding: 0; }
+
+.action-box .action-box-comments {
+  font-weight: bold;
+  font-size: 14px; }
+
+.single-action {
+  padding: 0 !important; }
+  .single-action td {
+    padding: 0; }
+  .single-action a {
+    display: block;
+    padding: 15px 6px;
+    font-weight: 700;
+    -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+    .single-action a:hover {
+      background-color: white; }
+
+.action-settings {
+  text-align: left;
+  padding: 0 10px; }
+  .action-settings h4 {
+    font-size: 10px;
+    padding: 0 0 5px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #e3e3e3; }
+  .action-settings .action-settings-btns {
+    margin-top: 12px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Voting
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.upvote, .downvote, .upvoted, .downvoted, .comment-vote-up, .comment-vote-down, .comment-voted-up, .comment-voted-down, .comment-votearrow {
+  display: inline-block;
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/voting-arrows.png) no-repeat;
+  background-size: 14px 42px;
+  background-position: 50% 0;
+  width: 14px;
+  height: 21px;
+  cursor: pointer;
+  opacity: .4;
+  padding: 0px 16px;
+  position: relative;
+  top: 3px; }
+
+.comment-vote-down, .comment-voted-down, .downvote {
+  background-position: 50% -22px; }
+
+.comment-votearrow {
+  display: inline-block;
+  cursor: pointer;
+  background-size: 8px 23px;
+  width: 8px;
+  height: 12px;
+  padding: 0 6px; }
+
+.comment-downvote {
+  background-position: 50% -11px;
+  margin-left: 14px; }
+
+.comment-vote-down {
+  opacity: .4; }
+
+.comment-voted-down {
+  opacity: 1; }
+
+.comment-voted-down-owner {
+  opacity: .4; }
+
+.comment-vote-up {
+  opacity: .4; }
+
+.comment-voted-up {
+  opacity: 1; }
+
+.comment-voted-up-owner {
+  opacity: 1; }
+
+.comment-wrap {
+  margin-bottom: 20px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Drag & Drop Items
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul.list-toc li {
+  border: solid 1px #e3e3e3;
+  background-color: #f7f7f7;
+  cursor: move;
+  box-shadow: 0px;
+  padding: 0 !important;
+  -webkit-transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 4px; }
+  ul.list-toc li:hover {
+    background-color: white; }
+  ul.list-toc li a {
+    color: #252835;
+    display: block;
+    padding: 10px; }
+    ul.list-toc li a:hover {
+      color: #2c85c5; }
+
+li.list-movable a {
+  padding: 10px 10px 10px 30px !important;
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/drag-handle.png) no-repeat;
+  background-size: 6px 9px;
+  background-position: 12px 50%; }
+
+li.list-active {
+  font-weight: 700;
+  background-color: white; }
+
+li.ui-sortable-helper {
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.4), 0px 2px 6px rgba(0, 0, 0, 0.4);
+  border-color: white !important;
+  background-color: white;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  border-radius: 4px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Form Elements
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.permalink h4 {
+  margin-top: 0; }
+.permalink input {
+  margin-top: 10px;
+  width: 100%; }
+
+input[type=text], textarea {
+  padding: 8px 10px;
+  border: 0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #ececec;
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #ececec;
+  background: #FFFFFF; }
+  input[type=text]:focus, textarea:focus {
+    -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #2c85c5;
+    box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #2c85c5; }
+
+input[type=checkbox], input[type=radio] {
+  margin: 5px 0;
+  margin-right: 4px; }
+
+textarea {
+  resize: vertical; }
+
+input[type=text]:focus {
+  border-color: #333; }
+
+input[type=submit], input[type=button] {
+  display: inline-block;
+  text-align: center;
+  background-color: #2c85c5;
+  color: white;
+  border-radius: 4px;
+  -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 5px 10px;
+  border: 0 none;
+  margin-right: 15px; }
+  input[type=submit]:hover, input[type=button]:hover {
+    color: white;
+    background-color: #194d72; }
+
+.left-column input[type=text] {
+  width: 100%; }
+.left-column input[type=submit], .left-column input[type=button] {
+  margin-top: 15px; }
+
+input[value="Cancel"] {
+  background-color: transparent;
+  color: #252835; }
+  input[value="Cancel"]:hover {
+    color: white;
+    background-color: #d12d43; }
+
+.delete-btn {
+  background-color: #d12d43 !important; }
+  .delete-btn:hover {
+    background-color: #921f2f !important; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Star Rating
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.rating .stars li {
+  display: inline-block;
+  width: 12px;
+  height: 12px; }
+.rating .stars .full-star {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/full-star-dark.png) no-repeat center center;
+  background-size: 12px; }
+.rating .stars .half-star {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/half-star-dark.png) no-repeat center center;
+  background-size: 12px; }
+.rating .stars .empty-star {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/empty-star-dark.png) no-repeat center center;
+  background-size: 12px; }
+.rating p {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin-top: 0;
+  padding-top: .5em; }
+
+.inline-rating-sm {
+  white-space: nowrap;
+  font-size: 12px; }
+  .inline-rating-sm .rating {
+    display: inline-block; }
+  .inline-rating-sm ul {
+    display: inline-block; }
+
+.inline-rating-md .rating .stars .full-star, .inline-rating-md .rating .stars .half-star, .inline-rating-md .rating .stars .empty-star {
+  background-size: 16px; }
+
+.inline-rating-md {
+  white-space: nowrap;
+  font-size: 16px; }
+  .inline-rating-md .rating {
+    display: inline-block; }
+    .inline-rating-md .rating .stars li {
+      width: 16px;
+      height: 16px; }
+  .inline-rating-md ul {
+    display: inline-block; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Modal Styling
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*Global dialog*/
+.hidden-dialog {
+  display: none; }
+
+.ui-dialog {
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.29), 0px 6px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.29), 0px 6px 10px 0px rgba(0, 0, 0, 0.5);
+  overflow: hidden; }
+  .ui-dialog ul li {
+    font-size: 14px;
+    line-height: 16px;
+    padding: .25em 0; }
+  .ui-dialog select {
+    font-size: 16px; }
+  .ui-dialog input[type=text], .ui-dialog textarea, .ui-dialog select {
+    margin: 4px 0 10px 0;
+    width: 100%; }
+  .ui-dialog .form-actions {
+    margin-top: 25px;
+    text-align: center; }
+
+.ui-dialog-content {
+  padding: 0 18px;
+  margin: 15px 0; }
+  .ui-dialog-content .inside li {
+    font-size: 12px;
+    line-height: 10px;
+    position: relative;
+    margin-left: 20px; }
+    .ui-dialog-content .inside li:before {
+      content: "● ";
+      font-size: 8px;
+      position: absolute;
+      left: -12px;
+      color: #8d8f9e;
+      display: inline; }
+
+#change_history_dialog {
+  max-height: 500px !important;
+  overflow-y: scroll; }
+
+.ui-dialog-titlebar {
+  padding: 12px 18px;
+  position: relative;
+  background-color: white;
+  border-bottom: 1px solid #e3e3e3;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+.ui-dialog-titlebar-close {
+  position: absolute;
+  right: 18px;
+  top: 17px; }
+
+.ui-icon-closethick {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/delete.png) no-repeat !important;
+  background-size: 10px 10px !important;
+  background-position: left top !important;
+  margin: 0 !important; }
+
+.ui-dialog .ui-dialog-titlebar-close, .ui-icon-closethick {
+  width: 10px !important;
+  height: 10px !important;
+  display: block !important; }
+
+.ui-button-text {
+  display: none; }
+
+.ui-dialog .ui-dialog-titlebar-close {
+  background: none !important;
+  border: none !important; }
+
+.ui-dialog .ui-dialog-titlebar-close, .ui-dialog .ui-dialog-titlebar-close:hover {
+  padding: 0 !important; }
+
+.ui-widget-overlay {
+  background: #585d77 !important;
+  opacity: 0.8 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.ui-front {
+  z-index: 100; }
+
+.ui-datepicker {
+  background-color: #f7f7f7;
+  margin-top: 6px;
+  position: relative;
+  -moz-box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.29), 0px 6px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.29), 0px 6px 10px 0px rgba(0, 0, 0, 0.5); }
+  .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    text-indent: -9999px;
+    width: 7px;
+    opacity: .4; }
+    .ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover {
+      opacity: 1; }
+  .ui-datepicker .ui-datepicker-header {
+    background-color: white;
+    padding-top: 8px; }
+  .ui-datepicker .ui-datepicker-prev {
+    left: 20px;
+    background: url("/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/carousel-arrows.png");
+    background-repeat: no-repeat;
+    background-position: 0px 3px;
+    background-size: 14px; }
+  .ui-datepicker .ui-datepicker-next {
+    right: 20px;
+    background: url("/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/carousel-arrows.png") -11px;
+    background-repeat: no-repeat;
+    background-position: -7px 3px;
+    background-size: 14px; }
+  .ui-datepicker .ui-datepicker-title {
+    text-align: center;
+    font-size: 14px; }
+  .ui-datepicker .ui-datepicker-calendar {
+    margin-bottom: 0; }
+    .ui-datepicker .ui-datepicker-calendar th, .ui-datepicker .ui-datepicker-calendar td {
+      text-align: center; }
+    .ui-datepicker .ui-datepicker-calendar thead {
+      background-color: white; }
+    .ui-datepicker .ui-datepicker-calendar tbody tr:last-child {
+      border-bottom: 0; }
+
+/* UPP dialog goodness */
+#upp_dialog {
+  -webkit-transition: 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: 0.35s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.loading-container {
+  position: relative;
+  display: block;
+  height: 120px;
+  width: 100%; }
+  .loading-container .loading-cubes {
+    top: 50px !important; }
+
+#upp_add_custom_form input[type=text] {
+  width: 80%; }
+#upp_add_custom_form input[type=submit] {
+  margin-left: 10px;
+  margin-right: 0; }
+
+#upp_dialog_auto_fetch #info {
+  font-size: 13px; }
+
+#upp_dialog_manual_fetch {
+  margin-top: 5px;
+  text-align: center; }
+  #upp_dialog_manual_fetch .form-actions {
+    margin-top: 15px; }
+
+#upp_dialog_auto_fetch_spinner {
+  display: none; }
+
+#upp_dialog_auto_fetch_result {
+  display: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px; }
+  #upp_dialog_auto_fetch_result img {
+    width: 175px;
+    height: 175px;
+    border-radius: 4px;
+    padding: 4px;
+    background: white;
+    border: 1px solid #D4D4D4;
+    text-align: center;
+    margin-bottom: 12px; }
+    #upp_dialog_auto_fetch_result img img {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  #upp_dialog_auto_fetch_result form {
+    font-weight: 400;
+    font-size: 16px; }
+
+#upp_dialog_auto_fetch_error {
+  margin-left: 7px;
+  color: #d12d43; }
+
+#upp_dialog_manual_entry_form {
+  display: none; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Misc
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+#animation_anchor {
+  position: relative;
+  z-index: 4; }
+
+.toggle {
+  display: inline-block;
+  background-color: #6e829a;
+  color: white;
+  padding: 1em;
+  cursor: pointer; }
+
+.toggle:hover {
+  background-color: #57697e; }
+
+.loading-cubes {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  -webkit-transform: translate(-42px, -36px);
+  -ms-transform: translate(-42px, -36px);
+  transform: translate(-42px, -36px); }
+
+.cube, .shadow {
+  width: 36px;
+  height: 42px;
+  position: absolute;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s; }
+
+.cube {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjM2cHgiIGhlaWdodD0iNDJweCIgdmlld0JveD0iMCAwIDM2IDQyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4yLjIgKDk5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPkN1YmU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBza2V0Y2g6dHlwZT0iTVNQYWdlIj4KICAgICAgICA8ZyBpZD0iSWNvbnMiIHNrZXRjaDp0eXBlPSJNU0FydGJvYXJkR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNDAuMDAwMDAwLCAtNDQyLjAwMDAwMCkiPgogICAgICAgICAgICA8ZyBpZD0iQ3ViZSIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzQwLjAwMDAwMCwgNDQyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTE4LDIxLjMzMzUyMjcgTDE4LDQyIEwzNiwzMSBMMzYsMTEgTDE4LDIxLjMzMzUyMjcgWiIgaWQ9IkZpbGwtMiIgZmlsbD0iI0M1NzYyRiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMzEgTDE4LDQyIEwxOCwyMS4zMzM1MjI3IEwwLDExIEwwLDMxIFoiIGlkPSJGaWxsLTMiIGZpbGw9IiNFM0EzMkQiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLDExIEwxOCwyMiBMMzYsMTEgTDE4LDAgTDAsMTEgWiIgaWQ9IkZpbGwtMSIgZmlsbD0iI0ZCRDc0RSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=") no-repeat top center; }
+
+.shadow {
+  top: 75px;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjM2cHgiIGhlaWdodD0iMjJweCIgdmlld0JveD0iMCAwIDM2IDIyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4yLjIgKDk5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPkZpbGwgNTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHNrZXRjaDp0eXBlPSJNU1BhZ2UiPgogICAgICAgIDxnIGlkPSJJY29ucyIgc2tldGNoOnR5cGU9Ik1TQXJ0Ym9hcmRHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMwOC4wMDAwMDAsIC01MTMuMDAwMDAwKSIgZmlsbD0iIzAwMDAwMCI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0zMDgsNTI0IEwzMjYsNTM1IEwzNDQsNTI0IEwzMjYsNTEzIEwzMDgsNTI0IFoiIGlkPSJGaWxsLTUiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==") no-repeat top center; }
+
+.cube-shadows {
+  opacity: .15;
+  position: relative; }
+
+.pause {
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important; }
+
+.box1 {
+  -webkit-animation: cube1 0.5s ease-out infinite;
+  animation: cube1 0.5s ease-out infinite; }
+
+.box2 {
+  -webkit-animation: cube2 0.5s ease-out infinite;
+  animation: cube2 0.5s ease-out infinite; }
+
+.box3 {
+  -webkit-animation: cube3 0.5s ease-out infinite;
+  animation: cube3 0.5s ease-out infinite;
+  z-index: 2; }
+
+.box4 {
+  -webkit-animation: cube4 0.5s ease-out infinite;
+  animation: cube4 0.5s ease-out infinite; }
+
+@-webkit-keyframes cube1 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
+  50% {
+    -webkit-transform: translate(16px, -9.5px);
+    transform: translate(16px, -9.5px); }
+
+  100% {
+    -webkit-transform: translate(32px, 0);
+    transform: translate(32px, 0); } }
+@keyframes cube1 {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
+  50% {
+    -webkit-transform: translate(16px, -9.5px);
+    transform: translate(16px, -9.5px); }
+
+  100% {
+    -webkit-transform: translate(32px, 0);
+    transform: translate(32px, 0); } }
+@-webkit-keyframes cube2 {
+  0%, 50% {
+    -webkit-transform: translate(32px, 0);
+    transform: translate(32px, 0); }
+
+  100% {
+    -webkit-transform: translate(48px, 9.5px);
+    transform: translate(48px, 9.5px); } }
+@keyframes cube2 {
+  0%, 50% {
+    -webkit-transform: translate(32px, 0);
+    transform: translate(32px, 0); }
+
+  100% {
+    -webkit-transform: translate(48px, 9.5px);
+    transform: translate(48px, 9.5px); } }
+@-webkit-keyframes cube3 {
+  0% {
+    -webkit-transform: translate(48px, 9.5px);
+    transform: translate(48px, 9.5px); }
+
+  50% {
+    -webkit-transform: translate(32px, 19px);
+    transform: translate(32px, 19px); }
+
+  100% {
+    -webkit-transform: translate(16px, 9.5px);
+    transform: translate(16px, 9.5px); } }
+@keyframes cube3 {
+  0% {
+    -webkit-transform: translate(48px, 9.5px);
+    transform: translate(48px, 9.5px); }
+
+  50% {
+    -webkit-transform: translate(32px, 19px);
+    transform: translate(32px, 19px); }
+
+  100% {
+    -webkit-transform: translate(16px, 9.5px);
+    transform: translate(16px, 9.5px); } }
+@-webkit-keyframes cube4 {
+  0%, 50% {
+    -webkit-transform: translate(16px, 9.5px);
+    transform: translate(16px, 9.5px); }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); } }
+@keyframes cube4 {
+  0%, 50% {
+    -webkit-transform: translate(16px, 9.5px);
+    transform: translate(16px, 9.5px); }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0); } }
+/*Top and bottom margin removal on markdown items*/
+.markdown p:first-child {
+  margin-top: 0px; }
+
+.markdown p:last-child {
+  margin-bottom: 0px; }
+
+/*Reporting items on site, globally used, red message if nothing is selected*/
+.moderation-report-no-reason-given {
+  display: none;
+  color: red; }
+
+.page-button-row {
+  margin: 20px 0px;
+  font-size: 12px;
+  text-align: center; }
+  .page-button-row span {
+    margin-right: 10px; }
+  .page-button-row .page-button-current {
+    border-bottom: 1px solid #252835;
+    padding: 5px; }
+  .page-button-row .page-button {
+    font-size: 16px;
+    display: inline-block; }
+    .page-button-row .page-button a {
+      padding: 5px 10px; }
+      .page-button-row .page-button a:hover {
+        border-bottom: 1px solid rgba(141, 143, 158, 0.5); }
+
+.breadcrumb {
+  color: #a1a2b8;
+  font-size: 14px; }
+  .breadcrumb span {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px;
+    position: relative;
+    top: -1px; }
+  .breadcrumb a {
+    color: #a1a2b8;
+    font-size: 14px; }
+    .breadcrumb a:hover {
+      color: white; }
+
+.avatar-username {
+  display: block;
+  overflow: hidden;
+  margin: 10px 0 20px 0; }
+  .avatar-username a {
+    font-size: 14px;
+    font-weight: 700;
+    color: #252835;
+    line-height: 16px; }
+    .avatar-username a:hover {
+      color: #2c85c5; }
+  .avatar-username h4 {
+    margin-bottom: 0; }
+  .avatar-username img {
+    margin-right: 8px;
+    float: left; }
+  .avatar-username div {
+    float: left;
+    position: relative;
+    top: 5px; }
+  .avatar-username span {
+    display: block; }
+  .avatar-username .topic-datestamp {
+    font-weight: 400;
+    font-size: 12px;
+    color: #8d8f9e;
+    margin-top: 4px; }
+    .avatar-username .topic-datestamp a {
+      font-size: 12px; }
+
+.user-thumb-lg {
+  width: 64px;
+  height: 64px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: white; }
+
+.user-thumb-md {
+  width: 48px;
+  height: 48px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: white; }
+
+.user-thumb-sm {
+  width: 36px;
+  height: 36px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  border-radius: 18px;
+  background-color: white; }
+
+.user-messages img {
+  width: 16px;
+  height: 12px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px; }
+
+.search-bar {
+  float: right;
+  margin-top: -4px;
+  font-size: 12px; }
+  .search-bar select {
+    margin-right: 20px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Header
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+header {
+  background-color: white;
+  padding-top: 1em;
+  position: relative;
+  z-index: 2; }
+
+.pcpp-header {
+  width: 100%;
+  margin: 0 auto;
+  height: 48px;
+  display: table;
+  font-size: 75%;
+  position: relative; }
+
+.pcpp-header a {
+  font-weight: 700; }
+
+.pcpp-header h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 222px;
+  height: 48px;
+  text-indent: -9999em;
+  background: url(https://web.archive.org/web/20180902105045im_/https://cdn.pcpartpicker.com/static/forever/img/pcpp.png) no-repeat;
+  background-size: 222px 48px;
+  margin: 0; }
+
+.user-nav {
+  width: 75%;
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  text-align: right; }
+  .user-nav a {
+    color: #252835; }
+    .user-nav a:hover {
+      color: #2c85c5; }
+
+.user-nav li {
+  display: inline;
+  padding: 0 .5em;
+  border-right: 1px solid #e3e3e3; }
+  .user-nav li:last-child {
+    border-right: 0;
+    padding-right: 0; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Language Selector
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.customSelect {
+  font-weight: 700;
+  padding-left: 21px;
+  background-size: 14px 10px;
+  background-position: 0px 3px;
+  background-repeat: no-repeat; }
+  .customSelect:after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 9px;
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/dropdown-arrow.png) no-repeat;
+    background-size: 8px 5px;
+    background-position: 0px 3px; }
+  .customSelect .customSelectInner {
+    padding-right: 5px; }
+  .customSelect.customSelectHover {
+    color: #2c85c5; }
+
+.language-selector {
+  cursor: pointer; }
+
+.flag-au.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-australia.png); }
+
+.flag-be.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-belgium.png); }
+
+.flag-ca.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-canada.png); }
+
+.flag-de.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-deutschland.png); }
+
+.flag-dk.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-denmark.png); }
+
+.flag-es.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-spain.png); }
+
+.flag-fr.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-france.png); }
+
+.flag-ie.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-ireland.png); }
+
+.flag-in.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-india.png); }
+
+.flag-it.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-italy.png); }
+
+.flag-nl.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-netherlands.png); }
+
+.flag-nz.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-newzealand.png); }
+
+.flag-se.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-sweden.png); }
+
+.flag-sg.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-singapore.png); }
+
+.flag-uk.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-uk.png); }
+
+.flag-us.customSelect {
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/flag-usa.png); }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Navigation
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+nav {
+  background-color: #252835;
+  margin-top: 1em; }
+
+.nav-wrapper {
+  border-left: 1px solid #34384a;
+  border-right: 1px solid #34384a;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; }
+
+.primary-nav {
+  float: left; }
+
+.primary-nav a {
+  color: white;
+  height: 60px;
+  font-weight: 700;
+  display: inline-block;
+  padding: .75em 1em .75em 3em;
+  background-position: 16px 18px;
+  border-right: 1px solid #34384a;
+  -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+  .primary-nav a:hover {
+    background-color: #34384a; }
+  .primary-nav a.active {
+    background-color: #34384a; }
+
+.primary-nav span {
+  text-transform: uppercase;
+  color: #eea900;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 3px; }
+
+.nav-build {
+  background: url(../images/wrench.png) no-repeat;
+  background-size: 22px 22px; }
+
+.nav-guides {
+  background: url(../images/guide.png) no-repeat;
+  background-size: 18px 24px; }
+
+.nav-builds {
+  background: url(../images/builds.png) no-repeat;
+  background-size: 18px 24px; }
+
+.nav-parts {
+  background: url(../images/part.png) no-repeat;
+  background-size: 22px 22px;
+  padding-right: 46px !important;
+  position: relative; }
+  .nav-parts span.nav-dropdown {
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: 16px;
+    background: url(../images/nav-dropdown.png) no-repeat;
+    background-size: 14px 7px;
+    -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -ms-transform-origin: 50% 25%;
+    -webkit-transform-origin: 50% 25%;
+    transform-origin: 50% 25%;
+    opacity: .7; }
+  .nav-parts span.show-drop {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+.secondary-nav {
+  float: right;
+  height: 60px; }
+
+.sub-links {
+  float: left;
+  width: 200px;
+  padding: 7px 0;
+  border-right: 1px solid #34384a; }
+
+.secondary-nav a {
+  float: left;
+  font-size: .75em;
+  color: white;
+  padding: 4px 0;
+  width: 90px;
+  display: block; }
+  .secondary-nav a:hover {
+    color: #a9d0ec; }
+
+#form_country_select {
+  display: inline-block; }
+
+.search {
+  float: left; }
+  .search a {
+    background: url(../images/search.png) no-repeat;
+    background-size: 24px 24px;
+    background-position: 50% 50%;
+    width: 60px;
+    height: 60px;
+    display: block;
+    -webkit-transition: background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+    .search a:hover {
+      background-color: #34384a; }
+    .search a.active {
+      background-color: #34384a; }
+
+.drop {
+  padding-top: 130px;
+  top: 0;
+  width: 100%;
+  min-width: 1200px;
+  -webkit-transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+  position: absolute;
+  z-index: 1;
+  background-color: #34384a; }
+  .drop.show {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0); }
+
+div.browse-parts-tray {
+  padding: 24px 0; }
+
+div.parts-tray-col-clear {
+  clear: both; }
+
+div.parts-tray-block-col {
+  float: left;
+  margin-right: 20px; }
+
+a.parts-tray-block {
+  width: 144px;
+  height: 150px;
+  background-color: #303344;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding-top: 112px;
+  font-size: .75em;
+  color: #fff;
+  border: 1px solid #3b3d53;
+  -webkit-transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+  a.parts-tray-block:hover {
+    background-color: #292d3b;
+    color: #76b4e1;
+    border: 1px solid #545a77; }
+  a.parts-tray-block img {
+    position: absolute;
+    left: 23px;
+    top: 12px;
+    width: 100px;
+    height: 100px; }
+
+div.parts-tray-list-col {
+  float: left;
+  margin-top: 20px; }
+  div.parts-tray-list-col ul {
+    margin-bottom: 20px; }
+    div.parts-tray-list-col ul li a {
+      color: white;
+      font-size: 12px; }
+      div.parts-tray-list-col ul li a:hover {
+        color: #a9d0ec; }
+
+.parts-tray-heading {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8d8f9e; }
+
+.core-parts a {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px; }
+
+.parts-two, .parts-three {
+  margin-right: 20px; }
+
+footer {
+  border-top: 1px solid #e3e3e3;
+  background-color: white;
+  padding: 30px 0 40px 0; }
+  footer .footer-branding {
+    width: 35%;
+    float: left;
+    font-size: 12px; }
+  footer .copyright-notice {
+    background: transparent url(https://web.archive.org/web/20160706115110im_/http://cdn.pcpartpicker.com/static/forever/img/pcpp.png) no-repeat;
+    padding-top: 3em;
+    background-size: 160px 35px;
+    font-size: 14px; }
+  footer .switch-to-mobile {
+    margin: 12px 0 12px 0;
+    font-size: 14px; }
+  footer .switch-to-production {
+    margin-top: 6px; }
+  footer .pcpp-network {
+    margin-top: 24px;
+    padding: 10px 0;
+    text-align: center;
+    position: relative; }
+    footer .pcpp-network h4 {
+      margin-bottom: 14px;
+      background-color: white;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      z-index: 1; }
+    footer .pcpp-network .title-divider {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #e3e3e3;
+      position: absolute;
+      top: 21px; }
+    footer .pcpp-network li {
+      display: inline-block;
+      margin: 0 14px; }
+    footer .pcpp-network #pcpp {
+      background: transparent url(https://web.archive.org/web/20160706115110im_/http://cdn.pcpartpicker.com/static/forever/img/pcpp.png) no-repeat;
+      display: block;
+      background-size: 100px 21px;
+      width: 100px;
+      height: 21px; }
+    footer .pcpp-network #pp {
+      background: transparent url(https://web.archive.org/web/20160706115110im_/http://cdn.pcpartpicker.com/static/forever/img/pcpp.png) no-repeat;
+      display: block;
+      background-size: 108px 21px;
+      width: 108px;
+      height: 21px; }
+  footer .footer-nav {
+    float: left;
+    width: 14%;
+    margin-right: 2%; }
+    footer .footer-nav li {
+      font-size: 12px; }
+    footer .footer-nav a {
+      border-left: 1px solid #e3e3e3;
+      padding: 4px 0 4px 12px;
+      display: block;
+      color: #252835; }
+      footer .footer-nav a:hover {
+        color: #2c85c5;
+        border-left: 1px solid #252835; }
+
+.comment-sort-select {
+  margin: 20px 0px; }
+
+.comment-edit-form {
+  position: relative;
+  margin-bottom: 20px; }
+  .comment-edit-form h4 {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+    color: #252835; }
+  .comment-edit-form #to_username {
+    margin-bottom: 20px; }
+  .comment-edit-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px; }
+
+.comment-help-link, .comment_help_link {
+  float: right;
+  font-size: 0.75em; }
+
+.comment-form-error {
+  display: none;
+  color: #d44;
+  margin-top: 6px; }
+
+.comment-help-box, #cx0_help_box {
+  display: none;
+  margin-top: 20px; }
+
+.comment-help-table td {
+  padding: 4px 0px; }
+
+.comment-reply-point {
+  display: none;
+  margin-top: 10px; }
+
+.comment-insert-point {
+  display: none; }
+
+.comment-hidden {
+  margin-bottom: 8px; }
+
+.comment-hide {
+  display: none; }
+
+.comment-nesting {
+  margin-left: 56px; }
+
+.comment-item {
+  border-top: 1px solid rgba(227, 227, 227, 0.7);
+  padding: 15px 0 30px 0; }
+
+.comment-user-thumb-md {
+  display: table-cell;
+  vertical-align: top;
+  width: 48px; }
+
+.comment-user-thumb-sm {
+  display: table-cell;
+  vertical-align: top;
+  width: 36px; }
+
+.comment-content {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 12px;
+  padding-top: 14px; }
+
+.comment-nesting .comment-content {
+  padding-top: 8px; }
+
+.comment-data .comment-username {
+  color: #252835;
+  font-size: 14px;
+  font-weight: 700; }
+
+.comment-points {
+  font-weight: normal; }
+
+.comment-data-row {
+  color: #8d8f9e;
+  font-size: 0.75em; }
+  .comment-data-row a {
+    color: #8d8f9e; }
+    .comment-data-row a:hover {
+      color: #2c85c5; }
+
+.comment-data-row .comment-data {
+  margin-left: 8px;
+  padding-left: 9px;
+  border-left: solid 1px #e3e3e3; }
+
+.comment-data-row .comment-data:first-child {
+  margin-left: 0px;
+  padding-left: 0px;
+  border-left: none; }
+
+.comment-content .markdown {
+  margin: 10px 0; }
+  .comment-content .markdown ul {
+    margin-bottom: 1em; }
+    .comment-content .markdown ul li {
+      font-size: 14px;
+      line-height: 20px; }
+  .comment-content .markdown p {
+    font-size: 16px;
+    margin-bottom: 1em; }
+    .comment-content .markdown p a {
+      color: #2c85c5; }
+      .comment-content .markdown p a:hover {
+        color: #103148; }
+
+.comment-delete-confirm {
+  display: none; }
+
+.comment-user-modifier {
+  color: white;
+  text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 2px 4px !important;
+  border-radius: 2px;
+  border: 0 !important;
+  position: relative;
+  top: -1px; }
+
+.comment-modifier-staff {
+  background-color: #EE9B00; }
+
+.comment-modifier-submitter {
+  background-color: #74B289; }
+
+.comment-modifier-manufacturer {
+  background-color: #9899A6; }
+
+.comment-modifier-retailer {
+  background-color: #858AC7; }
+
+.comment-modifier-publisher {
+  background-color: #BE8777; }
+
+.comment-message {
+  word-wrap: break-word; }
+
+.comment-depth0 {
+  max-width: 635px; }
+
+.comment-depth1 {
+  max-width: 590px; }
+
+.comment-depth2 {
+  max-width: 535px; }
+
+.comment-depth3 {
+  max-width: 475px; }
+
+.comment-depth4 {
+  max-width: 420px; }
+
+.comment-depth5 {
+  max-width: 365px; }
+
+.forum .comment-depth0 {
+  max-width: 775px; }
+.forum .comment-depth1 {
+  max-width: 730px; }
+.forum .comment-depth2 {
+  max-width: 675px; }
+.forum .comment-depth3 {
+  max-width: 620px; }
+.forum .comment-depth4 {
+  max-width: 565px; }
+.forum .comment-depth5 {
+  max-width: 510px; }
+
+.search-tray {
+  padding: 30px 0;
+  margin: 0 160px; }
+  .search-tray form {
+    position: relative; }
+  .search-tray input#search_go {
+    position: absolute;
+    top: 8px;
+    right: 0; }
+  .search-tray input#search_q {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: white;
+    font-size: 24px;
+    border-bottom: 1px solid #454a62;
+    width: 100%; }
+  .search-tray ul {
+    text-align: left;
+    margin-top: 10px; }
+    .search-tray ul li {
+      padding: 10px;
+      font-size: 16px; }
+      .search-tray ul li:hover {
+        background-color: #41465c; }
+      .search-tray ul li a {
+        color: #8d8f9e; }
+      .search-tray ul li .pp_add_part {
+        float: right;
+        color: #2c85c5;
+        margin-top: -2px;
+        background-color: rgba(44, 133, 197, 0); }
+        .search-tray ul li .pp_add_part:hover {
+          background-color: #2c85c5;
+          color: white; }
+
+.search-row-selection {
+  background-color: #41465c; }
+
+.search-highlight {
+  color: white; }
+
+.search-box-header {
+  margin-top: 30px; }
+
+.search-results .part-table tr td:first-of-type {
+  vertical-align: top; }
+  .search-results .part-table tr td:first-of-type a {
+    width: 65px;
+    height: 65px;
+    border-radius: 4px;
+    padding: 4px;
+    background: white;
+    border: 1px solid #D4D4D4;
+    text-align: center;
+    display: block; }
+    .search-results .part-table tr td:first-of-type a img {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+.search-results .tdname {
+  font-size: 14px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+General
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.owl-carousel {
+  padding: 15px 0; }
+  .owl-carousel .owl-item {
+    -webkit-transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1); }
+    .owl-carousel .owl-item:hover {
+      opacity: .75; }
+
+.build-carousel,
+.part-carousel {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  /* prevent accidental selection when quickly clicking on next/prev */ }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Individual Part
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-carousel {
+  height: 128px !important;
+  width: 128px !important;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 auto !important; }
+
+.part-carousel .item {
+  display: inline-block;
+  text-align: center;
+  height: 128px !important;
+  width: 128px !important; }
+
+.part-carousel .item img {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Completed Builds & Build Guides
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.build-carousel .item {
+  width: 128px;
+  height: 128px;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block; }
+  .build-carousel .item img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+User Completed Builds
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.user-builds .image-gallery {
+  border: 1px solid #e3e3e3; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Carousel Controls
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.owl-prev, .owl-next {
+  cursor: pointer; }
+  .owl-prev:hover, .owl-next:hover {
+    opacity: .6; }
+
+.part-carousel .owl-controls .owl-buttons div,
+.build-carousel .owl-controls .owl-buttons div {
+  padding: 5px 9px;
+  position: absolute; }
+
+.part-carousel .owl-buttons i,
+.build-carousel .owl-buttons i {
+  margin-top: 2px; }
+
+.part-carousel .owl-controls .owl-buttons .owl-prev,
+.build-carousel .owl-controls .owl-buttons .owl-prev {
+  left: -45px;
+  top: 65px; }
+
+.part-carousel .owl-controls .owl-buttons .owl-next,
+.build-carousel .owl-controls .owl-buttons .owl-next {
+  right: -45px;
+  top: 65px; }
+
+.carousel-left-arrow {
+  display: block;
+  height: 18px;
+  width: 11px;
+  background: url("/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/carousel-arrows.png");
+  background-repeat: no-repeat;
+  background-size: 22px; }
+
+.carousel-right-arrow {
+  display: block;
+  width: 11px;
+  height: 18px;
+  background: url("/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/carousel-arrows.png") -11px;
+  background-repeat: no-repeat;
+  background-size: 22px; }
+
+.single-image-gallery {
+  padding: 30px 45px 20px;
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  border-bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 245px;
+  display: inline-block; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Completed Builds
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.build-list {
+  margin-bottom: 20px !important; }
+  .build-list .build {
+    padding: 1em 0;
+    border-bottom: 1px solid #dedede; }
+    .build-list .build:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .build-list .build:last-child {
+      border-bottom: 0; }
+    .build-list .build ul li {
+      font-size: 12px;
+      padding: 0; }
+    .build-list .build .title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 20px; }
+      .build-list .build .title a:hover {
+        color: #2c85c5; }
+      .build-list .build .title .price {
+        font-size: 14px;
+        float: right;
+        text-align: right;
+        font-weight: 400;
+        color: #2c85c5; }
+        .build-list .build .title .price:hover {
+          color: #103148; }
+    .build-list .build .title a {
+      color: #252835; }
+    .build-list .build .image {
+      float: left;
+      margin-right: 1em;
+      width: 64px;
+      height: 64px;
+      border-radius: 4px;
+      padding: 4px;
+      background: white;
+      border: 1px solid #D4D4D4;
+      text-align: center;
+      margin-top: -4px; }
+      .build-list .build .image img {
+        max-width: 100%;
+        max-height: 100%;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    .build-list .build .owner {
+      color: #8d8f9e;
+      margin-top: 6px; }
+      .build-list .build .owner span {
+        float: right; }
+    .build-list .build .comments, .build-list .build .votes {
+      margin-left: 1.5em;
+      text-align: right;
+      color: #252835;
+      padding-left: 14px; }
+      .build-list .build .comments:hover, .build-list .build .votes:hover {
+        color: #2c85c5; }
+    .build-list .build .votes {
+      background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/up-arrow.png) no-repeat;
+      background-size: 8px 10px;
+      background-position: 0px 3px; }
+    .build-list .build .comments {
+      background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/comment-icon.png) no-repeat;
+      background-size: 9px 9px;
+      background-position: 0px 4px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+New & Edit Completed Build
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.edit-build .hero-tab {
+  background-color: #F77C0C; }
+.edit-build .right-column h4 {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #8d8f9e;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 16px 0 2px 0; }
+.edit-build .build-carousel-add-images {
+  text-align: center;
+  margin: 30px 0; }
+.edit-build .build-carousel-edit-images {
+  text-align: center;
+  margin-bottom: 15px; }
+.edit-build .details h4 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  color: #252835;
+  margin-bottom: 5px; }
+.edit-build .details .title {
+  margin-bottom: 5px; }
+.edit-build .details .user-build-title, .edit-build .details .user-build-description {
+  width: 100%; }
+.edit-build .details .user-build-content {
+  margin-top: 20px;
+  position: relative; }
+.edit-build .details table.user-build-data-input td.data-input {
+  white-space: nowrap; }
+.edit-build .details table.user-build-data-input td.data-input input[type="text"] {
+  width: 100px;
+  text-align: right; }
+.edit-build .details .part-review {
+  display: none;
+  position: relative;
+  margin: 10px 0; }
+  .edit-build .details .part-review .title {
+    font-family: "Source Sans Pro", sans-serif;
+    color: #8d8f9e;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px; }
+  .edit-build .details .part-review .part-review-description-content {
+    display: none; }
+  .edit-build .details .part-review .part-review-scores {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 120px; }
+  .edit-build .details .part-review .part-review-description {
+    margin-left: 130px; }
+  .edit-build .details .part-review .part-review-submit-row {
+    text-align: center;
+    margin: 10px 0 14px 0; }
+  .edit-build .details .part-review .part-review-submit-error {
+    font-weight: 700;
+    margin: 0 auto 12px;
+    color: #d12d43; }
+.edit-build .details .part-review-actions {
+  text-align: right;
+  clear: both; }
+  .edit-build .details .part-review-actions a {
+    margin-left: 20px; }
+.edit-build .details ul.stars li.part-review-editable {
+  cursor: pointer; }
+.edit-build .part-details h4 {
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #8d8f9e;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px; }
+.edit-build .image-list .item {
+  padding: 8px;
+  line-height: 0;
+  border: solid 1px #e3e3e3;
+  background-color: white;
+  cursor: move;
+  box-shadow: 0px;
+  -webkit-transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: -moz-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: -o-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 4px;
+  padding: 10px 10px 10px 30px !important;
+  background: white url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/drag-handle.png) no-repeat;
+  background-size: 6px 9px;
+  background-position: 12px 50%;
+  margin-bottom: 10px; }
+  .edit-build .image-list .item img {
+    width: 165px;
+    height: 165px; }
+  .edit-build .image-list .item .delete {
+    position: absolute;
+    right: 20px;
+    top: 46%; }
+    .edit-build .image-list .item .delete a {
+      width: 24px;
+      height: 24px;
+      background-size: 14px;
+      background-position: 5px 5px; }
+
+.user-build-image-uploads input[type='file'] {
+  margin-bottom: 20px; }
+
+.edit-part .image-list .item {
+  padding: 8px;
+  line-height: 0;
+  border: solid 1px #e3e3e3;
+  background-color: white;
+  cursor: move;
+  box-shadow: 0px;
+  -webkit-transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: -moz-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: -o-transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.65s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 4px;
+  padding: 10px 10px 10px 30px !important;
+  background: white url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/drag-handle.png) no-repeat;
+  background-size: 6px 9px;
+  background-position: 12px 50%;
+  margin-bottom: 10px; }
+  .edit-part .image-list .item img {
+    width: 165px;
+    height: 165px; }
+  .edit-part .image-list .item .delete {
+    position: absolute;
+    right: 20px;
+    top: 46%; }
+    .edit-part .image-list .item .delete a {
+      width: 24px;
+      height: 24px;
+      background-size: 14px;
+      background-position: 5px 5px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Default Part List
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-list table tr td {
+  padding: 8px; }
+.part-list .component-type, .part-list .component-type a {
+  font-size: 12px;
+  font-weight: 700; }
+.part-list .component-image a {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  padding: 4px;
+  background: white;
+  border: 1px solid #D4D4D4;
+  text-align: center;
+  display: block; }
+  .part-list .component-image a img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+.part-list .component-name .parametric-selection {
+  font-size: 12px;
+  padding: .375em 0; }
+  .part-list .component-name .parametric-selection ul {
+    margin-top: 2px; }
+  .part-list .component-name .parametric-selection li {
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+    margin-left: 20px; }
+    .part-list .component-name .parametric-selection li:before {
+      content: "● ";
+      font-size: 8px;
+      position: absolute;
+      left: -12px;
+      color: #8d8f9e;
+      display: inline; }
+    .part-list .component-name .parametric-selection li a {
+      color: #252835; }
+      .part-list .component-name .parametric-selection li a:hover {
+        color: #2c85c5; }
+  .part-list .component-name .parametric-selection a {
+    color: #2c85c5; }
+    .part-list .component-name .parametric-selection a:hover {
+      color: #103148; }
+.part-list .component-name a {
+  color: #252835;
+  font-weight: 700;
+  line-height: 14px; }
+  .part-list .component-name a:hover {
+    color: #2c85c5; }
+.part-list .price-settings a.change-price {
+  display: block; }
+  .part-list .price-settings a.change-price span {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/settings.png) no-repeat;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-size: 12px; }
+    .part-list .price-settings a.change-price span.no-custom-price {
+      opacity: .4; }
+      .part-list .price-settings a.change-price span.no-custom-price:hover {
+        opacity: 1; }
+.part-list .price-settings a.lock-parametric {
+  display: block; }
+  .part-list .price-settings a.lock-parametric span {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/lock-icon.png) no-repeat;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-size: 12px; }
+
+.add-another td, .price-modifier td {
+  padding-top: 0; }
+
+/*Notes for custom parts*/
+#add_custom_part_buy, #add_custom_part_own {
+  display: none; }
+
+.est-wattage {
+  background-color: #f7f7f7;
+  border: 1px solid #cacaca;
+  padding: 10px 2px;
+  text-align: center; }
+  .est-wattage h4 {
+    margin-top: 0; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Part List - Left Column
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-list {
+  margin-bottom: 30px; }
+  .part-list h2 {
+    margin-bottom: 0px; }
+  .part-list .rating .stars li {
+    border: 0; }
+  .part-list .parts li {
+    padding-top: .5em;
+    font-size: 12px;
+    border-bottom: 1px solid #dedede; }
+  .part-list .parts .image {
+    float: left;
+    margin-right: 1em;
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    padding: 4px;
+    background: white;
+    border: 1px solid #D4D4D4;
+    text-align: center; }
+    .part-list .parts .image img {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  .part-list .parts .name {
+    color: #252835;
+    font-size: 12px;
+    display: block;
+    font-weight: 700;
+    line-height: 15px; }
+  .part-list .parts a.name:hover {
+    color: #2c85c5; }
+  .part-list .parts .details {
+    background: none;
+    padding-bottom: 5px; }
+    .part-list .parts .details:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .part-list .parts .price {
+    float: right;
+    padding-left: 15px;
+    text-align: right;
+    font-weight: 400;
+    font-size: 12px;
+    color: #252835; }
+  .part-list .parts .merchant {
+    max-width: 65px; }
+  .part-list .parts .partlist-total {
+    border-bottom: 0; }
+  .part-list .part-list-totals {
+    text-align: right; }
+    .part-list .part-list-totals td {
+      font-size: 14px; }
+  .part-list .total-price {
+    font-weight: 700; }
+  .part-list .part-list-compat-wattage {
+    overflow: hidden;
+    padding: 5px 0; }
+    .part-list .part-list-compat-wattage .compat-message {
+      float: left;
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      margin: 0; }
+      .part-list .part-list-compat-wattage .compat-message.compat-message-ok span {
+        color: #3B9E11;
+        font-weight: 700;
+        background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/images/good-compatibility.png) no-repeat;
+        background-size: 11px 10px;
+        background-position: 0px 4px;
+        padding-left: 15px; }
+      .part-list .part-list-compat-wattage .compat-message.compat-message-note span {
+        color: #252835;
+        font-weight: 700;
+        background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/info.png) no-repeat;
+        background-size: 15px 15px;
+        background-position: 0px 2px;
+        padding-left: 22px; }
+      .part-list .part-list-compat-wattage .compat-message.compat-message-warning {
+        color: #3B9E11;
+        font-weight: 700;
+        background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/warning.png) no-repeat;
+        background-size: 15px 14px;
+        background-position: 0px 4px;
+        padding-left: 21px; }
+    .part-list .part-list-compat-wattage .est-wattage {
+      display: inline-block;
+      float: right;
+      text-align: right;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      line-height: 1.75em;
+      font-size: 14px;
+      background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/bolt.png) no-repeat;
+      background-size: 8px 12px;
+      background-position: 0px 6px;
+      padding-left: 13px; }
+      .part-list .part-list-compat-wattage .est-wattage a {
+        font-weight: 700; }
+  .part-list .price-totals {
+    padding-top: 6px; }
+    .part-list .price-totals .partlist-subtotal .label, .part-list .price-totals .partlist-total .label, .part-list .price-totals .partlist-combo .label, .part-list .price-totals .partlist-rebate .label {
+      font-weight: 400;
+      text-align: left; }
+    .part-list .price-totals .partlist-subtotal .price, .part-list .price-totals .partlist-total .price, .part-list .price-totals .partlist-combo .price, .part-list .price-totals .partlist-rebate .price {
+      float: right;
+      padding-left: 20px;
+      text-align: right;
+      font-weight: 400;
+      font-size: 12px;
+      color: #252835; }
+    .part-list .price-totals .partlist-total p {
+      font-size: 14px;
+      line-height: 16px; }
+    .part-list .price-totals .partlist-total .price {
+      font-weight: 700;
+      font-size: 14px !important; }
+
+.promo-box {
+  text-align: right;
+  padding-top: 0; }
+  .promo-box .promo-text {
+    text-align: center;
+    background-color: #e4f4cd;
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: 1px solid #bed2a2;
+    display: inline-block; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Price Breakdown by Merchant
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Build Guides
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.build-guides-hero {
+  background: #6a6a73 url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/build-guides-bkgd.jpg) no-repeat;
+  background-size: cover;
+  background-position: 50% 50%; }
+
+.build-guides {
+  color: white;
+  padding: 40px 0; }
+  .build-guides:after, .build-guides:before {
+    content: "";
+    display: table; }
+  .build-guides:after {
+    clear: both; }
+  .build-guides .about-guides, .build-guides .guide-list, .build-guides .guide-cover {
+    float: left; }
+  .build-guides h2 {
+    border: 0;
+    color: white;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    padding-bottom: 0; }
+  .build-guides a {
+    color: #a9d0ec; }
+    .build-guides a:hover {
+      color: #d2e6f5; }
+  .build-guides .btn-lgs {
+    color: white;
+    background-color: #4d9dd7; }
+    .build-guides .btn-lgs:hover {
+      background-color: #eea900;
+      color: white; }
+  .build-guides p {
+    margin-bottom: 1.75em;
+    color: #B6B6BD; }
+  .build-guides .guide {
+    border-bottom: 1px solid rgba(158, 160, 175, 0.2); }
+    .build-guides .guide .price {
+      float: right;
+      font-weight: 400;
+      color: #a9d0ec;
+      margin-left: 20px; }
+  .build-guides .title a, .build-guides .guide-preview .title a, .build-guides a.comments, .build-guides a.votes {
+    color: white; }
+    .build-guides .title a:hover, .build-guides .guide-preview .title a:hover, .build-guides a.comments:hover, .build-guides a.votes:hover {
+      color: #ffda45; }
+  .build-guides .votes {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/up-arrow.png) no-repeat;
+    background-size: 11px 13px; }
+  .build-guides .comments {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/comment-icon.png) no-repeat;
+    background-size: 12px 12px; }
+
+.about-guides {
+  width: 32%; }
+
+.guide-cover {
+  width: 32%;
+  background-color: #937A5D;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.07);
+  padding: 3em 2em;
+  margin-left: 2em;
+  position: relative;
+  background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/pcpp-circuit.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 150px 181px; }
+  .guide-cover .cover-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0), 0px 12px 20px transparent;
+    -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255, 255, 255, 0.15)), color-stop(50%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    /* IE10+ */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33ffffff', endColorstr='#00ffffff',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
+    background-repeat: no-repeat;
+    background-position: 0 0; }
+    .guide-cover .cover-link:hover {
+      box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.15), 0px 16px 36px rgba(0, 0, 0, 0.5);
+      background-repeat: no-repeat;
+      background-position: -80px -80px; }
+  .guide-cover h4 {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    margin: 0 0 1em 0;
+    font-size: 12px; }
+  .guide-cover .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.125;
+    padding: 0;
+    margin-bottom: .75em; }
+  .guide-cover .component {
+    font-size: 14px;
+    color: #dcd2c7;
+    padding: 3px 0; }
+  .guide-cover .price {
+    margin-top: 1em; }
+    .guide-cover .price a {
+      font-size: 18px;
+      color: white; }
+      .guide-cover .price a:hover {
+        color: #ffda45; }
+  .guide-cover .user-avatar {
+    display: inline;
+    margin-right: 10px; }
+    .guide-cover .user-avatar img {
+      border: 2px solid white; }
+  .guide-cover .owner {
+    font-size: 14px;
+    margin-bottom: 30px;
+    display: inline-block;
+    vertical-align: middle; }
+    .guide-cover .owner a {
+      color: #ffdf5f; }
+  .guide-cover .comments, .guide-cover .votes {
+    margin-top: 1em;
+    float: left;
+    display: block;
+    font-size: 18px;
+    text-align: right;
+    padding-left: 20px; }
+    .guide-cover .comments a, .guide-cover .votes a {
+      color: white; }
+  .guide-cover .votes {
+    margin-left: 1.25em;
+    background-position: 0px 4px;
+    background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/up-arrow-guide.png); }
+  .guide-cover .comments {
+    padding-left: 24px;
+    background-position: 0px 5px;
+    background-image: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/comment-icon-guide.png); }
+
+.guide-list {
+  width: 33%;
+  padding-left: 3em;
+  margin-top: .375em; }
+  .guide-list .guide {
+    padding: 1.125em .5em; }
+    .guide-list .guide:last-child {
+      border-bottom: 0; }
+    .guide-list .guide ul {
+      overflow: hidden; }
+      .guide-list .guide ul li {
+        font-size: 12px; }
+    .guide-list .guide .title {
+      font-weight: 700;
+      font-size: 16px;
+      padding: 0 0 .375em 0; }
+    .guide-list .guide .component {
+      color: #B6B6BD; }
+    .guide-list .guide .owner {
+      margin-top: 6px; }
+      .guide-list .guide .owner span {
+        float: right; }
+    .guide-list .guide .comments, .guide-list .guide .votes {
+      margin-left: 1.75em;
+      text-align: right; }
+    .guide-list .guide .votes {
+      background-size: 9px 11px;
+      background-position: 0px 1px;
+      padding-left: 16px; }
+    .guide-list .guide .comments {
+      background-size: 10px 10px;
+      background-position: 0px 2px;
+      padding-left: 19px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Live Stream Feature
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.live-stream-feature .live-stream-content, .live-stream-feature .twitch-embed {
+  float: left; }
+.live-stream-feature .live-stream-content {
+  width: 34%; }
+  .live-stream-feature .live-stream-content p {
+    font-size: 14px; }
+.live-stream-feature .twitch-embed {
+  width: 66%;
+  text-align: right; }
+  .live-stream-feature .twitch-embed iframe {
+    box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.5); }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Completed Builds
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.featured-build {
+  text-align: center;
+  background-color: white;
+  margin-bottom: 1em;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); }
+  .featured-build .build {
+    border: 0; }
+  .featured-build li {
+    padding: 0; }
+  .featured-build h4 {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #eea900;
+    margin: 0;
+    padding: .75em; }
+  .featured-build .image-triple-group {
+    margin-bottom: 18px;
+    margin-right: 0;
+    width: 100%;
+    overflow: hidden; }
+    .featured-build .image-triple-group .image-triple-group-left {
+      width: 66.66667%;
+      border-right: 1px solid white; }
+    .featured-build .image-triple-group .image-triple-group-right {
+      width: 33.33333%;
+      border-left: 1px solid white;
+      float: right; }
+      .featured-build .image-triple-group .image-triple-group-right .image-two, .featured-build .image-triple-group .image-triple-group-right .image-three {
+        max-width: 100%; }
+      .featured-build .image-triple-group .image-triple-group-right .image-two {
+        border-bottom: 2px solid white; }
+  .featured-build .title {
+    margin: .75em 0 .25em 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 0 1em; }
+    .featured-build .title a {
+      color: #252835; }
+      .featured-build .title a:hover {
+        color: #2c85c5; }
+  .featured-build .owner {
+    color: #8d8f9e;
+    margin-bottom: 1.25em;
+    font-size: 12px; }
+  .featured-build .component {
+    font-size: 14px;
+    padding: .125em .5em; }
+  .featured-build .comments, .featured-build .votes {
+    display: inline-block;
+    font-size: 18px;
+    padding-left: 20px; }
+    .featured-build .comments a, .featured-build .votes a {
+      color: #252835; }
+      .featured-build .comments a:hover, .featured-build .votes a:hover {
+        color: #2c85c5; }
+  .featured-build .votes {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/up-arrow.png) no-repeat;
+    background-size: 11px 13px;
+    background-position: 0px 1px; }
+  .featured-build .comments {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/comment-icon.png) no-repeat;
+    background-size: 12px 12px;
+    background-position: 0px 2px; }
+  .featured-build .price {
+    margin: 1.25em 2em 1.5em;
+    display: inline-block;
+    font-size: 18px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Blog Posts
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.posts:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.blog-post {
+  max-width: 325px;
+  height: 540px;
+  float: left;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  background-color: white;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative; }
+  .blog-post:nth-child(odd) {
+    margin-right: 1em; }
+  .blog-post:nth-child(even) {
+    margin-left: 1em; }
+  .blog-post .post-image {
+    height: 182px; }
+    .blog-post .post-image .youtube-image {
+      margin-top: -31px; }
+  .blog-post .details {
+    background: none;
+    padding: 24px 30px; }
+    .blog-post .details .markdown p {
+      font-size: 15px; }
+  .blog-post .title {
+    margin: 0 0 .25em 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px; }
+    .blog-post .title a {
+      color: #252835; }
+      .blog-post .title a:hover {
+        color: #2c85c5; }
+  .blog-post .meta {
+    font-size: 12px;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color: #8d8f9e;
+    margin: 0 0 1em; }
+  .blog-post .post-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fcfcfc;
+    border-top: 1px solid #efefef; }
+  .blog-post .comments {
+    text-align: center;
+    width: 50%;
+    float: left;
+    padding: 12px 0; }
+    .blog-post .comments a {
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px !important;
+      color: #252835;
+      background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/comment-icon.png) no-repeat;
+      background-size: 12px 12px;
+      padding-left: 20px;
+      background-position: 0px 4px; }
+      .blog-post .comments a:hover {
+        color: #2c85c5; }
+  .blog-post .twitter-share {
+    width: 50%;
+    text-align: center;
+    float: left;
+    padding: 12px 0; }
+    .blog-post .twitter-share .twitter-share-button {
+      vertical-align: middle; }
+
+.more-blog-posts {
+  text-align: center; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Price Drops
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.price-drop-list {
+  margin-bottom: 1em; }
+  .price-drop-list li {
+    padding: 1.25em 0; }
+    .price-drop-list li:last-child {
+      border-bottom: 0; }
+  .price-drop-list .image {
+    float: left;
+    margin-right: 1em;
+    max-width: 50px; }
+  .price-drop-list .title {
+    font-weight: 700;
+    color: #252835; }
+    .price-drop-list .title:hover {
+      color: #2c85c5; }
+  .price-drop-list .details {
+    background: none; }
+  .price-drop-list .prices {
+    float: right;
+    padding-left: 1em;
+    text-align: right; }
+  .price-drop-list .old-price {
+    display: block;
+    text-decoration: line-through;
+    color: #8d8f9e; }
+  .price-drop-list .merchant {
+    max-width: 65px; }
+  .price-drop-list .savings {
+    float: right; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Hero
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part .hero {
+  background: #4E5EA6;
+  text-align: center; }
+  .part .hero h4 {
+    opacity: 1;
+    font-weight: 700;
+    font-size: 14px; }
+  .part .hero h1 {
+    opacity: 1; }
+  .part .hero h4, .part .hero .rating p {
+    color: #95A1D6; }
+  .part .hero .rating p {
+    margin-bottom: 0;
+    opacity: 1; }
+  .part .hero .rating .stars .full-star {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/full-star.png) no-repeat center center;
+    background-size: 32px; }
+  .part .hero .rating .stars .half-star {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/half-star.png) no-repeat center center;
+    background-size: 32px; }
+  .part .hero .rating .stars .empty-star {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/empty-star.png) no-repeat center center;
+    background-size: 32px; }
+  .part .hero .rating .stars li {
+    opacity: 1;
+    width: 32px;
+    height: 32px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Actions
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-action-box-add select {
+  margin-left: 10px; }
+.part-action-box-add a {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 14px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Product Options
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.product-options h4 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 16px;
+  margin-bottom: 10px; }
+  .product-options h4 span {
+    font-weight: bold;
+    color: #252835; }
+.product-options .option-block {
+  margin-bottom: 30px; }
+  .product-options .option-block li {
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: 7px; }
+    .product-options .option-block li a {
+      font-size: 12px;
+      font-weight: bold;
+      padding: 5px 10px 4px;
+      background-color: #f7f7f7;
+      border: 1px solid #8bc0e5;
+      border-radius: 3px; }
+      .product-options .option-block li a:hover {
+        background-color: white;
+        border: 1px solid #252835; }
+  .product-options .option-block .selected-option a {
+    background-color: white;
+    border: 1px solid #252835;
+    color: #252835; }
+  .product-options .option-block .unavailable-option a {
+    color: #a9aab5;
+    background-color: #ededed;
+    border: 1px solid #d2d3d9; }
+    .product-options .option-block .unavailable-option a:hover {
+      color: #252835; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Prices
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.prices table thead .th-merchant {
+  padding-left: 20px; }
+.prices table thead .th-tax, .prices table thead .th-total {
+  text-align: right; }
+.prices table thead .th-total {
+  padding-right: 20px; }
+.prices table tbody tr {
+  background-color: transparent; }
+  .prices table tbody tr td {
+    padding: 8px 5px;
+    font-size: 14px; }
+.prices table .merchant {
+  text-align: left;
+  line-height: 0;
+  width: 25%;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .prices table .merchant img {
+    max-height: 28px; }
+.prices table .has-note, .prices table .has-promo {
+  border: 0; }
+  .prices table .has-note td, .prices table .has-promo td {
+    padding-bottom: 0; }
+.prices table .note td {
+  text-align: right;
+  padding-top: 0;
+  padding-right: 17px;
+  font-size: 10px;
+  color: #8d8f9e; }
+.prices table .promo {
+  text-align: center; }
+.prices table .promo-details td {
+  text-align: right; }
+  .prices table .promo-details td div {
+    font-size: 12px;
+    text-align: center;
+    background-color: #e4f4cd;
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: 1px solid #bed2a2;
+    display: inline-block;
+    margin-right: 12px; }
+.prices table .base, .prices table .promo, .prices table .tax {
+  width: 12%; }
+.prices table .shipping {
+  width: 20%;
+  text-align: center;
+  font-size: 12px; }
+  .prices table .shipping img {
+    max-width: 42px; }
+.prices table .tax, .prices table .total {
+  text-align: right; }
+.prices table .stock {
+  font-weight: 700;
+  font-size: 12px; }
+.prices table .out-of-stock {
+  color: #C9683E;
+  font-weight: 400;
+  font-size: 12px;
+  color: #8d8f9e; }
+.prices table .in-stock {
+  color: #50B325; }
+.prices table .preorder {
+  color: #252835; }
+.prices table .total {
+  width: 20%;
+  font-size: 16px;
+  position: relative;
+  font-weight: 700; }
+  .prices table .total a {
+    margin-right: 12px; }
+  .prices table .total span {
+    position: absolute;
+    right: 6px; }
+.prices .email-alert {
+  text-align: center;
+  margin-top: 1em; }
+  .prices .email-alert input[type=text] {
+    width: 60px;
+    margin-right: .5em; }
+  .prices .email-alert p {
+    font-size: 14px;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    margin: 0; }
+    .prices .email-alert p.note {
+      font-size: 12px;
+      color: #8d8f9e; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Price History
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+span.header-widget-right {
+  float: right;
+  font-size: .625em;
+  color: #242631; }
+
+#price_history_tooltip {
+  background-color: white;
+  width: 200px;
+  display: none;
+  box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  background-color: #252835;
+  padding: 0 10px 10px 10px; }
+  #price_history_tooltip table {
+    color: #8d8f9e;
+    margin-bottom: 0; }
+    #price_history_tooltip table tr {
+      border-top: 5px solid #252835;
+      border-bottom: 5px solid #252835;
+      background-color: transparent; }
+    #price_history_tooltip table .price_history_lowest {
+      background-color: #41465c;
+      font-weight: 400;
+      color: white; }
+    #price_history_tooltip table tr td:last-child {
+      color: white;
+      text-align: right; }
+
+#price_history_tooltip_date {
+  text-align: center;
+  font-size: 0.75em;
+  margin: 0;
+  color: white;
+  padding-top: .5em;
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+
+#price_history {
+  height: 300px;
+  margin-top: 25px; }
+
+.price-history-legend-item {
+  font-size: .625em;
+  display: inline-block;
+  margin-right: 24px;
+  margin-bottom: 10px; }
+
+.price-history-legend-color {
+  display: inline-block;
+  width: 13px;
+  height: 9px;
+  margin-right: 5px;
+  margin-bottom: -1px; }
+
+div.tickLabel {
+  font-size: .875em;
+  color: #242634; }
+
+td.price_history_merchant_toprow {
+  border-top: none; }
+
+td.price_history_price {
+  text-align: right; }
+
+tr.price_history_lowest {
+  font-weight: bold;
+  background-color: #ddf; }
+
+.price-history-legend-label {
+  border: solid 1px red; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Combo Deals
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.combo-deals .combo-deal {
+  margin-bottom: 60px; }
+.combo-deals table .image {
+  width: 65px;
+  height: 65px;
+  border-radius: 4px;
+  padding: 4px;
+  background: white;
+  border: 1px solid #D4D4D4;
+  text-align: center; }
+  .combo-deals table .image img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+.combo-deals table tbody tr {
+  background-color: transparent; }
+.combo-deals .combo-list .combo {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e3e3e3; }
+  .combo-deals .combo-list .combo .image {
+    float: left;
+    margin-right: 20px; }
+    .combo-deals .combo-list .combo .image a {
+      width: 65px;
+      height: 65px;
+      border-radius: 4px;
+      padding: 4px;
+      background: white;
+      border: 1px solid #D4D4D4;
+      text-align: center;
+      display: inline-block; }
+      .combo-deals .combo-list .combo .image a img {
+        max-width: 100%;
+        max-height: 100%;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+      .combo-deals .combo-list .combo .image a:last-of-type {
+        position: relative;
+        margin-left: 26px; }
+        .combo-deals .combo-list .combo .image a:last-of-type:before {
+          content: "+";
+          position: absolute;
+          left: -20px;
+          top: 18px;
+          font-size: 22px;
+          color: #8d8f9e; }
+  .combo-deals .combo-list .combo:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .combo-deals .combo-list .combo .combo-parts {
+    padding-top: 11px; }
+    .combo-deals .combo-list .combo .combo-parts .title {
+      color: #252835;
+      font-weight: 700;
+      font-size: 14px; }
+      .combo-deals .combo-list .combo .combo-parts .title:hover {
+        color: #2c85c5; }
+      .combo-deals .combo-list .combo .combo-parts .title:after {
+        content: "\A";
+        white-space: pre; }
+    .combo-deals .combo-list .combo .combo-parts .add-to-combo-list {
+      font-size: 12px;
+      font-weight: 700;
+      color: #2c85c5; }
+      .combo-deals .combo-list .combo .combo-parts .add-to-combo-list:hover {
+        color: #103148; }
+  .combo-deals .combo-list .combo .prices {
+    float: right;
+    text-align: right; }
+    .combo-deals .combo-list .combo .prices span {
+      display: block; }
+      .combo-deals .combo-list .combo .prices span.total {
+        text-decoration: line-through;
+        color: #8d8f9e; }
+      .combo-deals .combo-list .combo .prices span.combo-price {
+        font-weight: 700; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Compare Page
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-compare .part-table img {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  padding: 4px;
+  background: white;
+  border: 1px solid #D4D4D4;
+  text-align: center; }
+  .part-compare .part-table img img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+.part-compare .part-table .sd_value a {
+  font-weight: 700;
+  font-size: 16px;
+  color: #252835; }
+  .part-compare .part-table .sd_value a:hover {
+    color: #2c85c5; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Left Column
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-index .left-column li {
+  font-size: 12px; }
+.part-index .left-column .current-partlist .filter-list, .part-index .left-column .current-partlist .part-list {
+  background-color: #f7f7f7;
+  padding: 8px;
+  border: 1px solid #cacaca; }
+.part-index .left-column .current-partlist h4 {
+  margin-top: 8px; }
+.part-index .left-column .current-partlist .total-parts, .part-index .left-column .current-partlist .total-price, .part-index .left-column .current-partlist .est-wattage {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px; }
+.part-index .left-column .current-partlist .total-parts, .part-index .left-column .current-partlist .total-price {
+  display: inline-block; }
+.part-index .left-column .current-partlist .total-parts {
+  width: 30%; }
+.part-index .left-column .current-partlist .est-wattage {
+  text-align: left;
+  border: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  background-image: none; }
+  .part-index .left-column .current-partlist .est-wattage h4, .part-index .left-column .current-partlist .est-wattage div {
+    padding: 0; }
+.part-index .left-column .current-partlist .part-list {
+  border-top: 0; }
+
+.parametric-filter div {
+  margin-bottom: 15px; }
+
+#price_settings_local_location_show {
+  position: relative; }
+
+#price_settings_local_location_edit_link {
+  position: absolute;
+  right: 0px;
+  bottom: 0px; }
+
+.filter-row-all {
+  font-weight: bold; }
+
+.obj-filters .obj-filter {
+  border-bottom: solid 1px #dedede;
+  margin-bottom: 15px;
+  padding-bottom: 15px; }
+.obj-filters .obj-filter:last-child {
+  border-bottom: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px; }
+
+.obj-filter {
+  font-size: 12px; }
+  .obj-filter .title {
+    text-transform: uppercase;
+    color: #8d8f9e;
+    margin-bottom: 6px; }
+  .obj-filter li {
+    padding: 0px; }
+  .obj-filter input[type='checkbox'] {
+    margin-right: 4px; }
+  .obj-filter td {
+    font-size: 12px; }
+  .obj-filter .rating {
+    display: inline-block; }
+
+.obj-filter-dualslide {
+  margin: 0px 10px 6px 10px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Hero
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-index .hero {
+  background-color: #4E5EA6; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Detailed List (Table)
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-category-table-header {
+  position: relative; }
+
+.part-category-table-search {
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+  bottom: 15px; }
+  .part-category-table-search input {
+    margin-left: 6px; }
+
+.part-category-compat-compare {
+  font-size: 12px;
+  margin-bottom: 30px;
+  overflow: hidden; }
+
+.part-category-parametric {
+  display: inline-block;
+  float: right;
+  margin-left: 30px; }
+
+.part-category-compare {
+  display: inline-block;
+  float: left;
+  margin-right: 30px; }
+
+.part-table {
+  position: relative; }
+  .part-table thead th {
+    text-align: center !important;
+    padding: 0px 6px 12px 6px;
+    border: 1px solid #e3e3e3;
+    border-top: 0; }
+    .part-table thead th:first-child {
+      border-left: 0; }
+    .part-table thead th:last-child {
+      border-right: 0; }
+  .part-table thead .tablesorter-header {
+    background: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/sorter-arrows-2.png) no-repeat;
+    background-size: 15px 9px;
+    background-position: center bottom;
+    cursor: pointer; }
+    .part-table thead .tablesorter-header:hover {
+      border-bottom: 1px solid #8d8f9e; }
+  .part-table thead .tablesorter-headerAsc {
+    background: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/sorter-arrow-ascend-2.png) no-repeat;
+    background-size: 15px 9px;
+    background-position: center bottom;
+    color: #252835; }
+  .part-table thead .tablesorter-headerDesc {
+    background: url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/sorter-arrow-descend-2.png) no-repeat;
+    background-size: 15px 9px;
+    background-position: center bottom;
+    color: #252835; }
+  .part-table thead .tablesorter-headerAsc, .part-table thead .tablesorter-headerDesc {
+    border-bottom: 1px solid #8d8f9e; }
+    .part-table thead .tablesorter-headerAsc:hover, .part-table thead .tablesorter-headerDesc:hover {
+      border-bottom: 1px solid #8d8f9e; }
+  .part-table thead .sorter-false {
+    cursor: default;
+    background-image: none; }
+    .part-table thead .sorter-false:hover {
+      border-bottom: 1px solid #e3e3e3; }
+  .part-table td input.px {
+    margin-right: 8px; }
+  .part-table td img.feat {
+    margin-right: 8px; }
+  .part-table .fav-part {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/td_favorite.png) no-repeat;
+    background-size: 14px 14px;
+    background-position: 27px 9px;
+    width: 46px; }
+  .part-table td.combo-available {
+    background: transparent url(../images/combo-icon.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    background-position: 14px 50%; }
+
+#category_list_content .image {
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  padding: 4px;
+  background: white;
+  border: 1px solid #D4D4D4;
+  text-align: center; }
+  #category_list_content .image img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+#category_list_content .title {
+  font-weight: 700;
+  font-size: 22px; }
+  #category_list_content .title a {
+    color: #252835; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+List View
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-thumb-list li {
+  padding: 1em 0;
+  border-bottom: 1px solid #dedede; }
+  .part-thumb-list li:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .part-thumb-list li:last-child {
+    border-bottom: 0; }
+  .part-thumb-list li .select {
+    display: inline-block;
+    float: left;
+    margin-top: 37px; }
+  .part-thumb-list li .image {
+    float: left;
+    margin: 0 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    padding: 4px;
+    background: white;
+    border: 1px solid #D4D4D4;
+    text-align: center; }
+    .part-thumb-list li .image img {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  .part-thumb-list li .price-rating-add {
+    float: right;
+    text-align: right; }
+    .part-thumb-list li .price-rating-add .price {
+      font-size: 18px;
+      font-weight: 700;
+      color: #252835; }
+    .part-thumb-list li .price-rating-add .inline-rating-sm {
+      padding: 5px 0;
+      font-size: 16px; }
+      .part-thumb-list li .price-rating-add .inline-rating-sm .rating {
+        vertical-align: middle; }
+    .part-thumb-list li .price-rating-add .stars li {
+      border: 0;
+      width: 18px;
+      height: 18px;
+      background-size: 18px;
+      padding: 0; }
+    .part-thumb-list li .price-rating-add .btn-lgs {
+      padding: .75em 1.25em; }
+  .part-thumb-list li .title {
+    font-size: 20px;
+    font-weight: 700; }
+    .part-thumb-list li .title a {
+      color: #252835; }
+      .part-thumb-list li .title a:hover {
+        color: #2c85c5; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Modals
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+#price_dialog .price-manual-options input {
+  width: auto; }
+
+.system-build .hero {
+  background-color: #54547B;
+  color: white; }
+.system-build .action-bar-wrapper {
+  background-color: #ededed;
+  background-image: none;
+  border-bottom: 1px solid #e3e3e3; }
+  .system-build .action-bar-wrapper .full-column {
+    padding: 15px 0; }
+.system-build .part-list-action-bar {
+  background-color: #f7f7f7;
+  border: 1px solid #D4D4D4;
+  font-size: 14px;
+  overflow: hidden; }
+  .system-build .part-list-action-bar .part-list-empty-tip {
+    padding: 16px 20px;
+    text-align: center; }
+    .system-build .part-list-action-bar .part-list-empty-tip a {
+      font-weight: 700; }
+  .system-build .part-list-action-bar .permalink-markup, .system-build .part-list-action-bar .social-actions {
+    display: inline-block; }
+  .system-build .part-list-action-bar .permalink-markup-social {
+    float: left; }
+    .system-build .part-list-action-bar .permalink-markup-social .part-list-permalink {
+      float: left;
+      position: relative;
+      top: 9px;
+      margin-left: 14px; }
+      .system-build .part-list-action-bar .permalink-markup-social .part-list-permalink input {
+        width: 300px;
+        margin-left: 5px; }
+    .system-build .part-list-action-bar .permalink-markup-social .markup-block {
+      float: left;
+      margin-left: 14px;
+      position: relative;
+      top: 9px; }
+      .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons {
+        margin-left: 5px;
+        display: inline-block;
+        background-color: white;
+        border: 1px solid #D4D4D4;
+        border-radius: 4px;
+        vertical-align: middle;
+        line-height: 0; }
+        .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons .markup_bbcode, .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons .markup_plaintext {
+          border-left: 1px solid #d4d4d4; }
+        .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons li {
+          float: left; }
+          .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons li a {
+            display: block;
+            padding: 1px 8px; }
+            .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons li a:hover {
+              opacity: .7; }
+          .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons li img {
+            width: 30px;
+            height: 30px; }
+        .system-build .part-list-action-bar .permalink-markup-social .markup-block .markup-buttons .markup_reddit a {
+          padding-left: 0; }
+    .system-build .part-list-action-bar .permalink-markup-social .part-list-social-buttons {
+      float: left;
+      display: inline-block;
+      position: relative;
+      top: 15px;
+      margin-left: 16px; }
+      .system-build .part-list-action-bar .permalink-markup-social .part-list-social-buttons li {
+        display: inline-block;
+        margin-right: 10px; }
+  .system-build .part-list-action-bar .wattage-actions {
+    float: right;
+    border-left: 1px solid #d4d4d4; }
+    .system-build .part-list-action-bar .wattage-actions .part-list-action {
+      float: left;
+      border-left: 1px solid #d4d4d4; }
+      .system-build .part-list-action-bar .wattage-actions .part-list-action a {
+        padding: 16px 20px;
+        display: block;
+        font-weight: 700; }
+    .system-build .part-list-action-bar .wattage-actions .est-wattage {
+      font-size: 14px;
+      border: 0; }
+      .system-build .part-list-action-bar .wattage-actions .est-wattage a {
+        font-weight: 700;
+        padding-left: 32px;
+        background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/bolt.png) no-repeat;
+        background-size: 9px 12px;
+        background-position: 17px 20px; }
+        .system-build .part-list-action-bar .wattage-actions .est-wattage a:hover {
+          background: white url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/bolt.png) no-repeat;
+          background-size: 9px 12px;
+          background-position: 17px 20px; }
+.system-build .full-column {
+  padding: 24px 0; }
+.system-build .part-list td {
+  font-size: 14px; }
+  .system-build .part-list td ul li {
+    font-family: system;
+    margin: 0;
+    line-height: 18px; }
+    .system-build .part-list td ul li:before {
+      display: none; }
+.system-build .part-list .price-modifier td {
+  font-size: 12px; }
+.system-build .part-list .component-image {
+  vertical-align: top; }
+  .system-build .part-list .component-image a {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    padding: 4px;
+    background: white;
+    border: 1px solid #D4D4D4;
+    text-align: center;
+    display: block; }
+    .system-build .part-list .component-image a img {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+.system-build .part-list .component-name {
+  font-size: 14px; }
+.system-build .part-list .price {
+  font-size: 14px;
+  font-weight: 700; }
+.system-build .part-list .part-list-compat-wattage {
+  margin-bottom: 20px; }
+  .system-build .part-list .part-list-compat-wattage .compat-message {
+    font-size: 16px; }
+    .system-build .part-list .part-list-compat-wattage .compat-message.compat-message-ok span {
+      background-size: 13px 12px;
+      background-position: 0px 4px;
+      padding-left: 18px; }
+    .system-build .part-list .part-list-compat-wattage .compat-message.compat-message-note span {
+      background-size: 17px 17px;
+      background-position: 0px 2px;
+      padding-left: 25px; }
+    .system-build .part-list .part-list-compat-wattage .compat-message.compat-message-warning {
+      background-size: 19px 17px;
+      background-position: 0px 5px;
+      padding-left: 27px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Misc
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.warning-message {
+  margin-bottom: 16px;
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/warning.png) no-repeat;
+  background-size: 19px 17px;
+  padding-left: 25px; }
+
+.info-message {
+  margin-bottom: 16px;
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/info.png) no-repeat;
+  background-size: 17px 17px;
+  background-position: 0px 1px;
+  padding-left: 25px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Breakdown by Merchant
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.part-table .component-name a {
+  color: #252835;
+  font-weight: 700; }
+.part-table .price {
+  font-weight: 700; }
+.part-table .total-price {
+  font-weight: 700; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Completed Builds Index
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.completed-builds .hero {
+  background: #F77C0C; }
+.completed-builds .details .image-triple-group {
+  padding: 4px;
+  border: 1px solid #dedede;
+  max-width: 227px;
+  float: left;
+  margin-right: 30px; }
+.completed-builds .details .build .title {
+  font-size: 20px;
+  line-height: 1.25em;
+  padding-top: 15px; }
+.completed-builds .details .build .price {
+  font-size: 18px;
+  margin-left: 20px; }
+.completed-builds .details .build .component, .completed-builds .details .build .owner {
+  font-size: 16px; }
+.completed-builds .details .build .comments, .completed-builds .details .build .votes {
+  padding-left: 20px; }
+.completed-builds .details .build .votes {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/up-arrow.png) no-repeat;
+  background-size: 11px 13px;
+  background-position: 0px 2px; }
+.completed-builds .details .build .comments {
+  background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/comment-icon.png) no-repeat;
+  background-size: 12px 12px;
+  background-position: 0px 3px; }
+.completed-builds .right-column {
+  position: relative; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Complete Build Detail
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.build .hero {
+  background: #F77C0C;
+  text-align: center; }
+  .build .hero h4 {
+    font-size: 14px;
+    font-weight: 700; }
+  .build .hero p {
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    margin: .5em 0 0 0; }
+  .build .hero img {
+    border: 2px solid white; }
+  .build .hero a {
+    color: #ffdf5f;
+    font-weight: 700; }
+    .build .hero a:hover {
+      color: white; }
+.build .part-reviews h4 {
+  margin-bottom: 0; }
+.build .part-reviews .name {
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: 20px; }
+  .build .part-reviews .name a {
+    color: #252835; }
+    .build .part-reviews .name a:hover {
+      color: #2c85c5; }
+.build .part-reviews .review {
+  margin-bottom: 32px; }
+.build .part-reviews .inline-rating-md {
+  float: right;
+  margin-left: 20px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Hero
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.build-guide .general-hero, .build-guide .hero {
+  background: #937A5D; }
+.build-guide .hero {
+  background: #937A5D;
+  text-align: center; }
+  .build-guide .hero h4 {
+    font-size: 14px;
+    font-weight: 700; }
+  .build-guide .hero p {
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    margin: .5em 0 0 0; }
+  .build-guide .hero img {
+    border: 2px solid white; }
+  .build-guide .hero a {
+    color: #ffdf5f;
+    font-weight: 700; }
+    .build-guide .hero a:hover {
+      color: white; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Edit Guide
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.edit-build-guide .hero-tab {
+  background-color: #937A5D; }
+
+.edit-build-guide input[type=text], textarea {
+  width: 100%; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Guide List
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.build-guide .build-list .build .build-tags li {
+  display: inline;
+  font-size: 10px;
+  color: #937a5d;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 5px; }
+.build-guide .build-list .build .image-triple-group {
+  border: 1px solid #dedede;
+  background-color: white;
+  max-width: 227px;
+  float: left;
+  margin-right: 30px; }
+  .build-guide .build-list .build .image-triple-group .image-two, .build-guide .build-list .build .image-triple-group .image-three {
+    padding: 8px; }
+  .build-guide .build-list .build .image-triple-group .image-triple-group-left {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    padding: 4px; }
+    .build-guide .build-list .build .image-triple-group .image-triple-group-left img {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+  .build-guide .build-list .build .image-triple-group .image-triple-group-right {
+    border-left: 1px solid white; }
+    .build-guide .build-list .build .image-triple-group .image-triple-group-right .image-two {
+      border-bottom: 1px solid white; }
+.build-guide .build-list .build .title {
+  font-size: 22px;
+  line-height: 24px;
+  margin-top: 5px; }
+  .build-guide .build-list .build .title .price {
+    font-weight: 700;
+    color: #252835;
+    font-size: 18px; }
+    .build-guide .build-list .build .title .price:hover {
+      color: #2c85c5; }
+.build-guide .build-list .build ul li {
+  font-size: 16px; }
+.build-guide .build-list .build .comments {
+  background-size: 12px 12px;
+  background-position: 0px 3px;
+  padding-left: 20px; }
+.build-guide .build-list .build .votes {
+  background-size: 11px 13px;
+  background-position: 0px 2px;
+  padding-left: 20px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Forum Table Styling
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.forum-name {
+  width: 40%; }
+  .forum-name a {
+    font-size: 14px;
+    color: #252835;
+    font-weight: 700; }
+    .forum-name a:hover {
+      color: #2c85c5; }
+
+.forum-topic-count, .forum-post-count, .forum-topic-post-count, .forum-topic-view-count {
+  width: 9%; }
+
+.forum-topic a, .forum-topic-unread a {
+  font-size: 14px;
+  color: #252835; }
+  .forum-topic a:hover, .forum-topic-unread a:hover {
+    color: #2c85c5; }
+
+.forum-topic-unread {
+  font-weight: 700; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Misc
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*Moderation control for a form topic for staff, sets hard width for select*/
+.moderate-move-topic {
+  max-width: 200px; }
+
+.forum-topic-timestamp {
+  width: 15%; }
+  .forum-topic-timestamp a {
+    display: block; }
+
+.forum-list td {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-bottom: solid 1px #e0e0e0; }
+
+.forum-list th {
+  padding: 6px 8px;
+  text-align: left;
+  white-space: nowrap; }
+
+.forum-list tbody tr:nth-child(odd) {
+  background-color: #f1f1f1; }
+
+.forum-new-topic {
+  float: right; }
+
+.forum-topic-sticky td {
+  background-color: white; }
+.forum-topic-sticky .forum-topic, .forum-topic-sticky .forum-topic-unread {
+  background: white url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/sticky-post.png) no-repeat;
+  padding-left: 24px;
+  background-size: 10px 10px;
+  background-position: 8px 11px; }
+
+.forum-heading {
+  margin-bottom: 12px; }
+  .forum-heading p {
+    font-size: 12px;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.375em; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Misc
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.blog-article {
+  margin-bottom: 60px; }
+  .blog-article h2 a {
+    color: #252835;
+    font-weight: 700;
+    font-size: 24px; }
+    .blog-article h2 a:hover {
+      color: #2c85c5; }
+
+.blog .left-column ul {
+  margin-bottom: 30px; }
+.blog .left-column li a {
+  color: #252835;
+  font-weight: 700; }
+  .blog .left-column li a:hover {
+    color: #2c85c5; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Hero
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.user .avatar-username img, .partlist .avatar-username img {
+  border: 2px solid white; }
+.user .avatar-username h1, .partlist .avatar-username h1 {
+  margin: 0; }
+.user .avatar-username span, .partlist .avatar-username span {
+  font-size: 16px;
+  color: #a1a2b8;
+  margin-top: -2px; }
+.user .avatar-username div, .partlist .avatar-username div {
+  top: 2px;
+  margin-left: 6px;
+  width: 1050px; }
+.user .avatar-username h4, .partlist .avatar-username h4 {
+  margin-bottom: -5px;
+  color: #a1a2b8; }
+.user .right-column h2 a, .partlist .right-column h2 a {
+  display: inline-block;
+  width: 430px; }
+.user .right-column h2 span a, .partlist .right-column h2 span a {
+  display: static;
+  width: auto; }
+
+.partlist .avatar-username div {
+  top: -5px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Left Column
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+a#change_email_link {
+  margin-left: 10px; }
+
+.user .left-column li {
+  margin-top: 4px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Profile
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+#profile_description_edit {
+  display: none; }
+  #profile_description_edit textarea {
+    width: 100%;
+    margin-bottom: 10px; }
+
+#profile_avatar_edit img {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  vertical-align: middle; }
+#profile_avatar_edit a {
+  margin: 20px 10px 0 0; }
+#profile_avatar_edit #avatar_upload {
+  display: none;
+  margin: 43px 0px 10px 0px; }
+
+/*Admin controls for user account*/
+.user-admin-action {
+  margin-bottom: 10px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Comments
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.user-comments h4 a {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Inbox
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.inbox h4 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  color: #252835; }
+  .inbox h4 a {
+    color: #2c85c5; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Favorite Parts and Inventory
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.jump-to {
+  font-size: 12px;
+  margin-bottom: 30px; }
+  .jump-to a {
+    margin-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #e3e3e3;
+    font-weight: 700;
+    color: #252835; }
+    .jump-to a:last-of-type {
+      border-right: 0; }
+    .jump-to a:hover {
+      color: #2c85c5; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Saved Parts List
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+#delete-saved-part-list {
+  margin-top: 20px; }
+
+.edit-saved .hero-tab, .system-build .hero-tab {
+  background-color: #54547b; }
+.edit-saved h4, .system-build h4 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  color: #252835;
+  margin-bottom: 5px; }
+.edit-saved .saved-parts-content, .system-build .saved-parts-content {
+  margin-top: 20px; }
+.edit-saved input[type=text], .system-build input[type=text] {
+  width: 100%; }
+
+.saved-part-lists .left-column .private:before {
+  content: "Private";
+  display: block;
+  float: right;
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #8d8f9e;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Contact Form
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact-form {
+  margin-bottom: 20px; }
+  .contact-form input[type=text], .contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px; }
+  .contact-form h4 {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 14px;
+    color: #252835; }
+
+.contact .left-column {
+  font-size: 14px; }
+  .contact .left-column li {
+    padding: 0 0 2px 0; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Index Page
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.price-trend-blocks {
+  width: 1136px;
+  text-align: center; }
+
+.price-trend-block {
+  width: 200px;
+  height: 150px;
+  display: inline-block;
+  vertical-align: middle; }
+  .price-trend-block a {
+    text-align: center;
+    font-weight: 400;
+    color: #252835;
+    padding: 20px;
+    display: block;
+    background-color: white;
+    border: 1px solid #e3e3e3;
+    margin: 10px;
+    border-radius: 4px; }
+    .price-trend-block a:hover {
+      color: #2c85c5; }
+    .price-trend-block a img {
+      margin-bottom: 20px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Trend Details
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.trend-chart-item {
+  position: relative;
+  display: block; }
+  .trend-chart-item img {
+    border-radius: 4px;
+    border: 1px solid #e3e3e3;
+    padding: 15px 20px 15px 15px;
+    background-color: white; }
+  .trend-chart-item span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0; }
+    .trend-chart-item span img {
+      border-radius: 0;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      width: 50%;
+      height: 50%; }
+
+.trend-chart-item:hover {
+  cursor: pointer; }
+  .trend-chart-item:hover span {
+    opacity: 1;
+    -webkit-backface-visibility: hidden; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Mentioned by Logos
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.mentioned-by {
+  margin-top: 50px;
+  text-align: center; }
+  .mentioned-by img {
+    margin: 0 20px; }
+  .mentioned-by #forbes {
+    width: 107px; }
+  .mentioned-by #guardian {
+    width: 194px; }
+  .mentioned-by #lifehacker {
+    width: 117px; }
+  .mentioned-by #maximumpc {
+    width: 128px; }
+  .mentioned-by #pcworld {
+    width: 128px; }
+  .mentioned-by #tekzilla {
+    width: 143px; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Register
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+html.registration {
+  background-color: #5a5d76; }
+
+.registration-box {
+  background-color: #f7f7f7;
+  display: inline-block;
+  min-width: 350px;
+  margin: 100px auto;
+  border-radius: 8px;
+  box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.29), 0px 6px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 18px 35px 0px rgba(0, 0, 0, 0.29), 0px 6px 10px 0px rgba(0, 0, 0, 0.5); }
+
+.registration-box-container {
+  text-align: center; }
+
+.registration-box-heading {
+  font-size: 24px;
+  background-color: #ededed;
+  padding: 30px 30px 68px 30px;
+  padding-bottom: 68px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: solid 1px #e3e3e3;
+  position: relative; }
+
+.registration-box-heading-image {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  bottom: -40px;
+  margin-left: -40px;
+  border: solid 1px #e3e3e3;
+  border-radius: 50%;
+  background-color: #ffffff; }
+
+.registration-box-heading-image img {
+  margin: 15px 15px;
+  width: 48px;
+  height: 48px; }
+
+.registration-box-content {
+  padding: 40px 30px 30px 30px; }
+
+.registration-box-content .login {
+  min-width: 290px; }
+
+.registration-box-content .login input[type=text] {
+  width: 100%; }
+
+.registration-box-content .login input[type=password] {
+  width: 100%; }
+
+.registration-box-content .login input[type=email] {
+  width: 100%; }
+
+.registration-box-content .login input[type=checkbox] {
+  margin-right: 6px; }
+
+.registration-box-content .pad-block {
+  margin-top: 20px; }
+
+.registration-box-content .login .input-label {
+  text-align: left;
+  margin-bottom: 10px; }
+
+.registration-box-content .login .input-label-note {
+  font-size: 0.75em; }
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––
+Login
+––––––––––––––––––––––––––––––––––––––––––––––––––– */
+.login-register-text {
+  font-size: 14px; }
+
+.login-register-text div {
+  margin-bottom: 10px; }
+
+.login-register-text div.last-child {
+  margin-bottom: 0px; }
+
+.login-remember-me {
+  font-size: 12px;
+  margin-bottom: 3px; }
+
+.login-error {
+  color: red; }
+
+input[type=password] {
+  padding: 8px 10px;
+  border: 0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #ececec;
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #ececec;
+  background: #FFFFFF; }
+
+input[type=password]:focus {
+  -moz-box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #56a8df;
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21), inset 0px 0px 0px 1px #56a8df; }
+
+input[type=password]:focus {
+  border-color: #333; }
+
+
+
+
+
+#change_email_dialog { display: none; }
+
+.basic-table td { font-size: 12px; padding: 8px; border-bottom: solid 1px #e0e0e0; }
+.basic-table th { padding: 6px 8px; }
+.basic-table tbody tr:nth-child(odd) { background-color: #f1f1f1; }
+.basic-table td input[type=checkbox] { margin-right: 4px; }
+
+.merchant-preference-table td input[type=text] { width: 4em; text-align: right; }
+
+.action-buttons { text-align: right; }
+.action-buttons a { margin-left: 6px; }
+.save-button { margin-top: 20px; text-align: center; }
+
+.form-error-text { display: none; color: red; }
+.form-info-text { display: none; }
+
+.error-text { color: red; }
+
+#private_message_form table { width: 100%; }
+#private_message_form table td { width: 100%; }
+#private_message_form textarea { width: 100%; margin-bottom: 20px; }
+#private_message_form .form-error-text { margin: 20px 0px; }
+
+div.markdown div.embed-video iframe {
+  width: 690px;
+  height: 388px;
+}
+
+
+.saved-build-rename {
+  display: none;
+}
+
+.build-table .price {
+  text-align: right;
+}
+.build-table td.viewadd a.pp_add_part {
+  margin-left: 10px;
+}
+.build-table td {
+  font-size: 12px;
+  padding: 8px;
+  border-bottom: solid 1px #e0e0e0;
+}
+.build-table th {
+  padding: 6px 8px;
+}
+.build-table tbody tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+.comment-continue-thread {
+  margin-top: 20px;
+}
+.comment-view-rest {
+  margin-bottom: 20px;
+}
+
+.blog-posted-by {
+  margin-bottom: 20px;
+}
+
+.combo-deal-loading {
+  display: none;
+}
+.combo-deal-view-more {
+}
+.login-register-text div.last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+
+.empty-list-content {
+  margin: 30px 0;
+}
+
+.custom-part-url {
+  padding: 6px;
+  border: solid 1px red;
+  background-color: white;
+}
+
+.gray-out {
+  opacity:0.5;
+}
+
+.build-list-edit-row { text-align: right; }
+.build-list-edit-row a { margin-left: 20px; }
+
+
+a.disabled {
+    cursor: default;
+    color: #bbb;
+}
+a.disabled:hover {
+    color: #bbb;
+}
+table#explain_wattage_table {
+    margin-top:1em;
+}
+
+table.manual-zebra tr:nth-child(odd) {
+    background-color: transparent;
+}
+table.manual-zebra tr.zebra {
+    background-color: #f2f2f2;
+}
+
+table.manual-zebra tr {
+    border-bottom: none;
+}
+table.manual-zebra tr.last {
+    border-bottom: solid 1px #e8e8e8;
+}
+table.manual-zebra tr.row-border td {
+    padding: 0;
+}
+
+.part-table tr.even {
+    background-color: transparent;
+}
+.part-table tr.odd {
+    background-color: #f2f2f2;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+
+.item-settings span {
+    background: transparent url(/web/20180902130220im_/https://cdn.pcpartpicker.com/static/forever/img/settings.png) no-repeat;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+    opacity: .4;
+}
+.item-settings span:hover { opacity: 1; }
+
+.hidden {
+    display: none;
+}
+
+.saved-part-list-description-edit textarea {
+    display: block;
+    width: 100%;
+    margin: 4px 0 10px 0;
+}
+
+
+
+td.combo-relevant {
+    background-color: blue;
+}
+
+td.stock-status {
+    text-align: center;
+}
+td.stock {
+    text-align: center;
+}
+
+.compat-message-warning {
+    color: red !important;
+}
+
+.filter-incompatible {
+    color: #aaa;
+}
+
+a.trend-chart-item img {
+    width: 716px;
+}
+a.trend-chart-item span img {
+    width: 56px;
+    height: 56px;
+}
+
+.labelbox-input {
+    display: none;
+    position: absolute;
+    top: -6px;
+    white-space: nowrap;
+    width: 50px;
+    z-index: 1;
+}
+
+.labelbox-input input {
+    padding: 4px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.table-form th {
+    padding: 5px;
+    text-align: left;
+}
+
+
+.cc-window{opacity:1;transition:opacity 1s ease}.cc-window.cc-invisible{opacity:0}.cc-animate.cc-revoke{transition:transform 1s ease}.cc-animate.cc-revoke.cc-top{transform:translateY(-2em)}.cc-animate.cc-revoke.cc-bottom{transform:translateY(2em)}.cc-animate.cc-revoke.cc-active.cc-bottom,.cc-animate.cc-revoke.cc-active.cc-top,.cc-revoke:hover{transform:translateY(0)}.cc-grower{max-height:0;overflow:hidden;transition:max-height 1s}
+.cc-link,.cc-revoke:hover{text-decoration:underline}.cc-revoke,.cc-window{position:fixed;overflow:hidden;box-sizing:border-box;font-family:Helvetica,Calibri,Arial,sans-serif;font-size:16px;line-height:1.5em;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;z-index:9999}.cc-window.cc-static{position:static}.cc-window.cc-floating{padding:2em;max-width:24em;-ms-flex-direction:column;flex-direction:column}.cc-window.cc-banner{padding:1em 1.8em;width:100%;-ms-flex-direction:row;flex-direction:row}.cc-revoke{padding:.5em}.cc-header{font-size:18px;font-weight:700}.cc-btn,.cc-close,.cc-link,.cc-revoke{cursor:pointer}.cc-link{opacity:.8;display:inline-block;padding:.2em}.cc-link:hover{opacity:1}.cc-link:active,.cc-link:visited{color:initial}.cc-btn{display:block;padding:.4em .8em;font-size:.9em;font-weight:700;border-width:2px;border-style:solid;text-align:center;white-space:nowrap}.cc-banner .cc-btn:last-child{min-width:140px}.cc-highlight .cc-btn:first-child{background-color:transparent;border-color:transparent}.cc-highlight .cc-btn:first-child:focus,.cc-highlight .cc-btn:first-child:hover{background-color:transparent;text-decoration:underline}.cc-close{display:block;position:absolute;top:.5em;right:.5em;font-size:1.6em;opacity:.9;line-height:.75}.cc-close:focus,.cc-close:hover{opacity:1}
+.cc-revoke.cc-top{top:0;left:3em;border-bottom-left-radius:.5em;border-bottom-right-radius:.5em}.cc-revoke.cc-bottom{bottom:0;left:3em;border-top-left-radius:.5em;border-top-right-radius:.5em}.cc-revoke.cc-left{left:3em;right:unset}.cc-revoke.cc-right{right:3em;left:unset}.cc-top{top:1em}.cc-left{left:1em}.cc-right{right:1em}.cc-bottom{bottom:1em}.cc-floating>.cc-link{margin-bottom:1em}.cc-floating .cc-message{display:block;margin-bottom:1em}.cc-window.cc-floating .cc-compliance{-ms-flex:1;flex:1}.cc-window.cc-banner{-ms-flex-align:center;align-items:center}.cc-banner.cc-top{left:0;right:0;top:0}.cc-banner.cc-bottom{left:0;right:0;bottom:0}.cc-banner .cc-message{-ms-flex:1;flex:1}.cc-compliance{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:justify;align-content:space-between}.cc-compliance>.cc-btn{-ms-flex:1;flex:1}.cc-btn+.cc-btn{margin-left:.5em}
+@media print{.cc-revoke,.cc-window{display:none}}@media screen and (max-width:900px){.cc-btn{white-space:normal}}@media screen and (max-width:414px) and (orientation:portrait),screen and (max-width:736px) and (orientation:landscape){.cc-window.cc-top{top:0}.cc-window.cc-bottom{bottom:0}.cc-window.cc-banner,.cc-window.cc-left,.cc-window.cc-right{left:0;right:0}.cc-window.cc-banner{-ms-flex-direction:column;flex-direction:column}.cc-window.cc-banner .cc-compliance{-ms-flex:1;flex:1}.cc-window.cc-floating{max-width:none}.cc-window .cc-message{margin-bottom:1em}.cc-window.cc-banner{-ms-flex-align:unset;align-items:unset}}
+.cc-floating.cc-theme-classic{padding:1.2em;border-radius:5px}.cc-floating.cc-type-info.cc-theme-classic .cc-compliance{text-align:center;display:inline;-ms-flex:none;flex:none}.cc-theme-classic .cc-btn{border-radius:5px}.cc-theme-classic .cc-btn:last-child{min-width:140px}.cc-floating.cc-type-info.cc-theme-classic .cc-btn{display:inline-block}
+.cc-theme-edgeless.cc-window{padding:0}.cc-floating.cc-theme-edgeless .cc-message{margin:2em 2em 1.5em}.cc-banner.cc-theme-edgeless .cc-btn{margin:0;padding:.8em 1.8em;height:100%}.cc-banner.cc-theme-edgeless .cc-message{margin-left:1em}.cc-floating.cc-theme-edgeless .cc-btn+.cc-btn{margin-left:0}
+/*
+     FILE ARCHIVED ON 13:02:20 Sep 02, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 17:13:35 Feb 15, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 88.126
+  exclusion.robots: 0.097
+  exclusion.robots.policy: 0.088
+  RedisCDXSource: 0.608
+  esindex: 0.01
+  LoadShardBlock: 65.046 (3)
+  PetaboxLoader3.datanode: 68.388 (4)
+  CDXLines.iter: 19.122 (3)
+  load_resource: 177.606
+  PetaboxLoader3.resolve: 112.038
+*/
