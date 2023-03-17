@@ -27,7 +27,7 @@
                     <h5>Chipsets</h5>
                     {% for chipsets in chipsets %}
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="brand" value="{{ chipsets }}" id="{{ chipsets }}">
+                            <input class="form-check-input" type="checkbox" name="chipset" value="{{ chipsets }}" id="{{ chipsets }}">
                             <label class="form-check-label" for="{{ chipsets }}">
                                 {{ chipsets }}
                             </label>
@@ -38,7 +38,7 @@
                     <h5>form_factors</h5>
                     {% for form_factors in form_factors %}
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="brand" value="{{ form_factors }}" id="{{ form_factors }}">
+                            <input class="form-check-input" type="checkbox" name="form_factor" value="{{ form_factors }}" id="{{ form_factors }}">
                             <label class="form-check-label" for="{{ form_factors }}">
                                 {{ form_factors }}
                             </label>
@@ -49,7 +49,7 @@
                     <h5>form_factors</h5>
                     {% for socket_types in socket_types %}
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="brand" value="{{ socket_types }}" id="{{ socket_types }}">
+                            <input class="form-check-input" type="checkbox" name="socket_type" value="{{ socket_types }}" id="{{ socket_types }}">
                             <label class="form-check-label" for="{{ socket_types }}">
                                 {{ socket_types }}
                             </label>
@@ -65,7 +65,6 @@
                         <input class="form-control" type="text" name="max_price" placeholder="Max price">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Apply filters</button>
             </form>
         </div>
 			<div class="col-md-9">
@@ -87,7 +86,7 @@
 							<tr><td><img src="{{ motherboard.motherboard_image_url }}" alt="{{ motherboard.motherboard_model }}" width="50" height="50"></td>
 								<td>{{ motherboard.motherboard_brand }}</td>
 								<td>{{ motherboard.motherboard_model }}</td>
-								<td>{{ motherboard.motherboard_socket }}</td>
+								<td>{{ motherboard.motherboard_socket_type }}</td>
 								<td>{{ motherboard.motherboard_ram_slots }}</td>
 								<td>{{ motherboard.motherboard_form_factor }}</td>
 								<td>${{ motherboard.motherboard_price }}</td>
@@ -136,4 +135,29 @@
                         </div>
                     </div>
                 </div>
+                <script>
+                    // Get all the filter checkboxes
+                    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+                  
+                    // Add event listeners to each checkbox
+                    checkboxes.forEach((checkbox) => {
+                      checkbox.addEventListener('change', () => {
+                        // Get the values of all checked checkboxes
+                        const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
+                        const chipsets = [...document.querySelectorAll('input[name=chipsets]:checked')].map((checkbox) => checkbox.value);
+                        const formFactors = [...document.querySelectorAll('input[name=form_factors]:checked')].map((checkbox) => checkbox.value);
+                        const socketTypes = [...document.querySelectorAll('input[name=socket_types]:checked')].map((checkbox) => checkbox.value);
+                        const minPrice = document.querySelector('input[name=min_price]').value;
+                        const maxPrice = document.querySelector('input[name=max_price]').value;
+                        
+                        // Construct the filter URL with the selected values
+                        const filterUrl = `/motherboard?brand=${brands.join(',')}&chipsets=${chipsets.join(',')}&form_factors=${formFactors.join(',')}&socket_types=${socketTypes.join(',')}&min_price=${minPrice}&max_price=${maxPrice}`;
+                  
+                        // Update the current URL with the filter URL and reload the page
+                        window.history.replaceState(null, '', filterUrl);
+                        location.reload();
+                      });
+                    });
+                </script>
+                
 {% endblock %}                

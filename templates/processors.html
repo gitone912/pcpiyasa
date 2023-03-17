@@ -103,8 +103,8 @@
 						  <label for="2000">$2000</label>
 						  <br>
 						</div>
-						<button type="submit">Filter</button>
 					  </form>
+					  
 					  </li>
 				  <li class="list-group-item"><a href="/processors" class="btn btn-info">Reset Filters</a></li>
 				</ul>
@@ -133,7 +133,7 @@
 				<tr>
 					<td>
 						<div class="d-flex align-items-center">
-							<img src="{{ x.processor_image_url }}" alt="" style="width: 45px; height: 45px" class="rounded" />
+							<img src="" alt="" style="width: 45px; height: 45px" class="rounded" />
 							<div class="ms-3">
 								<p class="fw-bold mb-1">{{ x.processor_model }}</p>
 							</div>
@@ -180,7 +180,7 @@
 			
 			<tr>
 
-			
+			</table>
 			{% if processors.has_other_pages %}
     <ul class="pagination justify-content-center">
         {% if processors.has_previous %}
@@ -222,5 +222,31 @@
 </div>
 </div>
 </div>
+<script>
+	// Get all the filter checkboxes
+	const checkboxes = document.querySelectorAll('input[type=checkbox]');
+  
+	// Add event listeners to each checkbox
+	checkboxes.forEach((checkbox) => {
+	  checkbox.addEventListener('change', () => {
+		// Get the values of all checked checkboxes
+		const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
+		const socketTypes = [...document.querySelectorAll('input[name=socket_type]:checked')].map((checkbox) => checkbox.value);
+		const minSpeeds = [...document.querySelectorAll('input[name=min_speed]:checked')].map((checkbox) => checkbox.value);
+		const minCores = [...document.querySelectorAll('input[name=min_cores]:checked')].map((checkbox) => checkbox.value);
+		const minPrices = [...document.querySelectorAll('input[name=min_price]:checked')].map((checkbox) => checkbox.value);
+		const maxPrices = [...document.querySelectorAll('input[name=max_price]:checked')].map((checkbox) => checkbox.value);
+  
+		// Construct the filter URL with the selected values
+		const filterUrl = `/processors?brand=${brands.join(',')}&socket_type=${socketTypes.join(',')}&min_speed=${minSpeeds.join(',')}&min_cores=${minCores.join(',')}&min_price=${minPrices.join(',')}&max_price=${maxPrices.join(',')}`;
+  
+		// Update the current URL with the filter URL and reload the page
+		window.history.replaceState(null, '', filterUrl);
+		location.reload();
+	  });
+	});
+  </script>
+  
+  
 
 {% endblock content %}

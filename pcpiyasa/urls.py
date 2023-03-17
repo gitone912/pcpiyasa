@@ -25,4 +25,5 @@ urlpatterns = [
     path("", include("graphics_cards.urls")),
     path("", include("motherboard.urls")),
     path("", include("ram.urls")),
+    path("", include("authentication.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
