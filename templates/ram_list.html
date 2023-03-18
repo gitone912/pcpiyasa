@@ -132,4 +132,26 @@
                 </li>
             {% endif %}
         </ul>
-    {% endif %}   
+    {% endif %}  
+	<script>
+		// Get all the filter checkboxes
+		const checkboxes = document.querySelectorAll('input[type=checkbox]');
+	  
+		// Add event listeners to each checkbox
+		checkboxes.forEach((checkbox) => {
+		  checkbox.addEventListener('change', () => {
+			// Get the values of all checked checkboxes
+			const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
+			const ramTypes = [...document.querySelectorAll('input[name=ram_type]:checked')].map((checkbox) => checkbox.value);
+			const ramSizes = [...document.querySelectorAll('input[name=ram_size]:checked')].map((checkbox) => checkbox.value);
+	  
+			// Construct the filter URL with the selected values
+			const filterUrl = `/ram?brand=${brands.join(',')}&ram_type=${ramTypes.join(',')}&ram_size=${ramSizes.join(',')}`;
+	  
+			// Update the current URL with the filter URL and reload the page
+			window.history.replaceState(null, '', filterUrl);
+			location.reload();
+		  });
+		});
+	</script>
+	

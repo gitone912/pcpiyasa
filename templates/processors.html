@@ -238,21 +238,21 @@
 	  checkbox.addEventListener('change', () => {
 		// Get the values of all checked checkboxes
 		const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
-		const socketTypes = [...document.querySelectorAll('input[name=socket_type]:checked')].map((checkbox) => checkbox.value);
-		const minSpeeds = [...document.querySelectorAll('input[name=min_speed]:checked')].map((checkbox) => checkbox.value);
-		const minCores = [...document.querySelectorAll('input[name=min_cores]:checked')].map((checkbox) => checkbox.value);
+		const colors = [...document.querySelectorAll('input[name=color]:checked')].map((checkbox) => checkbox.value);
+		const fanRPMs = [...document.querySelectorAll('input[name=fan_rpm]:checked')].map((checkbox) => checkbox.value);
+		const noiseLevels = [...document.querySelectorAll('input[name=noise_level]:checked')].map((checkbox) => checkbox.value);
 		const minPrices = [...document.querySelectorAll('input[name=min_price]:checked')].map((checkbox) => checkbox.value);
 		const maxPrices = [...document.querySelectorAll('input[name=max_price]:checked')].map((checkbox) => checkbox.value);
   
 		// Construct the filter URL with the selected values
-		const filterUrl = `/processors?brand=${brands.join(',')}&socket_type=${socketTypes.join(',')}&min_speed=${minSpeeds.join(',')}&min_cores=${minCores.join(',')}&min_price=${minPrices.join(',')}&max_price=${maxPrices.join(',')}`;
+		const filterUrl = `/products?brand=${brands.join(',')}&color=${colors.join(',')}&fan_rpm=${fanRPMs.join(',')}&noise_level=${noiseLevels.join(',')}&min_price=${minPrices.join(',')}&max_price=${maxPrices.join(',')}`;
   
 		// Update the current URL with the filter URL and reload the page
 		window.history.replaceState(null, '', filterUrl);
 		location.reload();
 	  });
 	});
-  </script>
+</script>
   
   
 

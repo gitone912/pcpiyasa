@@ -3,36 +3,88 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-3">
-			<h4>Filter by:</h4>
-			<form method="GET">
-				<div class="mb-3">
-					<h5>Brand</h5>
-					{% for brand in brands %}
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}">
-						<label class="form-check-label" for="{{ brand }}">
-							{{ brand }}
-						</label>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h4>Filter by:</h4>
+				<form method="GET">
+					<div class="mb-3">
+						<h5>Brand</h5>
+						{% for brand in brands %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="brand" value="{{ brand }}" id="{{ brand }}" {% if brand == request.GET.brand %}checked{% endif %}>
+							<label class="form-check-label" for="{{ brand }}">
+								{{ brand }}
+							</label>
+						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
-				</div>
-				<div class="mb-3">
-					<h5>Color</h5>
-					{% for color in colors %}
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" name="color" value="{{ color }}" id="{{ color }}">
-						<label class="form-check-label" for="{{ color }}">
-							{{ color }}
-						</label>
+					<div class="mb-3">
+						<h5>Color</h5>
+						{% for color in colors %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="color" value="{{ color }}" id="{{ color }}" {% if color == request.GET.color %}checked{% endif %}>
+							<label class="form-check-label" for="{{ color }}">
+								{{ color }}
+							</label>
+						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
-				</div>
-				<button type="submit" class="btn btn-primary">Apply filters</button>
-			</form>
-		</div>
+					<div class="mb-3">
+						<h5>Fan RPM</h5>
+						{% for fan_rpm in fan_rpms %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" name="fan_rpm" value="{{ fan_rpm }}" id="{{ fan_rpm }}" {% if fan_rpm in request.GET.fan_rpm %}checked{% endif %}>
+							<label class="form-check-label" for="{{ fan_rpm }}">
+								{{ fan_rpm }}
+							</label>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="mb-3">
+						<h5>Noise Level</h5>
+						{% for noise in noise_levels %}
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="noise_level" id="{{ noise.id }}" value="{{ noise.value }}" {% if noise.value == request.GET.noise_levels %}checked{% endif %}>
+							<label class="form-check-label" for="{{ noise.id }}">
+								{{ noise.label }}
+							</label>
+						</div>
+						{% endfor %}
+					</div>
+					  
+					<div class="mb-3">
+						<h5>Price Range</h5>
+						<div>
+							<label for="min_price">Minimum Price:</label>
+							<br>
+							<input type="checkbox" name="min_price" value="100" id="100">
+							<label for="100">$100</label>
+							<br>
+							<input type="checkbox" name="min_price" value="200" id="200">
+							<label for="200">$200</label>
+							<br>
+							<input type="checkbox" name="min_price" value="300" id="300">
+							<label for="300">$300</label>
+							<br>
+						  </div>
+						  <div>
+							<label for="max_price">Maximum Price:</label>
+							<br>
+							<input type="checkbox" name="max_price" value="500" id="500">
+							<label for="500">$500</label>
+							<br>
+							<input type="checkbox" name="max_price" value="1000" id="1000">
+							<label for="1000">$1000</label>
+							<br>
+							<input type="checkbox" name="max_price" value="2000" id="2000">
+							<label for="2000">$2000</label>
+							<br>
+						  </div>
+					</div>
+					<button type="submit" class="btn btn-primary">Apply filters</button>
+				</form>
+			</div>
 		<div class="col-md-9">
 			<h2>CPU Coolers</h2>
 			<table class="table">
@@ -110,3 +162,50 @@
 </div>
 </div>
 </div>
+<script>
+    // Get all the filter checkboxes and select options
+    const filters = document.querySelectorAll('input[type=checkbox], select');
+
+    // Add event listeners to each filter
+    filters.forEach((filter) => {
+        filter.addEventListener('change', () => {
+            // Get the values of all checked checkboxes and selected options
+            const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
+            const colors = [...document.querySelectorAll('input[name=color]:checked')].map((checkbox) => checkbox.value);
+            
+            const noiseLevel = document.querySelector('input[name=noise_level]:checked').map((checkbox)=>checkbox.value);
+			((checkbox) => checkbox.value);
+            const maxPrice = [...document.querySelectorAll('input[name=max_price]:checked')].map((checkbox) => checkbox.value);
+			const minPrice = [...document.querySelectorAll('input[name=min_price]:checked')].map
+            const fanRpm = document.querySelector('input[name=fan_rpm]:checked').map((checkbox)=>checkbox.value);
+
+            // Construct the filter URL with the selected values
+            let filterUrl = '/cpu_cooler?';
+            if (brands.length > 0) {
+                filterUrl += `brand=${brands.join(',')}&`;
+            }
+            if (colors.length > 0) {
+                filterUrl += `color=${colors.join(',')}&`;
+            }
+            if (minPrice.length > 0) {
+                filterUrl += `min_price=${minPrice}&`;
+            }
+            if (maxPrice.length > 0) {
+                filterUrl += `max_price=${maxPrice}&`;
+            }
+            if (fanRpm !== 'Any') {
+                filterUrl += `fan_rpm=${fanRpm}&`;
+            }
+            if (noiseLevel !== 'Any') {
+                filterUrl += `noise_level=${noiseLevel}&`;
+            }
+
+            // Remove the last '&' character from the URL
+            filterUrl = filterUrl.slice(0, -1);
+
+            // Update the current URL with the filter URL and reload the page
+            window.history.replaceState(null, '', filterUrl);
+            location.reload();
+        });
+    });
+</script>

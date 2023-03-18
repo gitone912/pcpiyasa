@@ -137,3 +137,24 @@
 {% endif %}
 </ul>
 {% endif %}
+<script>
+    // Get all the filter checkboxes
+    const checkboxes = document.querySelectorAll('input[type=checkbox]');
+
+    // Add event listeners to each checkbox
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            // Get the values of all checked checkboxes
+            const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
+            const memoryInterfaces = [...document.querySelectorAll('input[name=memory_interfaces]:checked')].map((checkbox) => checkbox.value);
+            const frameSyncs = [...document.querySelectorAll('input[name=frame_syncs]:checked')].map((checkbox) => checkbox.value);
+
+            // Construct the filter URL with the selected values
+            const filterUrl = `/graphics_card?brand=${brands.join(',')}&memory_interfaces=${memoryInterfaces.join(',')}&frame_syncs=${frameSyncs.join(',')}`;
+
+            // Update the current URL with the filter URL and reload the page
+            window.history.replaceState(null, '', filterUrl);
+            location.reload();
+        });
+    });
+</script>
