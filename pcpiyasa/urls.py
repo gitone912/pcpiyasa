@@ -26,4 +26,5 @@ urlpatterns = [
     path("", include("motherboard.urls")),
     path("", include("ram.urls")),
     path("", include("authentication.urls")),
+    path("", include("user_interface.urls")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

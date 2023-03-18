@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+<section class="main-wrapper xs-col-12">
+    <div>
+    <div class="wrapper wrapper__pageTitle wrapper__pageTitle--tabs">
+    <section class="xs-col-11 lg-col-9 xl-col-8 xs-mx-auto">
+    <h1 class="pageTitle">Account</h1>
+    <div class="user"><a href="{% url 'profile' %}"><img src="{{user_profile.avatar.url}}" class="user-avatar xs-mr2 xs-align-middle" alt="akashgaming" />{{ request.user.username }}</a></div>
+    <nav class="tabsGroup" role='navigation'>
+    <ul id='tabs'>
+    <li><a href="{% url 'account' %}" class="active ">Account</a></li>
+    <li><a href="{% url 'profile' %}" class=" ">Profile</a></li>
+    <li><a href="/user/akashgaming/comments/" class=" ">Comments</a></li>
+    <li><a href="/user/akashgaming/topics/" class=" ">Topics</a></li>
+    <li><a href="/user/akashgaming/saved/" class=" ">Saved Part Lists</a></li>
+    <li><a href="/user/akashgaming/favorites/" class=" ">Favorite Parts</a></li>
+    <li><a href="/user/akashgaming/inventory/" class=" ">Inventory</a></li>
+    <li><a href="/user/akashgaming/builds/" class=" ">Completed Builds</a></li>
+    <li class="more hidden" data-width="80">
+    <a href="#"><svg class="icon shape-dots"><use xlink:href="#shape-dots" /></svg></a>
+    <ul></ul>
+    </li>
+    </ul>
+    </nav>
+    </section>
+    </div>
+    <div class="wrapper wrapper__pageContent">
+    <div class="pageMessage" style="display:none;"><p></p></div>
+    <section class="main-content xs-col-11 lg-col-9 xl-col-8 xs-mx-auto">
+    <div class="wrapper--columns clearfix">
+    <div class="sidebar-content col xs-col-12 md-col-4 lg-col-3 xl-col-2">
+    <div class="block">
+    <ul class="group__content userPref__nav list-toc list-unstyled">
+    <li id="" class="" role="" aria-grabbed="false"><a href="{% url 'account' %}"><div>General</div></a></li>
+    <li id="" class="list-active" role="" aria-grabbed="false"><a href="/user/akashgaming/account/email/"><div>Email & Password</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/followeditems/"><div>Followed Discussions</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/notifications/"><div>Notifications</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/pricing/"><div>Merchants & Pricing</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/pricealert/"><div>Price Alerts</div></a></li>
+    </ul>
+    </div>
+    </div>
+    <div class="main-content col xs-col-12 md-col-8 lg-col-9 xl-col-10">
+    <div class="block">
+    <div class="group group--user">
+    <h6 class="group__title">Email</h6>
+    <div class="group__content">
+    <p id="email_address">{{ request.user.email }} </p>
+    <a id="change_email_link" href="#">Change Email</a>
+    </div>
+    </div>
+    <div class="group group--user">
+    <h6 class="group__title">Password</h6>
+    <div class="group__content">
+    <p class="change-password"></p>
+    <a id="change_password_link" href="/accounts/password/change/">Change Password</a>
+    </div>
+    </div>
+    <div class="group group--user">
+    <h6 class="group__title">Activity</h6>
+    <div class="group__content">
+    <a href="/user/akashgaming/account/activity/">View Recent Account Activity</a>
+    </div>
+    </div>
+    <div class="group group--user">
+    <div class="group__content">
+    <button id="delete_account_link" href="" class="button button--small button--negative">Delete Account</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </section>
+    <div class="modal" id="default_dialog" style="display:none;">
+    <div class="modal__container xs-col-12 sm-col-9 md-col-7 lg-col-5 xs-mx-auto">
+    <div class="modal__header">
+    <h2></h2>
+    <a class="modal__close js-hide-modal" href="javascript:">
+    <svg class="icon shape-delete"><use xlink:href="#shape-delete" /></svg>
+    </a>
+    </div>
+    <div class="modal__content">
+    </div>
+    <div class="modal__footer">
+    <input id="default_dialog_ok" class="button button--small" type="submit" value="OK">
+    <input id="default_dialog_cancel" class="button button--small button--secondary button--dark js-hide-modal" type="button" value="Cancel">
+    </div>
+    </div>
+    </div>
+    <form id="change_email_form" action="/qapi/user/email/update/">
+    <input type="hidden" name="csrfmiddlewaretoken" value="JpiBAYNMDUUtXMACZr6991gfqLkpcnaUXcKKJbrlEZVTQVK11KUGuH0c9MzvewJx">
+    <input type="hidden" name="user" value="akashgaming">
+    <div class="modal" id="change_email_dialog" style="display:none;">
+    <div class="modal__container xs-col-12 sm-col-9 md-col-7 lg-col-5 xs-mx-auto">
+    <div class="modal__header">
+    <h2>Change Email Address</h2>
+    <a class="modal__close js-hide-modal" href="javascript:">
+    <svg class="icon shape-delete"><use xlink:href="#shape-delete" /></svg>
+    </a>
+    </div>
+    <div class="modal__content">
+    <div class="wrapper-formField">
+    <label for="id_name">New Email Address</label>
+    <input id="email_field" name="email" type="text" maxlength="75" placeholder="New Email Address">
+    </div>
+    <div class="wrapper-formField">
+    <label for="id_name">Confirm Email Address</label>
+    <input id="email2_field" name="email2" type="text" maxlength="75" placeholder="Confirm Email Address">
+    </div>
+    <div class="wrapper-formField">
+    <label for="id_name">Enter Current Password</label>
+    <input id="password_field" name="password" type="password" placeholder="Enter Current Password">
+    </div>
+    <div id="change_email_error" class="form-error-text"></div>
+    <div class="form-actions">
+     <input id="change_email_button" class="button button--small" type="submit" value="Change">
+    <input id="change_email_cancel_button" class="modal__close js-hide-modal button button--secondary button--small button--dark" type="button" value="Cancel">
+    </div>
+    </div>
+    </div>
+    </div>
+    </form>
+    {% endblock content %}

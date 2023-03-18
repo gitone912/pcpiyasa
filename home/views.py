@@ -209,4 +209,4 @@ def show_list(request):
     if not graphics_cards:
         context['no_graphics_card'] = 'No Graphics Card added yet.'
     
-    return render(request, 'pc_builder.html', context)
+    return render(request, 'test.html', context)

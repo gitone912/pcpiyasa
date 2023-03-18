@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="main-wrapper xs-col-12">
+    <div>
+    <div class="wrapper wrapper__pageTitle wrapper__pageTitle--tabs">
+    <section class="xs-col-11 lg-col-9 xl-col-8 xs-mx-auto">
+    <h1 class="pageTitle">Profile</h1>
+    <div class="user"><a href="{% url 'profile' %}"><img src="{{user_profile.avatar.url}}" class="user-avatar xs-mr2 xs-align-middle" alt="akashgaming" />{{ request.user.username }}</a></div>
+    <nav class="tabsGroup" role='navigation'>
+    <nav class="tabsGroup" role='navigation'>
+    <ul id='tabs'>
+    <li><a href="{% url 'account' %}" class=" ">Account</a></li>
+    <li><a href="{% url 'profile' %}" class="active ">Profile</a></li>
+    <li><a href="/user/akashgaming/comments/" class=" ">Comments</a></li>
+    <li><a href="/user/akashgaming/topics/" class=" ">Topics</a></li>
+    <li><a href="/user/akashgaming/saved/" class=" ">Saved Part Lists</a></li>
+    <li><a href="/user/akashgaming/favorites/" class=" ">Favorite Parts</a></li>
+    <li><a href="/user/akashgaming/inventory/" class=" ">Inventory</a></li>
+    <li><a href="/user/akashgaming/builds/" class=" ">Completed Builds</a></li>
+    <li class="more hidden" data-width="80">
+    <a href="#"><svg class="icon shape-dots"><use xlink:href="#shape-dots" /></svg></a>
+    <ul></ul>
+    </li>
+    </ul>
+    </nav>
+    </section>
+    </div>
+    <div class="wrapper wrapper__pageContent">
+    <section class="xs-col-11 lg-col-9 xl-col-8 xs-mx-auto">
+    <div class="wrapper--columns clearfix">
+    <div class="sidebar-content col xs-col-12 md-col-3 lg-col-3">
+    <section class="module-subTitle">
+    <div class="subTitle">
+     <div class="subTitle__header">
+    <h2>Account</h2>
+    </div>
+    </div>
+    </section>
+    <div class="block user__account">
+    <div class="group group--user">
+    <h3 class="group__title">Completed Builds</h3>
+    <div class="group__content">
+    <p><a href="/user/akashgaming/builds/">0</a></p>
+    </div>
+    </div>
+    <div class="group group--user">
+    <h3 class="group__title">Created</h3>
+    <div class="group__content">
+    <p> {{ request.user.date_joined|date:"F j, Y" }}</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="main-content col xs-col-12 md-col-9 lg-col-9">
+    <div class="block">
+    <section class="module-subTitle">
+    <div class="subTitle">
+    <div class="subTitle__header">
+    <h2>Profile</h2>
+    </div>
+    </div>
+    </section>
+    <form method="POST" action="{% url 'profile' %}" >
+        {% csrf_token %}
+    <div id="profile_description" class="markdown">
+    <input type="text" value="{{user_profile.description}} " name="description">
+    </div>
+    <button type="submit" class="button button--small">Edit Description</button>
+    <div id="profile_description_edit" style="display:none;">
+    </form>
+    </div>
+    </div>
+    <div id="profile_avatar_edit" class="block">
+    <section class="module-subTitle">
+    <div class="subTitle">
+    <div class="subTitle__header">
+    <h2>Manage Avatar</h2>
+    </div>
+    </div>
+    </section>
+    <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+   
+    <a href="#"><img src="{{user_profile.avatar.url}}" class="user-thumb-lg rounded-circle img-fluid" alt="uploadimage" style="width: 150px;" /></a>
+    <div class="avatar__buttons">
+    <a href="#" class="button button--small button--secondary button--negative xs-mr1" id="delete_avatar"><span>Delete Avatar</span></a>
+        <input type="file" name="avatar">
+        <button type="submit"  class="button button--small">Change Avatar</button>
+    
+    </a>
+    </div>
+</form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </section>
+    <div class="modal" id="default_dialog" style="display:none;">
+    <div class="modal__container xs-col-12 sm-col-9 md-col-7 lg-col-5 xs-mx-auto">
+    <div class="modal__header">
+    <h2></h2>
+    <a class="modal__close js-hide-modal" href="javascript:">
+    <svg class="icon shape-delete"><use xlink:href="#shape-delete" /></svg>
+    </a>
+    </div>
+    <div class="modal__content">
+    </div>
+    <div class="modal__footer">
+    <input id="default_dialog_ok" class="button button--small" type="submit" value="OK">
+    <input id="default_dialog_cancel" class="button button--small button--secondary button--dark js-hide-modal" type="button" value="Cancel">
+    </div>
+    </div>
+    </div>
+    {% endblock content %}

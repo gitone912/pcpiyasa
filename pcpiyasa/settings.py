@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'ram',
     'graphics_cards',
     'cpu_cooler',
-    'authentication'
+    'authentication',
+    'user_interface',
 ]
 
 MIDDLEWARE = [

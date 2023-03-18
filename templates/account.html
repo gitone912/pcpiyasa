@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+<section class="main-wrapper xs-col-12">
+    <div>
+    <div class="wrapper wrapper__pageTitle wrapper__pageTitle--tabs">
+    <section class="xs-col-11 lg-col-9 xl-col-8 xs-mx-auto">
+    <h1 class="pageTitle">Account</h1>
+    <div class="user"><a href="/user/akashgaming/"><img -src="//cdna.pcpartpicker.com/static/forever/images/user/5390195.dbb003b6633be16f706b3453ba14abcd.256c.jpg" class="user-avatar xs-mr2 xs-align-middle" alt="akashgaming" />{{ request.user.username }}</a></div>
+     <nav class="tabsGroup" role='navigation'>
+    <ul id='tabs'>
+    <li><a href="{% url 'account' %}" class="active ">Account</a></li>
+    <li><a href="{% url 'profile' %}" class=" ">Profile</a></li>
+    <li><a href="/user/akashgaming/comments/" class=" ">Comments</a></li>
+    <li><a href="/user/akashgaming/topics/" class=" ">Topics</a></li>
+    <li><a href="/user/akashgaming/saved/" class=" ">Saved Part Lists</a></li>
+    <li><a href="/user/akashgaming/favorites/" class=" ">Favorite Parts</a></li>
+    <li><a href="/user/akashgaming/inventory/" class=" ">Inventory</a></li>
+    <li><a href="/user/akashgaming/builds/" class=" ">Completed Builds</a></li>
+    <li class="more hidden" data-width="80">
+    <a href="#"><svg class="icon shape-dots"><use xlink:href="#shape-dots" /></svg></a>
+    <ul></ul>
+    </li>
+    </ul>
+    </nav>
+    </section>
+    </div>
+    <div class="wrapper wrapper__pageContent">
+    <div class="pageMessage" style="display:none;"><p></p></div>
+    <section class="main-content xs-col-11 lg-col-9 xl-col-8 xs-mx-auto">
+    <div class="wrapper--columns clearfix">
+    <div class="sidebar-content col xs-col-12 md-col-4 lg-col-3 xl-col-2">
+    <div class="block">
+    <ul class="group__content userPref__nav list-toc list-unstyled">
+    <li id="" class="list-active" role="" aria-grabbed="false"><a href="{% url 'account' %}"><div>General Preferences</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="{% url 'email_pass' %}"><div>Email & Password</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/followeditems/"><div>Followed Discussions</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/notifications/"><div>Notifications</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/pricing/"><div>Merchants & Pricing</div></a></li>
+    <li id="" class="" role="" aria-grabbed="false"><a href="/user/akashgaming/account/pricealert/"><div>Price Alerts</div></a></li>
+    </ul>
+    </div>
+    </div>
+    <div class="main-content col xs-col-12 md-col-8 lg-col-9 xl-col-10">
+    <div class="group group--user">
+    <h6 class="group__title">General Preferences</h6>
+    <ul class="group__content list-unstyled">
+    <li>
+    <input type="checkbox" class="toggle pp_user_account_update_checkbox" id="user_account_mask_profanities" name="user_account_mask_profanities" checked>
+    <label for="user_account_mask_profanities"><span class="toggle__track"></span>Enable profanity filter</label>
+    </li>
+    </ul>
+    </div>
+    <div class="group group--user">
+    <h6 class="group__title">Theme</h6>
+    <ul class="group__content list-unstyled">
+    <li>
+    <input type="radio" class="radio pp_change_theme" name="theme" value="light-mode" id="theme_light-mode" checked>
+    <label for="theme_light-mode">Light Mode</label>
+    </li>
+    <li>
+    <input type="radio" class="radio pp_change_theme" name="theme" value="dark-mode" id="theme_dark-mode">
+    <label for="theme_dark-mode">Dark Mode</label>
+    </li>
+    </ul>
+    </div>
+    <div class="group group--user">
+    <h6 class="group__title">Privacy</h6>
+    <ul class="group__content list-unstyled">
+    <li>
+    <input type="checkbox" class="toggle" id="check_no_sell_info" name="no_sell_personal_info" checked disabled="disabled">
+    <label for="check_no_sell_info"><span class="toggle__track"></span>Do not sell my personal information</label>
+    </li>
+    </ul>
+    </div>
+    <div class="group group--user">
+    <div class="group__content">
+    <button id="delete_account_link" class="button button--small button--negative delete-account">Delete Account</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </section>
+    <div class="modal" id="default_dialog" style="display:none;">
+    <div class="modal__container xs-col-12 sm-col-9 md-col-7 lg-col-5 xs-mx-auto">
+    <div class="modal__header">
+    <h2></h2>
+    <a class="modal__close js-hide-modal" href="javascript:">
+    <svg class="icon shape-delete"><use xlink:href="#shape-delete" /></svg>
+    </a>
+    </div>
+    <div class="modal__content">
+    </div>
+    <div class="modal__footer">
+    <input id="default_dialog_ok" class="button button--small" type="submit" value="OK">
+    <input id="default_dialog_cancel" class="button button--small button--secondary button--dark js-hide-modal" type="button" value="Cancel">
+    </div>
+    </div>
+    </div>
+    {% endblock content %}

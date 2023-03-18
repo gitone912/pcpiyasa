@@ -123,7 +123,7 @@
                             
                             </td>
                             <td>
-                                <a href="{% url 'processor_detail' x.processor.id %}">{{ x.processor.processor_name }}</a>
+                                <a href="{% url 'processor_detail' x.processor.id %}" >{{ x.processor.processor_name }}</a>
                             </td>
                     
                     <td>
@@ -171,7 +171,7 @@
         
         
         {% if no_cpu_cooler %}
-        <td><a href="{% url 'cpu_cooler' %}" class="btn-mds">Choose A CPU Cooler</a></td>
+        <td><a href="{% url 'cpu_cooler' %}" class="btn-mds" class="btn btn-primary">Choose A CPU Cooler</a></td>
     {% else %}
         
                 {% for x in cpu_cooler %}
