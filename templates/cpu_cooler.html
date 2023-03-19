@@ -82,7 +82,7 @@
 							<br>
 						  </div>
 					</div>
-					<button type="submit" class="btn btn-primary">Apply filters</button>
+					
 				</form>
 			</div>
 		<div class="col-md-9">
@@ -162,50 +162,4 @@
 </div>
 </div>
 </div>
-<script>
-    // Get all the filter checkboxes and select options
-    const filters = document.querySelectorAll('input[type=checkbox], select');
 
-    // Add event listeners to each filter
-    filters.forEach((filter) => {
-        filter.addEventListener('change', () => {
-            // Get the values of all checked checkboxes and selected options
-            const brands = [...document.querySelectorAll('input[name=brand]:checked')].map((checkbox) => checkbox.value);
-            const colors = [...document.querySelectorAll('input[name=color]:checked')].map((checkbox) => checkbox.value);
-            
-            const noiseLevel = document.querySelector('input[name=noise_level]:checked').map((checkbox)=>checkbox.value);
-			((checkbox) => checkbox.value);
-            const maxPrice = [...document.querySelectorAll('input[name=max_price]:checked')].map((checkbox) => checkbox.value);
-			const minPrice = [...document.querySelectorAll('input[name=min_price]:checked')].map
-            const fanRpm = document.querySelector('input[name=fan_rpm]:checked').map((checkbox)=>checkbox.value);
-
-            // Construct the filter URL with the selected values
-            let filterUrl = '/cpu_cooler?';
-            if (brands.length > 0) {
-                filterUrl += `brand=${brands.join(',')}&`;
-            }
-            if (colors.length > 0) {
-                filterUrl += `color=${colors.join(',')}&`;
-            }
-            if (minPrice.length > 0) {
-                filterUrl += `min_price=${minPrice}&`;
-            }
-            if (maxPrice.length > 0) {
-                filterUrl += `max_price=${maxPrice}&`;
-            }
-            if (fanRpm !== 'Any') {
-                filterUrl += `fan_rpm=${fanRpm}&`;
-            }
-            if (noiseLevel !== 'Any') {
-                filterUrl += `noise_level=${noiseLevel}&`;
-            }
-
-            // Remove the last '&' character from the URL
-            filterUrl = filterUrl.slice(0, -1);
-
-            // Update the current URL with the filter URL and reload the page
-            window.history.replaceState(null, '', filterUrl);
-            location.reload();
-        });
-    });
-</script>

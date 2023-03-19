@@ -86,7 +86,7 @@ def cpu_cooler_view(request):
         paginator = Paginator(coolers, 150)  # Show 100 coolers per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        return render(request, 'cpu_cooler.html', {
+        return render(request, 'trail.html', {
             'coolers': page_obj,
             'brands': brands,
             'fan_rpms': fan_rpms,
@@ -98,7 +98,7 @@ def cpu_cooler_view(request):
     paginator = Paginator(coolers, 150)  # Show 100 coolers per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'cpu_cooler.html', {
+    return render(request, 'trail.html', {
         'coolers': page_obj,
         'brands': brands,
         'fan_rpms': fan_rpms,
@@ -106,3 +106,6 @@ def cpu_cooler_view(request):
         'colors': colors,
         'prices': prices,
     })
+
+def cpu_coolers(request):
+    return render(request, 'cpu_cooler.html')
